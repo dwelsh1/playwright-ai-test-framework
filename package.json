@@ -1,0 +1,64 @@
+{
+  "name": "Playwright AI Assisted Framework",
+  "version": "1.0.0",
+  "description": "An enterprise ready Playwright Framework for AI-assisted test automation development with TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "node scripts/check-smart-reporter.cjs",
+    "test": "npx playwright test --project=chromium --workers=4",
+    "test:junit": "npx playwright test --project=chromium --workers=4 --reporter=junit",
+    "test:json": "npx playwright test --project=chromium --workers=4 --reporter=json",
+    "test:allure": "npx playwright test --project=chromium --workers=4 --reporter=allure-playwright",
+    "test:smart": "npx playwright test --project=chromium --workers=4 --reporter=./tools/playwright-smart-reporter/dist/smart-reporter.js",
+    "test:all-reporters": "npx playwright test --project=chromium --workers=4",
+    "test:smoke": "npx playwright test --project=chromium --workers=4 --grep @smoke",
+    "test:staging": "TEST_ENV=staging npx playwright test --project=chromium --workers=4",
+    "test:staging:smoke": "TEST_ENV=staging npx playwright test --project=chromium --workers=4 --grep @smoke",
+    "test:production": "TEST_ENV=production npx playwright test --project=chromium --workers=4 --grep @smoke",
+    "build:smart-reporter": "npm install --prefix tools/playwright-smart-reporter && npm run build --prefix tools/playwright-smart-reporter",
+    "report:html": "npx playwright show-report playwright-report",
+    "report:allure": "npx allure serve allure-results",
+    "report:smart": "node scripts/open-smart-report.cjs",
+    "report:smart:serve": "node tools/playwright-smart-reporter/dist/bin/serve.js",
+    "report:merge-history": "node tools/playwright-smart-reporter/dist/bin/merge-history.js",
+    "verify:smart-reporter": "node scripts/verify-smart-reporter.cjs",
+    "lint": "npx eslint .",
+    "lint:fix": "npx eslint . --fix",
+    "format": "npx prettier --write .",
+    "kill": "powershell -ExecutionPolicy Bypass -File scripts/kill-test-processes.ps1",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "**/*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "**/*.{js,cjs,mjs,json,md}": [
+      "prettier --write"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.5",
+    "@faker-js/faker": "^9.9.0",
+    "@playwright/cli": "^0.1.1",
+    "@playwright/test": "^1.58.0",
+    "@types/node": "^24.0.1",
+    "@typescript-eslint/eslint-plugin": "^8.34.1",
+    "@typescript-eslint/parser": "^8.34.1",
+    "allure-playwright": "^3.6.0",
+    "dotenv": "^16.5.0",
+    "eslint": "^9.29.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-define-config": "^2.1.0",
+    "eslint-plugin-playwright": "^2.2.0",
+    "eslint-plugin-prettier": "^5.5.0",
+    "husky": "^9.1.7",
+    "jiti": "^2.4.2",
+    "lint-staged": "^16.1.2",
+    "zod": "^4.3.6"
+  }
+}
