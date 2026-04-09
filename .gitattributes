@@ -10,6 +10,9 @@ Dockerfile text eol=lf
 # Lock files — treat as binary to avoid noisy diffs
 package-lock.json -diff linguist-generated
 
+# Exclude generated report fixtures from language stats
+tests/smart-report.html linguist-generated
+
 # Binary files
 *.png binary
 *.jpg binary
