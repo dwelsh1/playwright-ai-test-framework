@@ -1,0 +1,181 @@
+name: Playwright Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    # Nightly regression at 2 AM UTC
+    - cron: '0 2 * * *'
+
+env:
+  CI: true
+  APP_URL: ${{ vars.APP_URL || 'http://localhost:5273' }}
+  API_URL: ${{ vars.API_URL || 'http://localhost:3002' }}
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+
+  smoke:
+    name: Smoke Tests
+    needs: lint
+    runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.58.0-noble
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Wait for SUT to be ready
+        run: |
+          echo "Waiting for application to be ready..."
+          curl --retry 10 --retry-delay 3 --retry-connrefused \
+               --fail --silent --output /dev/null \
+               "${API_URL}/api/coffees"
+          echo "Application is ready."
+      - name: Build smart reporter
+        run: npm run build:smart-reporter
+      - name: Run smoke tests
+        run: npx playwright test --project=chromium --grep @smoke
+        env:
+          ENABLE_AI_RECOMMENDATIONS: 'false'
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: smoke-report
+          path: playwright-report/
+          retention-days: 14
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: smoke-traces
+          path: test-results/
+          retention-days: 7
+
+  regression:
+    name: Regression Tests (shard ${{ matrix.shard }})
+    needs: lint
+    if: github.event_name == 'schedule' || github.event_name == 'push'
+    runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.58.0-noble
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1/4, 2/4, 3/4, 4/4]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Wait for SUT to be ready
+        run: |
+          echo "Waiting for application to be ready..."
+          curl --retry 10 --retry-delay 3 --retry-connrefused \
+               --fail --silent --output /dev/null \
+               "${API_URL}/api/coffees"
+          echo "Application is ready."
+      - name: Build smart reporter
+        run: npm run build:smart-reporter
+      - name: Run regression tests (shard ${{ matrix.shard }})
+        run: npx playwright test --project=chromium --shard=${{ matrix.shard }} --reporter=blob
+        env:
+          ENABLE_AI_RECOMMENDATIONS: 'false'
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: blob-report-${{ strategy.job-index }}
+          path: blob-report/
+          retention-days: 1
+
+  merge-reports:
+    name: Merge Reports
+    if: ${{ !cancelled() }}
+    needs: regression
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - uses: actions/download-artifact@v4
+        with:
+          path: all-blob-reports
+          pattern: blob-report-*
+          merge-multiple: true
+      - name: Merge blob reports into HTML and JSON
+        run: |
+          npx playwright merge-reports --reporter html ./all-blob-reports
+          npx playwright merge-reports --reporter json ./all-blob-reports > test-results/results.json
+      - name: Detect flaky tests
+        run: node scripts/detect-flaky.js
+        continue-on-error: true
+      - uses: actions/upload-artifact@v4
+        with:
+          name: regression-report
+          path: playwright-report/
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: regression-junit
+          path: test-results/junit.xml
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: flaky-report
+          path: test-results/flaky-tests.json
+          retention-days: 30
+
+  quarantine:
+    name: Quarantined Tests (informational)
+    needs: lint
+    if: github.event_name == 'schedule' || github.event_name == 'push'
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    container:
+      image: mcr.microsoft.com/playwright:v1.58.0-noble
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Wait for SUT to be ready
+        run: |
+          curl --retry 10 --retry-delay 3 --retry-connrefused \
+               --fail --silent --output /dev/null \
+               "${API_URL}/api/coffees"
+      - name: Build smart reporter
+        run: npm run build:smart-reporter
+      - name: Run quarantined tests
+        run: npx playwright test --project=chromium --grep "@flaky" --retries=3
+        continue-on-error: true
+        env:
+          ENABLE_AI_RECOMMENDATIONS: 'false'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: quarantine-report
+          path: playwright-report/
+          retention-days: 7

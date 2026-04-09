@@ -1,0 +1,40 @@
+{
+  "name": "Playwright AI Framework",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "22"
+    }
+  },
+  "mounts": [
+    "source=pw-ai-node_modules,target=/workspace/node_modules,type=volume",
+    "source=pw-ai-cli-browsers,target=/ms-playwright-cli,type=volume"
+  ],
+  "containerEnv": {
+    "DEVCONTAINER": "true",
+    "PLAYWRIGHT_BROWSERS_PATH": "/ms-playwright",
+    "PLAYWRIGHT_CLI_BROWSERS_PATH": "/ms-playwright-cli"
+  },
+  "postCreateCommand": "bash .devcontainer/post-create.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-playwright.playwright",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+      ],
+      "settings": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": "explicit"
+        }
+      }
+    }
+  },
+  "forwardPorts": [5273, 3002],
+  "remoteUser": "pwuser"
+}

@@ -1,0 +1,6706 @@
+{
+  "runs": [],
+  "tests": {
+    "[user-setup] coffee-cart\\auth.user.setup.ts::authenticate as user": [
+      {
+        "passed": true,
+        "duration": 622,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 650,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 7910,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 654,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 7900,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 693,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 660,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 8153,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 646,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 636,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\e2e\\cart-management.spec.ts::should persist cart across SPA navigation but clear on page reload": [
+      {
+        "passed": true,
+        "duration": 1135,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1119,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1174,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1171,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1137,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1121,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1148,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1387,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1158,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1222,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\e2e\\cart-management.spec.ts::should browse menu, add multiple items, modify quantities, and checkout": [
+      {
+        "passed": true,
+        "duration": 1092,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1159,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1173,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1198,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1201,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1134,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1164,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1376,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1158,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1240,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\e2e\\admin-workflow.spec.ts::should show API-created order in admin dashboard and allow deletion": [
+      {
+        "passed": true,
+        "duration": 1630,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1650,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1659,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1644,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1721,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1661,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1643,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1928,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1708,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1813,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\e2e\\admin-workflow.spec.ts::should allow admin to view statistics, filter orders, and manage deletions": [
+      {
+        "passed": true,
+        "duration": 2380,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 2191,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 2312,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 2224,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 2343,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 2304,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 2460,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 2526,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 2499,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 2501,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\accessibility.spec.ts::login page meets WCAG 2.1 AA": [
+      {
+        "passed": true,
+        "duration": 968,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 931,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 895,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 930,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 961,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 976,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 998,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1197,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 947,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 944,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\e2e\\full-purchase.spec.ts::should complete full user journey from login to order confirmation": [
+      {
+        "passed": true,
+        "duration": 1524,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1272,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1545,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1506,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1500,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1237,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1365,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1613,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1306,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1356,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\e2e\\full-purchase.spec.ts::should allow admin to view and delete user orders": [
+      {
+        "passed": true,
+        "duration": 1899,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1901,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1893,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1837,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1905,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1882,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 2134,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 2227,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1953,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 2049,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\accessibility.spec.ts::menu page meets WCAG 2.1 AA": [
+      {
+        "passed": true,
+        "duration": 1064,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 982,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1005,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 990,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 999,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 995,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1047,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1268,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1134,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1047,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\accessibility.spec.ts::login page error state meets WCAG 2.1 AA": [
+      {
+        "passed": true,
+        "duration": 1021,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 961,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 963,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1005,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1005,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 991,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 985,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1224,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1031,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1018,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\accessibility.spec.ts::payment details modal meets WCAG 2.1 AA": [
+      {
+        "passed": true,
+        "duration": 1116,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1062,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1039,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1126,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1096,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1107,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1079,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1318,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1096,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1129,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\accessibility.spec.ts::login form is keyboard operable": [
+      {
+        "passed": true,
+        "duration": 677,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 619,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 640,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 665,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 646,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 625,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 645,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 875,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 665,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 660,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\accessibility.spec.ts::[DEMO] a11ybreak param produces detectable WCAG violations": [
+      {
+        "passed": true,
+        "duration": 999,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 879,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 925,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 950,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 928,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 926,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 956,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1158,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 940,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1016,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\admin-dashboard.spec.ts::should load admin dashboard": [
+      {
+        "passed": true,
+        "duration": 962,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 885,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 922,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 915,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 887,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 947,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 912,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1243,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 922,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 945,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\admin-dashboard.spec.ts::should display stat cards": [
+      {
+        "passed": true,
+        "duration": 943,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 916,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 944,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 930,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 983,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 915,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 961,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1207,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 980,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 972,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\admin-dashboard.spec.ts::should calculate revenue correctly": [
+      {
+        "passed": true,
+        "duration": 998,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 930,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 969,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 945,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 913,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 926,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1013,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1216,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 982,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 963,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\admin-dashboard.spec.ts::should display orders table": [
+      {
+        "passed": true,
+        "duration": 918,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 916,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 914,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 931,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 920,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 951,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 946,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1163,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 987,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 984,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\admin-dashboard.spec.ts::should allow deleting an order": [
+      {
+        "passed": true,
+        "duration": 1081,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1089,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1115,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1090,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1073,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1096,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1128,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1346,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1118,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1143,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\admin-dashboard.spec.ts::should update order count after deletion": [
+      {
+        "passed": true,
+        "duration": 1326,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1432,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1406,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1470,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": false,
+        "duration": 1300,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1522,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1439,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1659,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1468,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1500,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\admin-dashboard.spec.ts::should remove order from table on delete": [
+      {
+        "passed": true,
+        "duration": 1415,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1395,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1428,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1521,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1473,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1469,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1428,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1705,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1429,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1525,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\cart.spec.ts::should display cart contents": [
+      {
+        "passed": true,
+        "duration": 848,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 747,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 774,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 783,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 769,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 803,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 811,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1054,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 794,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 834,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\cart.spec.ts::should increase item quantity": [
+      {
+        "passed": true,
+        "duration": 762,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 738,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 785,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 855,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 840,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 754,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 789,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1021,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 767,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 815,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\cart.spec.ts::should remove item from cart": [
+      {
+        "passed": true,
+        "duration": 819,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 855,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 825,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 871,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 985,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 857,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 874,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1310,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 779,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 868,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\cart.spec.ts::should decrease item quantity": [
+      {
+        "passed": true,
+        "duration": 843,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 834,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 825,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 833,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 832,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 842,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 879,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1277,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 945,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 891,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\cart.spec.ts::should empty cart by removing all items": [
+      {
+        "passed": true,
+        "duration": 849,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 815,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 885,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 824,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 803,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 857,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 844,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1057,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 884,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 861,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\cart.spec.ts::should clear cart contents on page reload": [
+      {
+        "passed": true,
+        "duration": 950,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1015,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 982,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 973,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1028,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1053,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1083,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1205,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1010,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1198,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\cart.spec.ts::should display correct total price based on quantities": [
+      {
+        "passed": true,
+        "duration": 795,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 783,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1012,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 804,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 783,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 799,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 990,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1038,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 773,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 840,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\cart.spec.ts::should clear cart after successful checkout": [
+      {
+        "passed": true,
+        "duration": 988,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 975,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 904,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 923,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 983,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1008,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 971,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1206,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 994,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 980,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\cart.spec.ts::should display exact total price for known item quantities": [
+      {
+        "passed": true,
+        "duration": 929,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 914,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 937,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 927,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 977,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 919,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 941,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1140,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 973,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 899,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\checkout.spec.ts::should show checkout button in cart": [
+      {
+        "passed": true,
+        "duration": 811,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 792,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 813,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 854,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 843,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 835,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 823,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1072,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 871,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 820,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\checkout.spec.ts::should fill checkout form with valid data": [
+      {
+        "passed": true,
+        "duration": 882,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 874,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 922,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 908,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 955,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1138,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1146,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1186,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 936,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 938,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\checkout.spec.ts::should show order confirmation message": [
+      {
+        "passed": true,
+        "duration": 952,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1093,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 964,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 959,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1243,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 979,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 990,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1224,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 973,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 933,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\checkout.spec.ts::should require name field": [
+      {
+        "passed": true,
+        "duration": 978,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 999,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 985,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 964,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1354,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 980,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 935,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1282,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 973,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 992,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\checkout.spec.ts::should require email field": [
+      {
+        "passed": true,
+        "duration": 981,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 981,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 969,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1014,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1189,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1077,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 957,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1185,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 977,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1252,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\checkout.spec.ts::should validate email format": [
+      {
+        "passed": true,
+        "duration": 958,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1202,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 932,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 961,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1126,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 971,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 986,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1213,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 951,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 936,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\checkout.spec.ts::should persist subscribe checkbox state": [
+      {
+        "passed": true,
+        "duration": 972,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 920,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 914,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 973,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 975,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 968,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 929,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1213,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 970,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1034,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\checkout.spec.ts::should display order items in confirmation": [
+      {
+        "passed": true,
+        "duration": 1054,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1014,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 978,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 966,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 994,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1012,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 985,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1253,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1012,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1178,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\checkout.spec.ts::should generate order confirmation number": [
+      {
+        "passed": true,
+        "duration": 1028,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1003,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 943,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 930,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1024,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 948,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 975,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1146,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 972,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 981,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\checkout.spec.ts::should clear cart after successful checkout": [
+      {
+        "passed": true,
+        "duration": 1027,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1001,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1068,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1055,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1019,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1011,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 954,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1233,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1027,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1079,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\checkout.spec.ts::should create order entry on successful checkout": [
+      {
+        "passed": true,
+        "duration": 1165,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1106,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1144,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1116,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1093,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1182,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1154,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1387,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1144,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1209,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\failure.spec.ts::intentional failure - assertion": [
+      {
+        "passed": false,
+        "duration": 514,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": false,
+        "duration": 495,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": false,
+        "duration": 490,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": false,
+        "duration": 517,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": false,
+        "duration": 515,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": false,
+        "duration": 498,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": false,
+        "duration": 497,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": false,
+        "duration": 487,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": false,
+        "duration": 502,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": false,
+        "duration": 517,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\login.spec.ts::should login successfully as user and redirect to menu": [
+      {
+        "passed": true,
+        "duration": 586,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 704,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 598,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 544,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 620,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 678,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 715,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 961,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 614,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 601,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\login.spec.ts::should show error message on invalid credentials": [
+      {
+        "passed": true,
+        "duration": 645,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 571,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 715,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 599,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 675,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 583,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 580,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 846,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 689,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 604,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\login.spec.ts::should validate password field is required": [
+      {
+        "passed": true,
+        "duration": 555,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 562,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 595,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 568,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 560,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 573,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 581,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 831,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 575,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 571,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\login.spec.ts::should not submit empty login form": [
+      {
+        "passed": true,
+        "duration": 562,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 557,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 553,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 579,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 543,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 578,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 614,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 810,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 560,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 550,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\login.spec.ts::should stay on login page after invalid login attempt": [
+      {
+        "passed": true,
+        "duration": 588,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 597,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 591,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 578,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 559,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 582,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 595,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 832,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 590,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 577,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\login.spec.ts::should login as admin with valid admin credentials": [
+      {
+        "passed": true,
+        "duration": 839,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 756,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 793,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 803,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 776,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 781,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 800,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 990,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 772,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 812,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\login.spec.ts::should validate email field is required": [
+      {
+        "passed": true,
+        "duration": 576,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 543,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 576,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 663,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 543,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 546,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 575,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 824,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 564,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 654,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\menu.spec.ts::should load menu page with coffees": [
+      {
+        "passed": true,
+        "duration": 693,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 678,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 697,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 696,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 712,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 694,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 724,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 985,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 714,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 708,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\menu.spec.ts::should add coffee to cart from menu": [
+      {
+        "passed": true,
+        "duration": 796,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 741,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 742,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 722,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 742,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 802,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 808,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 964,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 762,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 752,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\menu.spec.ts::should display coffee prices": [
+      {
+        "passed": true,
+        "duration": 707,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 730,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 727,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 700,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 703,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 750,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 731,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 971,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 789,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 707,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\menu.spec.ts::should add coffee to cart via right-click context menu": [
+      {
+        "passed": true,
+        "duration": 769,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 757,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 762,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 783,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 809,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 763,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 761,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1049,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 810,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 842,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\menu.spec.ts::should undo last action with Ctrl+Z": [
+      {
+        "passed": true,
+        "duration": 757,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 746,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 815,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 774,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 765,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 752,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 751,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 986,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 778,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 750,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\menu.spec.ts::should translate coffee name on double-click": [
+      {
+        "passed": true,
+        "duration": 775,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 765,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 751,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 779,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 759,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 729,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 756,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1000,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 795,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 774,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\menu.spec.ts::should search/filter coffees by name": [
+      {
+        "passed": true,
+        "duration": 694,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 681,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 694,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 783,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 688,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 679,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 701,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1015,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 737,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 682,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\menu.spec.ts::should add multiple of same coffee": [
+      {
+        "passed": true,
+        "duration": 1018,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1019,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 995,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1098,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1013,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1060,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1005,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1265,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1003,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1028,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\navigation.spec.ts::should navigate to all main pages via header": [
+      {
+        "passed": true,
+        "duration": 741,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 708,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 728,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 728,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 739,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 749,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 705,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 990,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 685,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 711,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\navigation.spec.ts::should logout user from header": [
+      {
+        "passed": true,
+        "duration": 762,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 730,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 705,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 743,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 739,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 733,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 708,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 999,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 737,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 716,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\navigation.spec.ts::should update cart badge count": [
+      {
+        "passed": true,
+        "duration": 733,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 701,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 707,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 738,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 709,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 734,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 729,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1032,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 736,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 740,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\navigation.spec.ts::should have accessible navigation links": [
+      {
+        "passed": true,
+        "duration": 714,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 695,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 687,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 715,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 663,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 704,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 688,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 946,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 668,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 705,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\navigation.spec.ts::should highlight active page in navigation": [
+      {
+        "passed": true,
+        "duration": 682,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 675,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 677,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 687,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 692,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 743,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 688,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 974,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 745,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 705,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\navigation.spec.ts::should navigate to orders page from header": [
+      {
+        "passed": true,
+        "duration": 834,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 832,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 855,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 839,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 851,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 834,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 817,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1094,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 847,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 834,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\navigation.spec.ts::should maintain navigation state across pages": [
+      {
+        "passed": true,
+        "duration": 746,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 746,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 778,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 764,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 742,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 750,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 740,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 994,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 789,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1043,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\network-error.spec.ts::should handle API server error gracefully on menu": [
+      {
+        "passed": true,
+        "duration": 929,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 900,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 848,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 856,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 863,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 887,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 870,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1219,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 864,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 856,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\network-error.spec.ts::should handle API timeout gracefully on cart": [
+      {
+        "passed": true,
+        "duration": 924,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 955,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 932,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 909,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 942,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 911,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 911,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1305,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 908,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 880,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\network-error.spec.ts::should handle offline mode gracefully": [
+      {
+        "passed": true,
+        "duration": 816,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 784,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 791,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 784,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 780,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 797,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 812,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1026,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 808,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 745,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\network-error.spec.ts::should block third-party image requests": [
+      {
+        "passed": true,
+        "duration": 895,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 883,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 889,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 891,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 976,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 963,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 906,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1223,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 859,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1042,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\network-error.spec.ts::should display mock data from intercepted API": [
+      {
+        "passed": true,
+        "duration": 888,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 888,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 898,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 879,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 906,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 874,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 872,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1222,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 849,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 831,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\orders-list.spec.ts::should load orders page": [
+      {
+        "passed": true,
+        "duration": 1231,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1185,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1106,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1124,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1359,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1171,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1127,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1366,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1393,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1153,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\orders-list.spec.ts::should display list of orders": [
+      {
+        "passed": true,
+        "duration": 1229,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1180,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1152,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1186,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1171,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1164,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1179,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1400,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1195,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1199,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\orders-list.spec.ts::should display order details": [
+      {
+        "passed": true,
+        "duration": 1279,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1176,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1130,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1160,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1126,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1161,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1174,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1414,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1187,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1151,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\orders-list.spec.ts::should show orders when they exist": [
+      {
+        "passed": true,
+        "duration": 1158,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1171,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1155,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1144,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1239,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1382,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1162,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1407,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1198,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1196,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\orders-list.spec.ts::should display orders sorted by date": [
+      {
+        "passed": true,
+        "duration": 1144,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1161,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1179,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1167,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1162,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1173,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1185,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1397,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1176,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1140,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\orders-list.spec.ts::should display user email in order": [
+      {
+        "passed": true,
+        "duration": 1135,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1142,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1141,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1162,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1195,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1150,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1214,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1445,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1193,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1141,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\orders-list.spec.ts::should display valid order structure": [
+      {
+        "passed": true,
+        "duration": 1193,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1149,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1159,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1135,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1176,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1200,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1208,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1424,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1198,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1173,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\orders-list.spec.ts::should support orders pagination": [
+      {
+        "passed": true,
+        "duration": 1128,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1141,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1124,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1153,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1152,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1157,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1223,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1430,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1254,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1206,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\performance.spec.ts::login page loads within performance budget": [
+      {
+        "passed": true,
+        "duration": 700,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 753,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 712,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 726,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 765,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 720,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 736,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 941,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 737,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 720,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\performance.spec.ts::menu page loads within performance budget": [
+      {
+        "passed": true,
+        "duration": 1764,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1802,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1776,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1844,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1814,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1831,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1799,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 2031,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1907,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1818,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\performance.spec.ts::cart page loads within performance budget": [
+      {
+        "passed": true,
+        "duration": 697,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 719,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 728,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 752,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 737,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 725,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1274,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1048,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 736,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 710,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\performance.spec.ts::page resources are within size budgets": [
+      {
+        "passed": true,
+        "duration": 741,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 711,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 747,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 741,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 952,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 745,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 720,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1030,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 761,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 741,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\visual-regression.spec.ts::menu page matches baseline screenshot": [
+      {
+        "passed": true,
+        "duration": 802,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 864,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 792,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 845,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 796,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 829,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 777,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1145,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 810,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 791,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\visual-regression.spec.ts::cart page empty state matches baseline": [
+      {
+        "passed": true,
+        "duration": 815,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 848,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 860,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 795,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 809,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 818,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 841,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1043,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 833,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 835,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\visual-regression.spec.ts::cart page with items matches baseline": [
+      {
+        "passed": true,
+        "duration": 831,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 821,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 813,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 827,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 882,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 864,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 829,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1124,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 868,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1232,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\visual-regression.spec.ts::login page matches baseline screenshot": [
+      {
+        "passed": true,
+        "duration": 811,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 804,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 886,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 831,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 838,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 822,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 791,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1076,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 823,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 782,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\visual-regression.spec.ts::[DEMO] visualbreak param produces a detectable visual difference": [
+      {
+        "passed": true,
+        "duration": 769,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 811,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 799,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 795,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 827,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 810,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 809,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1016,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 795,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 797,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\visual-regression.spec.ts::checkout modal matches baseline screenshot": [
+      {
+        "passed": true,
+        "duration": 881,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 924,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 878,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 892,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 914,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 886,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 894,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1209,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 958,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 902,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[chromium] coffee-cart\\functional\\failure.spec.ts::intentional failure - button click": [
+      {
+        "passed": false,
+        "duration": 15873,
+        "timestamp": "2026-03-25T18:27:03.412Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": false,
+        "duration": 15847,
+        "timestamp": "2026-03-25T18:30:54.992Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": false,
+        "duration": 15864,
+        "timestamp": "2026-03-25T20:51:14.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": false,
+        "duration": 15895,
+        "timestamp": "2026-03-25T20:57:36.542Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": false,
+        "duration": 15862,
+        "timestamp": "2026-03-25T21:27:17.202Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": false,
+        "duration": 15901,
+        "timestamp": "2026-03-25T21:30:57.331Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": false,
+        "duration": 15877,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": false,
+        "duration": 15912,
+        "timestamp": "2026-03-26T00:59:28.621Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": false,
+        "duration": 15864,
+        "timestamp": "2026-03-26T01:07:57.371Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": false,
+        "duration": 15853,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[sauce-demo] sauce-demo\\e2e\\product-browse.spec.ts::should view product price after login": [
+      {
+        "passed": true,
+        "duration": 881,
+        "timestamp": "2026-03-25T21:27:59.035Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 754,
+        "timestamp": "2026-03-25T21:35:54.376Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 690,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1044,
+        "timestamp": "2026-03-26T01:05:57.328Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 727,
+        "timestamp": "2026-03-26T01:08:13.511Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 708,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 8082,
+        "timestamp": "2026-03-26T01:18:13.327Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 682,
+        "timestamp": "2026-03-26T01:19:36.528Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 712,
+        "timestamp": "2026-03-26T01:27:05.453Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 8118,
+        "timestamp": "2026-03-26T01:38:05.037Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ],
+    "[sauce-demo] sauce-demo\\e2e\\cart-management.spec.ts::should reflect cart count after adding item from inventory": [
+      {
+        "passed": true,
+        "duration": 881,
+        "timestamp": "2026-03-25T21:27:59.035Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 760,
+        "timestamp": "2026-03-25T21:35:54.376Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 688,
+        "timestamp": "2026-03-25T21:36:49.947Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 1051,
+        "timestamp": "2026-03-26T01:05:57.328Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 753,
+        "timestamp": "2026-03-26T01:08:13.511Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 718,
+        "timestamp": "2026-03-26T01:09:03.050Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 8083,
+        "timestamp": "2026-03-26T01:18:13.327Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 681,
+        "timestamp": "2026-03-26T01:19:36.528Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 715,
+        "timestamp": "2026-03-26T01:27:05.453Z",
+        "skipped": false,
+        "retry": 0
+      },
+      {
+        "passed": true,
+        "duration": 8103,
+        "timestamp": "2026-03-26T01:38:05.037Z",
+        "skipped": false,
+        "retry": 0
+      }
+    ]
+  },
+  "summaries": [
+    {
+      "runId": "run-1774474579541",
+      "timestamp": "2026-03-25T21:36:19.541Z",
+      "total": 89,
+      "passed": 87,
+      "failed": 2,
+      "skipped": 0,
+      "flaky": 2,
+      "slow": 1,
+      "duration": 30405,
+      "passRate": 98,
+      "metadata": {
+        "project": {
+          "org": "acme-corp",
+          "team": "qa-platform",
+          "app": "full-regression-suite",
+          "repo": "acme-corp/my-pw-ai-framework",
+          "region": "us-east-1"
+        },
+        "build": {
+          "ciProvider": "local",
+          "branch": "feature/smart-reporter",
+          "commitSha": "abc1234d",
+          "pipelineId": "303",
+          "environment": "staging"
+        },
+        "playwrightProjects": ["user-setup", "sauce-demo", "chromium"]
+      }
+    },
+    {
+      "runId": "run-1774486726252",
+      "timestamp": "2026-03-26T00:58:46.252Z",
+      "total": 87,
+      "passed": 85,
+      "failed": 2,
+      "skipped": 0,
+      "flaky": 2,
+      "slow": 61,
+      "duration": 42370,
+      "passRate": 98,
+      "metadata": {
+        "project": {
+          "org": "acme-corp",
+          "team": "ecommerce",
+          "app": "coffee-cart",
+          "repo": "acme-corp/coffee-cart",
+          "region": "us-east-1"
+        },
+        "build": {
+          "ciProvider": "github",
+          "branch": "main",
+          "commitSha": "f3a9c21b",
+          "pipelineId": "101",
+          "environment": "staging"
+        },
+        "playwrightProjects": ["user-setup", "chromium"]
+      }
+    },
+    {
+      "runId": "run-1774487154705",
+      "timestamp": "2026-03-26T01:05:54.705Z",
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0,
+      "slow": 2,
+      "duration": 2622,
+      "passRate": 100,
+      "metadata": {
+        "project": {
+          "org": "acme-corp",
+          "team": "retail-platform",
+          "app": "sauce-demo",
+          "repo": "acme-corp/sauce-demo",
+          "region": "eu-west-1"
+        },
+        "build": {
+          "ciProvider": "local",
+          "branch": "release/v2.1",
+          "commitSha": "8d4e1a7f",
+          "pipelineId": "202",
+          "environment": "production"
+        },
+        "playwrightProjects": ["sauce-demo"]
+      }
+    },
+    {
+      "runId": "run-1774487247493",
+      "timestamp": "2026-03-26T01:07:27.493Z",
+      "total": 87,
+      "passed": 85,
+      "failed": 2,
+      "skipped": 0,
+      "flaky": 2,
+      "slow": 0,
+      "duration": 29878,
+      "passRate": 98,
+      "metadata": {
+        "project": {
+          "org": "acme-corp",
+          "team": "ecommerce",
+          "app": "coffee-cart",
+          "repo": "acme-corp/coffee-cart",
+          "region": "us-east-1"
+        },
+        "build": {
+          "ciProvider": "github",
+          "branch": "main",
+          "commitSha": "f3a9c21b",
+          "pipelineId": "101",
+          "environment": "staging"
+        },
+        "playwrightProjects": ["user-setup", "chromium"]
+      }
+    },
+    {
+      "runId": "run-1774487291159",
+      "timestamp": "2026-03-26T01:08:11.159Z",
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0,
+      "slow": 0,
+      "duration": 2351,
+      "passRate": 100,
+      "metadata": {
+        "project": {
+          "org": "acme-corp",
+          "team": "retail-platform",
+          "app": "sauce-demo",
+          "repo": "acme-corp/sauce-demo",
+          "region": "eu-west-1"
+        },
+        "build": {
+          "ciProvider": "local",
+          "branch": "release/v2.1",
+          "commitSha": "8d4e1a7f",
+          "pipelineId": "202",
+          "environment": "production"
+        },
+        "playwrightProjects": ["sauce-demo"]
+      }
+    },
+    {
+      "runId": "run-1774487312447",
+      "timestamp": "2026-03-26T01:08:32.447Z",
+      "total": 89,
+      "passed": 87,
+      "failed": 2,
+      "skipped": 0,
+      "flaky": 2,
+      "slow": 3,
+      "duration": 30602,
+      "passRate": 98,
+      "metadata": {
+        "project": {
+          "org": "acme-corp",
+          "team": "qa-platform",
+          "app": "full-regression-suite",
+          "repo": "acme-corp/my-pw-ai-framework",
+          "region": "us-east-1"
+        },
+        "build": {
+          "ciProvider": "local",
+          "branch": "feature/smart-reporter",
+          "commitSha": "abc1234d",
+          "pipelineId": "303",
+          "environment": "staging"
+        },
+        "playwrightProjects": ["user-setup", "sauce-demo", "chromium"]
+      }
+    },
+    {
+      "runId": "run-1774487883638",
+      "timestamp": "2026-03-26T01:18:03.638Z",
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0,
+      "slow": 2,
+      "duration": 9688,
+      "passRate": 100,
+      "metadata": {
+        "project": {
+          "org": "acme-corp",
+          "team": "retail-platform",
+          "app": "sauce-demo",
+          "repo": "acme-corp/sauce-demo",
+          "region": "eu-west-1"
+        },
+        "build": {
+          "ciProvider": "local",
+          "branch": "release/v2.1",
+          "commitSha": "8d4e1a7f",
+          "pipelineId": "202",
+          "environment": "production"
+        },
+        "playwrightProjects": ["sauce-demo"]
+      }
+    },
+    {
+      "runId": "run-1774487974218",
+      "timestamp": "2026-03-26T01:19:34.218Z",
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0,
+      "slow": 0,
+      "duration": 2310,
+      "passRate": 100,
+      "metadata": {
+        "project": {
+          "org": "acme-corp",
+          "team": "retail-platform",
+          "app": "sauce-demo",
+          "repo": "acme-corp/sauce-demo",
+          "region": "eu-west-1"
+        },
+        "build": {
+          "ciProvider": "local",
+          "branch": "release/v2.1",
+          "commitSha": "8d4e1a7f",
+          "pipelineId": "202",
+          "environment": "production"
+        },
+        "playwrightProjects": ["sauce-demo"]
+      }
+    },
+    {
+      "runId": "run-1774488423027",
+      "timestamp": "2026-03-26T01:27:03.027Z",
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0,
+      "slow": 0,
+      "duration": 2426,
+      "passRate": 100,
+      "metadata": {
+        "project": {
+          "org": "acme-corp",
+          "team": "retail-platform",
+          "app": "sauce-demo",
+          "repo": "acme-corp/sauce-demo",
+          "region": "eu-west-1"
+        },
+        "build": {
+          "ciProvider": "local",
+          "branch": "release/v2.1",
+          "commitSha": "8d4e1a7f",
+          "pipelineId": "202",
+          "environment": "production"
+        },
+        "playwrightProjects": ["sauce-demo"]
+      }
+    },
+    {
+      "runId": "run-1774489075241",
+      "timestamp": "2026-03-26T01:37:55.241Z",
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0,
+      "slow": 2,
+      "duration": 9795,
+      "passRate": 100,
+      "metadata": {
+        "project": {
+          "org": "acme-corp",
+          "team": "retail-platform",
+          "app": "sauce-demo",
+          "repo": "acme-corp/sauce-demo",
+          "region": "eu-west-1"
+        },
+        "build": {
+          "ciProvider": "local",
+          "branch": "release/v2.1",
+          "commitSha": "8d4e1a7f",
+          "pipelineId": "202",
+          "environment": "production"
+        },
+        "playwrightProjects": ["sauce-demo"]
+      }
+    }
+  ],
+  "runFiles": {}
+}

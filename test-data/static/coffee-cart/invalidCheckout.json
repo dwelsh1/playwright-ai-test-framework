@@ -1,0 +1,42 @@
+[
+  {
+    "description": "missing name field",
+    "email": "user@example.com",
+    "subscribe": false
+  },
+  {
+    "description": "missing email field",
+    "name": "John Doe",
+    "subscribe": false
+  },
+  {
+    "description": "invalid email format",
+    "name": "John Doe",
+    "email": "invalid-email",
+    "subscribe": false
+  },
+  {
+    "description": "extremely long name",
+    "name": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "email": "user@example.com",
+    "subscribe": false
+  },
+  {
+    "description": "special characters in name",
+    "name": "John<script>alert('xss')</script>Doe",
+    "email": "user@example.com",
+    "subscribe": false
+  },
+  {
+    "description": "empty name string",
+    "name": "",
+    "email": "user@example.com",
+    "subscribe": false
+  },
+  {
+    "description": "only whitespace name",
+    "name": "   ",
+    "email": "user@example.com",
+    "subscribe": false
+  }
+]

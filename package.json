@@ -1,31 +1,56 @@
 {
-  "name": "Playwright AI Assisted Framework",
-  "version": "1.0.0",
-  "description": "An enterprise ready Playwright Framework for AI-assisted test automation development with TypeScript",
+  "name": "playwright-ai-test-framework",
+  "version": "1.8.0",
+  "description": "An enterprise-ready Playwright framework for AI-assisted test automation development with TypeScript",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/don-welsh/playwright-ai-test-framework.git"
+  },
+  "homepage": "https://github.com/don-welsh/playwright-ai-test-framework",
+  "bugs": {
+    "url": "https://github.com/don-welsh/playwright-ai-test-framework/issues"
+  },
   "scripts": {
     "pretest": "node scripts/check-smart-reporter.cjs",
     "test": "npx playwright test --project=chromium --workers=4",
+    "posttest": "npm run report:smart",
+    "test:report": "node scripts/run-tests-and-open-report.cjs",
+    "test:api": "npx playwright test --project=chromium-api --workers=1",
+    "test:all": "npx playwright test --project=chromium --workers=4 && npx playwright test --project=chromium-api --workers=1 && npm run report:smart",
     "test:junit": "npx playwright test --project=chromium --workers=4 --reporter=junit",
     "test:json": "npx playwright test --project=chromium --workers=4 --reporter=json",
-    "test:allure": "npx playwright test --project=chromium --workers=4 --reporter=allure-playwright",
     "test:smart": "npx playwright test --project=chromium --workers=4 --reporter=./tools/playwright-smart-reporter/dist/smart-reporter.js",
-    "test:all-reporters": "npx playwright test --project=chromium --workers=4",
     "test:smoke": "npx playwright test --project=chromium --workers=4 --grep @smoke",
-    "test:staging": "TEST_ENV=staging npx playwright test --project=chromium --workers=4",
-    "test:staging:smoke": "TEST_ENV=staging npx playwright test --project=chromium --workers=4 --grep @smoke",
-    "test:production": "TEST_ENV=production npx playwright test --project=chromium --workers=4 --grep @smoke",
+    "test:env:staging": "node scripts/run-playwright-env.cjs staging --project=chromium --workers=4",
+    "test:env:staging:smoke": "node scripts/run-playwright-env.cjs staging --project=chromium --workers=4 --grep @smoke",
+    "test:env:production": "node scripts/run-playwright-env.cjs production --project=chromium --workers=4 --grep @smoke",
+    "config:report": "node scripts/set-report-config.cjs",
+    "test:smart:config": "node scripts/test-smart.cjs",
     "build:smart-reporter": "npm install --prefix tools/playwright-smart-reporter && npm run build --prefix tools/playwright-smart-reporter",
+    "report:axe": "node scripts/merge-axe-results.cjs",
+    "history:alias": "node scripts/history-alias.cjs",
     "report:html": "npx playwright show-report playwright-report",
-    "report:allure": "npx allure serve allure-results",
     "report:smart": "node scripts/open-smart-report.cjs",
-    "report:smart:serve": "node tools/playwright-smart-reporter/dist/bin/serve.js",
+    "report:smart:serve": "node scripts/serve-smart-report.cjs",
     "report:merge-history": "node tools/playwright-smart-reporter/dist/bin/merge-history.js",
     "verify:smart-reporter": "node scripts/verify-smart-reporter.cjs",
     "lint": "npx eslint .",
     "lint:fix": "npx eslint . --fix",
     "format": "npx prettier --write .",
+    "select": "npx playwright-cli-select run --project=chromium",
+    "select:failed": "npx playwright-cli-select run --last-failed --project=chromium",
+    "select:ui": "npx playwright-cli-select run --ui --project=chromium",
+    "select:headed": "npx playwright-cli-select run --headed --project=chromium",
     "kill": "powershell -ExecutionPolicy Bypass -File scripts/kill-test-processes.ps1",
+    "check:env": "node scripts/check-env.cjs",
+    "reset:auth": "node scripts/reset-auth.cjs",
+    "clean": "node scripts/clean.cjs",
+    "detect:flaky": "node scripts/detect-flaky.js",
+    "report:summary": "node scripts/report-summary.cjs",
+    "generate:test": "bash scripts/generate-test.sh",
+    "onboard": "bash scripts/onboard.sh",
+    "sync:github-agents": "node scripts/sync-github-agents.cjs",
     "prepare": "husky"
   },
   "lint-staged": {
@@ -37,11 +62,22 @@
       "prettier --write"
     ]
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "engines": {
+    "node": ">=22"
+  },
+  "keywords": [
+    "playwright",
+    "typescript",
+    "test-automation",
+    "ai-assisted-development",
+    "zod",
+    "page-object-model"
+  ],
+  "author": "Don Welsh",
+  "license": "MIT",
   "type": "module",
   "devDependencies": {
+    "@axe-core/playwright": "4.11.1",
     "@eslint/eslintrc": "^3.3.5",
     "@faker-js/faker": "^9.9.0",
     "@playwright/cli": "^0.1.1",
@@ -49,7 +85,6 @@
     "@types/node": "^24.0.1",
     "@typescript-eslint/eslint-plugin": "^8.34.1",
     "@typescript-eslint/parser": "^8.34.1",
-    "allure-playwright": "^3.6.0",
     "dotenv": "^16.5.0",
     "eslint": "^9.29.0",
     "eslint-config-prettier": "^10.1.5",
@@ -59,6 +94,9 @@
     "husky": "^9.1.7",
     "jiti": "^2.4.2",
     "lint-staged": "^16.1.2",
+    "playwright-cli-select": "1.0.9",
+    "pw-api-plugin": "^2.1.0",
+    "yaml": "2.8.3",
     "zod": "^4.3.6"
   }
 }

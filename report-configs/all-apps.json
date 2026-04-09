@@ -1,0 +1,29 @@
+{
+  "outputFile": "playwright-report/smart-report-all-apps.html",
+  "enableAIRecommendations": true,
+  "lmStudioBaseUrl": "http://127.0.0.1:1234",
+  "lmStudioModel": "qwen/qwen3-coder-30b",
+  "smartReporterMaxTokens": 512,
+  "maxHistoryRuns": 10,
+  "filterPwApiSteps": false,
+  "enableHistoryDrilldown": true,
+  "enableTraceViewer": true,
+  "enableNetworkLogs": false,
+  "stabilityThreshold": 70,
+  "retryFailureThreshold": 2,
+  "metadata": {
+    "project": {
+      "org": "acme-corp",
+      "team": "qa-platform",
+      "app": "full-regression-suite",
+      "repo": "don-welsh/playwright-ai-test-framework",
+      "region": "us-east-1"
+    },
+    "build": {
+      "branch": "feature/smart-reporter",
+      "commitSha": "abc1234d",
+      "pipelineId": "303",
+      "environment": "staging"
+    }
+  }
+}

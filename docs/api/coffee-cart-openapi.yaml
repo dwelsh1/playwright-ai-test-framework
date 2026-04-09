@@ -1,0 +1,719 @@
+openapi: 3.0.3
+info:
+  title: Coffee Cart API
+  description: |
+    REST API for the Coffee Cart application.
+    Covers the menu, cart, checkout, orders, and store-location endpoints.
+    There is no token-based auth — the app uses session cookies (login via POST /api/login).
+  version: 1.0.0
+  contact:
+    name: Coffee Cart (demo app)
+
+servers:
+  - url: http://localhost:3002
+    description: Local development server
+
+tags:
+  - name: auth
+    description: Session authentication
+  - name: menu
+    description: Coffee menu
+  - name: cart
+    description: Shopping cart (global, server-side state)
+  - name: checkout
+    description: Order placement
+  - name: orders
+    description: Order history and management
+  - name: stores
+    description: Pickup store locations
+
+paths:
+  # ---------------------------------------------------------------------------
+  # Auth
+  # ---------------------------------------------------------------------------
+
+  /api/login:
+    post:
+      tags: [auth]
+      summary: Log in as user or admin
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [email, password]
+              properties:
+                email:
+                  type: string
+                  example: user@example.com
+                password:
+                  type: string
+                  example: password
+      responses:
+        '200':
+          description: Login successful — session cookie set
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Login successful
+        '401':
+          description: Invalid credentials
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /api/logout:
+    post:
+      tags: [auth]
+      summary: End the current session
+      responses:
+        '200':
+          description: Logged out successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Logged out
+
+  # ---------------------------------------------------------------------------
+  # Menu
+  # ---------------------------------------------------------------------------
+
+  /api/coffees:
+    get:
+      tags: [menu]
+      summary: List all coffees on the menu
+      responses:
+        '200':
+          description: Array of coffee items
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Coffee'
+
+  # ---------------------------------------------------------------------------
+  # Cart
+  # ---------------------------------------------------------------------------
+
+  /api/cart:
+    get:
+      tags: [cart]
+      summary: Get current cart contents
+      responses:
+        '200':
+          description: Array of cart items (empty array when cart is empty)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CartResponse'
+
+    post:
+      tags: [cart]
+      summary: Add a coffee to the cart (increments quantity if already present)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [name]
+              properties:
+                name:
+                  type: string
+                  example: Espresso
+      responses:
+        '201':
+          description: Updated cart contents
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CartResponse'
+        '400':
+          description: Missing name field
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Coffee not found on menu
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+    delete:
+      tags: [cart]
+      summary: Empty the entire cart
+      responses:
+        '200':
+          description: Empty cart (always returns [])
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CartResponse'
+
+  /api/cart/{name}:
+    delete:
+      tags: [cart]
+      summary: Decrement quantity of a coffee by 1 (removes item when quantity reaches 0)
+      parameters:
+        - name: name
+          in: path
+          required: true
+          description: URL-encoded coffee name
+          schema:
+            type: string
+            example: Espresso
+      responses:
+        '200':
+          description: Updated cart contents
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CartResponse'
+        '404':
+          description: Coffee not in cart
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /api/cart/{name}/all:
+    delete:
+      tags: [cart]
+      summary: Remove all units of a coffee from the cart (no-op if not present — always 200)
+      parameters:
+        - name: name
+          in: path
+          required: true
+          description: URL-encoded coffee name
+          schema:
+            type: string
+            example: Espresso
+      responses:
+        '200':
+          description: Updated cart contents (always 200, even if item was not in cart)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CartResponse'
+
+  # ---------------------------------------------------------------------------
+  # Checkout
+  # ---------------------------------------------------------------------------
+
+  /api/checkout:
+    post:
+      tags: [checkout]
+      summary: Place an order and clear the cart
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CheckoutRequest'
+      responses:
+        '201':
+          description: Order placed successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CheckoutResponse'
+        '400':
+          description: Missing required fields (name, email, or items)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  # ---------------------------------------------------------------------------
+  # Orders
+  # ---------------------------------------------------------------------------
+
+  /api/orders:
+    get:
+      tags: [orders]
+      summary: List all past orders
+      responses:
+        '200':
+          description: Array of orders
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Order'
+
+  /api/orders/{orderId}:
+    get:
+      tags: [orders]
+      summary: Get a single order by ID
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+            example: ORD-1713456789012
+      responses:
+        '200':
+          description: Order details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+        '404':
+          description: Order not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+    delete:
+      tags: [orders]
+      summary: Delete an order by ID (admin only)
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+            example: ORD-1713456789012
+      responses:
+        '200':
+          description: Order deleted — returns remaining orders
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Order'
+        '404':
+          description: Order not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  # ---------------------------------------------------------------------------
+  # Stores
+  # ---------------------------------------------------------------------------
+
+  /api/stores:
+    get:
+      tags: [stores]
+      summary: List all active pickup stores
+      responses:
+        '200':
+          description: Array of active stores
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Store'
+
+  /api/stores/seed:
+    post:
+      tags: [stores]
+      summary: Seed deterministic Arizona store data (no-op if stores already exist)
+      description: Used in tests to ensure store data exists without restarting the server.
+      responses:
+        '200':
+          description: Seed result
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  seeded:
+                    type: boolean
+                  count:
+                    type: integer
+
+  /api/stores/{id}:
+    get:
+      tags: [stores]
+      summary: Get a single store by numeric ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            example: 1
+      responses:
+        '200':
+          description: Store details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Store'
+        '400':
+          description: Non-numeric ID
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Store not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /api/stores/nearest:
+    post:
+      tags: [stores]
+      summary: Find the nearest active store to given coordinates
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Coordinates'
+      responses:
+        '200':
+          description: Nearest store result (store is null when no stores exist)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NearestStoreResponse'
+        '400':
+          description: Invalid or missing coordinates
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /api/stores/eligibility:
+    post:
+      tags: [stores]
+      summary: Check whether coordinates are within a specific store's pickup radius
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: '#/components/schemas/Coordinates'
+                - type: object
+                  required: [store_id]
+                  properties:
+                    store_id:
+                      type: integer
+                      example: 1
+      responses:
+        '200':
+          description: Eligibility result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StoreEligibilityResponse'
+        '400':
+          description: Invalid coordinates or missing store_id
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Store not found or inactive
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+# ---------------------------------------------------------------------------
+# Components
+# ---------------------------------------------------------------------------
+
+components:
+  schemas:
+    Error:
+      type: object
+      required: [error]
+      properties:
+        error:
+          type: string
+          example: Store not found
+
+    Coffee:
+      type: object
+      required: [name, price, recipe]
+      properties:
+        name:
+          type: string
+          example: Espresso
+        price:
+          type: number
+          example: 5.00
+        recipe:
+          type: array
+          items:
+            type: object
+            required: [name, quantity]
+            properties:
+              name:
+                type: string
+                example: Espresso
+              quantity:
+                type: integer
+                example: 1
+
+    CartItem:
+      type: object
+      required: [name, quantity]
+      properties:
+        name:
+          type: string
+          example: Espresso
+        quantity:
+          type: integer
+          minimum: 1
+          example: 2
+
+    CartResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/CartItem'
+
+    CheckoutItem:
+      type: object
+      required: [name, quantity, unitPrice]
+      properties:
+        name:
+          type: string
+          example: Espresso
+        quantity:
+          type: integer
+          minimum: 1
+          example: 1
+        unitPrice:
+          type: number
+          example: 5.00
+
+    CheckoutRequest:
+      type: object
+      required: [name, email, items]
+      properties:
+        name:
+          type: string
+          example: Jane Doe
+        email:
+          type: string
+          format: email
+          example: jane@example.com
+        subscribe:
+          type: boolean
+          default: false
+        items:
+          type: array
+          minItems: 1
+          items:
+            $ref: '#/components/schemas/CheckoutItem'
+        store_id:
+          type: string
+          nullable: true
+        store_name:
+          type: string
+          nullable: true
+        pickup_address:
+          type: string
+          nullable: true
+        user_latitude:
+          type: number
+          nullable: true
+        user_longitude:
+          type: number
+          nullable: true
+        distance_miles:
+          type: number
+          nullable: true
+        eligibility_status:
+          type: string
+          nullable: true
+
+    CheckoutResponse:
+      type: object
+      required: [message, order]
+      properties:
+        message:
+          type: string
+          example: Order placed successfully. Check your email for payment details.
+        order:
+          type: object
+          required: [orderId, name, email, subscribe, items, total, createdAt]
+          properties:
+            orderId:
+              type: string
+              pattern: '^ORD-'
+              example: ORD-1713456789012
+            name:
+              type: string
+            email:
+              type: string
+            subscribe:
+              type: boolean
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/CheckoutItem'
+            total:
+              type: number
+            createdAt:
+              type: string
+              format: date-time
+            store_id:
+              type: string
+              nullable: true
+            store_name:
+              type: string
+              nullable: true
+
+    Order:
+      type: object
+      required: [id, order_id, name, email, subscribe, items, total, created_at]
+      properties:
+        id:
+          type: integer
+        order_id:
+          type: string
+          pattern: '^ORD-'
+          example: ORD-1713456789012
+        name:
+          type: string
+        email:
+          type: string
+        subscribe:
+          type: boolean
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/CheckoutItem'
+        total:
+          type: number
+        created_at:
+          type: string
+          format: date-time
+        store_id:
+          type: string
+          nullable: true
+        store_name:
+          type: string
+          nullable: true
+        pickup_address:
+          type: string
+          nullable: true
+        user_latitude:
+          type: number
+          nullable: true
+        user_longitude:
+          type: number
+          nullable: true
+        distance_miles:
+          type: number
+          nullable: true
+        eligibility_status:
+          type: string
+          nullable: true
+
+    Store:
+      type: object
+      required:
+        [id, name, address, city, state, zip, latitude, longitude, pickup_radius_miles, is_active]
+      properties:
+        id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: Desert Bloom Coffee
+        address:
+          type: string
+          example: 123 Main St
+        city:
+          type: string
+          example: Phoenix
+        state:
+          type: string
+          example: AZ
+        zip:
+          type: string
+          example: '85001'
+        latitude:
+          type: number
+          example: 33.4484
+        longitude:
+          type: number
+          example: -112.0740
+        pickup_radius_miles:
+          type: number
+          example: 5.0
+        is_active:
+          type: boolean
+          example: true
+        created_at:
+          type: string
+          nullable: true
+          format: date-time
+        updated_at:
+          type: string
+          nullable: true
+          format: date-time
+
+    Coordinates:
+      type: object
+      required: [latitude, longitude]
+      properties:
+        latitude:
+          type: number
+          minimum: -90
+          maximum: 90
+          example: 33.4484
+        longitude:
+          type: number
+          minimum: -180
+          maximum: 180
+          example: -112.0740
+
+    NearestStoreResponse:
+      type: object
+      required: [store, distance_miles, is_within_radius]
+      properties:
+        store:
+          nullable: true
+          allOf:
+            - $ref: '#/components/schemas/Store'
+        distance_miles:
+          type: number
+          nullable: true
+          example: 2.3
+        is_within_radius:
+          type: boolean
+          example: true
+
+    StoreEligibilityResponse:
+      type: object
+      required: [store_id, store_name, distance_miles, is_within_radius, pickup_radius_miles]
+      properties:
+        store_id:
+          type: integer
+        store_name:
+          type: string
+        distance_miles:
+          type: number
+        is_within_radius:
+          type: boolean
+        pickup_radius_miles:
+          type: number

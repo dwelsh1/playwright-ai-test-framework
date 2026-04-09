@@ -1,0 +1,29 @@
+{
+  "outputFile": "playwright-report/smart-report-sauce-demo.html",
+  "enableAIRecommendations": true,
+  "lmStudioBaseUrl": "http://127.0.0.1:1234",
+  "lmStudioModel": "qwen/qwen3-coder-30b",
+  "smartReporterMaxTokens": 512,
+  "maxHistoryRuns": 10,
+  "filterPwApiSteps": false,
+  "enableHistoryDrilldown": true,
+  "enableTraceViewer": true,
+  "enableNetworkLogs": false,
+  "stabilityThreshold": 70,
+  "retryFailureThreshold": 2,
+  "metadata": {
+    "project": {
+      "org": "acme-corp",
+      "team": "retail-platform",
+      "app": "sauce-demo",
+      "repo": "acme-corp/sauce-demo",
+      "region": "eu-west-1"
+    },
+    "build": {
+      "branch": "release/v2.1",
+      "commitSha": "8d4e1a7f",
+      "pipelineId": "202",
+      "environment": "production"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+tools/playwright-smart-reporter/node_modules/
+
+# Build artifacts
+dist/
+tools/playwright-smart-reporter/dist/
+
+# Test artifacts
+playwright-report/
+blob-report/
+test-results/
+coverage/
+
+# Lock files
+package-lock.json
+
+# Generated
+*.tsbuildinfo
+
+# GitHub Copilot agents (sync-github-agents.cjs); keep YAML stable — format README only
+.github/agents/*.md
+!.github/agents/README.md
+
+# Playwright CLI exploration snapshots
+.playwright-cli/
+
+# Vendored / minified files
+tools/playwright-smart-reporter/src/vendors/

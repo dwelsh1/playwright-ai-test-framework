@@ -1,0 +1,20 @@
+# Enforce LF line endings for all text files
+* text=auto eol=lf
+
+# Shell scripts must always use LF (prevents bash\r errors in containers)
+*.sh text eol=lf
+
+# Docker
+Dockerfile text eol=lf
+
+# Lock files — treat as binary to avoid noisy diffs
+package-lock.json -diff linguist-generated
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.zip binary
+*.tar.gz binary

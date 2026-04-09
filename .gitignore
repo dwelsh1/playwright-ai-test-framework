@@ -1,0 +1,50 @@
+# Dependencies
+node_modules/
+tools/playwright-smart-reporter/node_modules/
+
+# Build artifacts
+dist/
+tools/playwright-smart-reporter/dist/
+*.tsbuildinfo
+
+# Test artifacts
+.auth/
+auth-states/
+playwright-report/
+blob-report/
+test-results/
+coverage/
+screenshots/
+videos/
+
+# Playwright CLI exploration artifacts (snapshots, console logs, screenshots)
+.playwright-cli/
+
+# Smart reporter settings (generated from report UI)
+playwright-report-settings.json
+
+# Smart reporter history and run snapshots (local run data, not committed)
+.smart-reporter/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+**/.DS_Store
+**/Thumbs.db
+
+# Archives
+*.zip
+*.tar.gz

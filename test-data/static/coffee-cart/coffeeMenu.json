@@ -1,0 +1,78 @@
+{
+  "coffees": [
+    {
+      "name": "Americano",
+      "price": 6.0,
+      "recipe": [
+        { "name": "espresso", "quantity": 30 },
+        { "name": "water", "quantity": 70 }
+      ]
+    },
+    {
+      "name": "Cafe Latte",
+      "price": 6.5,
+      "recipe": [
+        { "name": "espresso", "quantity": 30 },
+        { "name": "steamed milk", "quantity": 50 },
+        { "name": "milk foam", "quantity": 20 }
+      ]
+    },
+    {
+      "name": "Cappuccino",
+      "price": 6.5,
+      "recipe": [
+        { "name": "espresso", "quantity": 30 },
+        { "name": "steamed milk", "quantity": 20 },
+        { "name": "milk foam", "quantity": 50 }
+      ]
+    },
+    {
+      "name": "Espresso",
+      "price": 5.0,
+      "recipe": [{ "name": "espresso", "quantity": 30 }]
+    },
+    {
+      "name": "Espresso Con Panna",
+      "price": 5.0,
+      "recipe": [
+        { "name": "espresso", "quantity": 30 },
+        { "name": "whipped cream", "quantity": 20 }
+      ]
+    },
+    {
+      "name": "Espresso Macchiato",
+      "price": 5.5,
+      "recipe": [
+        { "name": "espresso", "quantity": 30 },
+        { "name": "milk foam", "quantity": 15 }
+      ]
+    },
+    {
+      "name": "Flat White",
+      "price": 7.0,
+      "recipe": [
+        { "name": "espresso", "quantity": 30 },
+        { "name": "steamed milk", "quantity": 70 }
+      ]
+    },
+    {
+      "name": "Mocha",
+      "price": 7.5,
+      "recipe": [
+        { "name": "espresso", "quantity": 30 },
+        { "name": "chocolate syrup", "quantity": 20 },
+        { "name": "steamed milk", "quantity": 25 },
+        { "name": "whipped cream", "quantity": 25 }
+      ]
+    },
+    {
+      "name": "Hot Chocolate",
+      "price": 3.25,
+      "recipe": [
+        { "name": "steamed milk", "quantity": 50 },
+        { "name": "chocolate syrup", "quantity": 35 },
+        { "name": "whipped cream", "quantity": 15 }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "lmStudioBaseUrl": "http://127.0.0.1:1234",
+  "lmStudioModel": "qwen2.5-coder-7b-instruct",
+  "smartReporterMaxTokens": 1000,
+  "enableAIRecommendations": true,
+  "enableTraceViewer": true,
+  "enableNetworkLogs": false,
+  "enableHistoryDrilldown": true,
+  "maxHistoryRuns": 10,
+  "metadata": {
+    "project": {
+      "org": "acme-corp",
+      "team": "platform",
+      "app": "my-app",
+      "repo": "my-org/my-app",
+      "region": "us-east-1"
+    },
+    "customFields": [
+      {
+        "key": "owner",
+        "label": "Owner",
+        "scope": "test"
+      },
+      {
+        "key": "component",
+        "label": "Component",
+        "values": ["auth", "checkout", "catalog"],
+        "scope": "test"
+      }
+    ],
+    "savedViews": [
+      {
+        "id": "failures-only",
+        "name": "Failures Only",
+        "description": "Show only failed tests",
+        "filters": {
+          "status": ["failed"]
+        },
+        "createdAt": "2026-01-01T00:00:00.000Z"
+      }
+    ]
+  }
+}

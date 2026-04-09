@@ -1,0 +1,37 @@
+[
+  {
+    "description": "valid email with wrong password",
+    "email": "user@example.com",
+    "password": "WrongPassword123!"
+  },
+  {
+    "description": "invalid email format",
+    "email": "invalid-email",
+    "password": "password"
+  },
+  {
+    "description": "non-existent email",
+    "email": "nonexistent@example.com",
+    "password": "password"
+  },
+  {
+    "description": "empty email",
+    "email": "",
+    "password": "password"
+  },
+  {
+    "description": "empty password",
+    "email": "user@example.com",
+    "password": ""
+  },
+  {
+    "description": "both fields empty",
+    "email": "",
+    "password": ""
+  },
+  {
+    "description": "sql injection attempt in email",
+    "email": "user@example.com' OR '1'='1",
+    "password": "password"
+  }
+]

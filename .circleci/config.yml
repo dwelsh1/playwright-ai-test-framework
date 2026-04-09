@@ -1,0 +1,159 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@6.1
+
+# ──────────────────────────────────────────────────────────
+# Jobs
+# ──────────────────────────────────────────────────────────
+
+jobs:
+  lint:
+    docker:
+      - image: cimg/node:22.0
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+      - run:
+          name: Lint
+          command: npm run lint
+
+  smoke-tests:
+    docker:
+      - image: mcr.microsoft.com/playwright:v1.58.0-noble
+    environment:
+      CI: 'true'
+      ENABLE_AI_RECOMMENDATIONS: 'false'
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+      - run:
+          name: Wait for SUT to be ready
+          command: |
+            echo "Waiting for application to be ready..."
+            curl --retry 10 --retry-delay 3 --retry-connrefused \
+                 --fail --silent --output /dev/null \
+                 "${API_URL:-http://localhost:3002}/api/coffees"
+            echo "Application is ready."
+      - run:
+          name: Build smart reporter
+          command: npm run build:smart-reporter
+      - run:
+          name: Run smoke tests
+          command: npx playwright test --project=chromium --grep @smoke --reporter=list,junit
+          environment:
+            PLAYWRIGHT_JUNIT_OUTPUT_NAME: test-results/junit.xml
+      - store_artifacts:
+          path: playwright-report
+          destination: playwright-report
+      - store_artifacts:
+          path: test-results
+          destination: test-results
+      - store_test_results:
+          path: test-results
+
+  regression-tests:
+    docker:
+      - image: mcr.microsoft.com/playwright:v1.58.0-noble
+    parallelism: 4
+    environment:
+      CI: 'true'
+      ENABLE_AI_RECOMMENDATIONS: 'false'
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+      - run:
+          name: Wait for SUT to be ready
+          command: |
+            echo "Waiting for application to be ready..."
+            curl --retry 10 --retry-delay 3 --retry-connrefused \
+                 --fail --silent --output /dev/null \
+                 "${API_URL:-http://localhost:3002}/api/coffees"
+            echo "Application is ready."
+      - run:
+          name: Build smart reporter
+          command: npm run build:smart-reporter
+      - run:
+          name: Run regression tests (shard << pipeline.number >>)
+          command: npx playwright test --project=chromium --shard=$((CIRCLE_NODE_INDEX + 1))/$CIRCLE_NODE_TOTAL --reporter=list,junit,json
+          environment:
+            PLAYWRIGHT_JUNIT_OUTPUT_NAME: test-results/junit.xml
+      - run:
+          name: Detect flaky tests
+          command: node scripts/detect-flaky.js
+          when: always
+      - store_artifacts:
+          path: playwright-report
+          destination: playwright-report
+      - store_artifacts:
+          path: test-results
+          destination: test-results
+      - store_artifacts:
+          path: test-results/flaky-tests.json
+          destination: flaky-report
+      - store_test_results:
+          path: test-results
+
+  quarantine-tests:
+    docker:
+      - image: mcr.microsoft.com/playwright:v1.58.0-noble
+    environment:
+      CI: 'true'
+      ENABLE_AI_RECOMMENDATIONS: 'false'
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+      - run:
+          name: Wait for SUT to be ready
+          command: |
+            curl --retry 10 --retry-delay 3 --retry-connrefused \
+                 --fail --silent --output /dev/null \
+                 "${API_URL:-http://localhost:3002}/api/coffees"
+      - run:
+          name: Build smart reporter
+          command: npm run build:smart-reporter
+      - run:
+          name: Run quarantined tests
+          command: npx playwright test --project=chromium --grep "@flaky" --retries=3 --reporter=list,junit
+          when: always
+          environment:
+            PLAYWRIGHT_JUNIT_OUTPUT_NAME: test-results/junit.xml
+      - store_artifacts:
+          path: playwright-report
+          destination: quarantine-report
+      - store_test_results:
+          path: test-results
+
+# ──────────────────────────────────────────────────────────
+# Workflows
+# ──────────────────────────────────────────────────────────
+
+workflows:
+  # Runs on every push and PR
+  pr-checks:
+    jobs:
+      - lint
+      - smoke-tests:
+          requires:
+            - lint
+
+  # Nightly full regression
+  nightly-regression:
+    triggers:
+      - schedule:
+          cron: '0 2 * * *'
+          filters:
+            branches:
+              only: main
+    jobs:
+      - lint
+      - regression-tests:
+          requires:
+            - lint
+      - quarantine-tests:
+          requires:
+            - lint
