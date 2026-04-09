@@ -28,7 +28,16 @@ npm test
 
 ### Application Under Test (Coffee Cart)
 
-The tests run against the Coffee Cart app in a separate repo (`coffee-cart/`). Start it before running tests.
+The tests run against the Coffee Cart app in a separate repo (`coffee-cart/`). If you do not already have it locally, clone it first, then start it before running framework tests.
+
+```bash
+git clone https://github.com/dwelsh1/coffee-cart.git ../coffee-cart
+cd ../coffee-cart
+npm install
+npm start
+```
+
+This starts the API on port `3002` and the Vite app on port `5273`, which is what the framework expects by default.
 
 | Command            | Description                                                       |
 | ------------------ | ----------------------------------------------------------------- |
