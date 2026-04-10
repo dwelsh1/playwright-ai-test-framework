@@ -57,17 +57,17 @@
 
 ## Test Tags
 
-| Tag            | When                | Coverage                                    |
-| -------------- | ------------------- | ------------------------------------------- |
-| `@smoke`       | Every PR            | Critical path, fast gate                    |
-| `@sanity`      | After deploy        | Core feature verification                   |
-| `@regression`  | Nightly             | Full functional suite                       |
-| `@e2e`         | Nightly             | Multi-page user journeys                    |
-| `@api`         | Every PR + nightly  | API endpoint contracts                      |
-| `@a11y`        | Nightly + on-demand | WCAG 2.1 AA scanning                        |
-| `@visual`      | Nightly (main only) | Screenshot baseline comparison              |
-| `@destructive` | Nightly secondary   | State-modifying — needs `afterEach` cleanup |
-| `@flaky`       | Quarantine job      | Known-intermittent, non-blocking            |
+| Tag            | When                | Coverage                                                                  |
+| -------------- | ------------------- | ------------------------------------------------------------------------- |
+| `@smoke`       | Coffee Cart gate    | Critical path; **GitHub PRs** run `sauce-demo` instead (public AUT)       |
+| `@sanity`      | After deploy        | Core feature verification                                                 |
+| `@regression`  | Nightly             | Full functional suite                                                     |
+| `@e2e`         | Nightly             | Multi-page user journeys                                                  |
+| `@api`         | Nightly + local     | API contracts; not in the GitHub **PR** job (Sauce Demo smoke only on PR) |
+| `@a11y`        | Nightly + on-demand | WCAG 2.1 AA scanning                                                      |
+| `@visual`      | Nightly (main only) | Screenshot baseline comparison                                            |
+| `@destructive` | Nightly secondary   | State-modifying — needs `afterEach` cleanup                               |
+| `@flaky`       | Quarantine job      | Known-intermittent, non-blocking                                          |
 
 **Rules:** Exactly **one** primary tag per test. Only `@destructive` and `@flaky` may be added alongside.
 Never put tags on `test.describe()` — only on individual tests.

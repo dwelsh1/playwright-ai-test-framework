@@ -201,7 +201,7 @@ Already at 5 stars. No changes needed.
 
 **Strengths:**
 
-- GitHub Actions: lint + smoke on PR, sharded 4-way regression nightly, merged HTML report artifact
+- GitHub Actions: lint + **Sauce Demo** smoke on PR; on `main` push and nightly — same smoke plus sharded 4-way **Coffee Cart** regression, merge-reports (not on PRs), and quarantine; merged HTML report artifact
 - CircleCI: identical strategy with `CIRCLE_NODE_INDEX`/`CIRCLE_NODE_TOTAL` sharding and JUnit test insights
 - Both pipelines use `mcr.microsoft.com/playwright:v1.58.0-noble` for consistent browser rendering
 - Smart Reporter build step in both pipelines (AI disabled in CI, zero API key risk)

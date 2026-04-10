@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.8.1] - 2026-04-10
+
+### Changed
+
+- GitHub Actions: pull-request smoke runs the **`sauce-demo`** project against the public site; Coffee Cart regression, merge-reports, and quarantine stay on **`main`** push and nightly schedule. Regression jobs clone Coffee Cart, install `build-essential` for `better-sqlite3`, and start API + Vite (Linux-safe; `npm start` remains Windows-only upstream).
+- `playwright.config.ts` — Sauce Demo `baseURL` treats blank `SAUCE_DEMO_URL` as unset so the default host still applies.
+- `.gitignore` — ignore `.claude/settings.local.json`; file removed from version control (remains on disk locally).
+
+### Fixed
+
+- GitHub Actions: `merge-reports` no longer runs on pull requests when regression shards are skipped (avoids missing blob directory failures).
+
+### Documentation
+
+- `docs/developer.md`, `docs/usage/docker-usage.md`, `docs/framework-cheatsheet.md`, and `docs/framework-assessment.md` updated to match the CI behavior above.
+- `ci-cd` skill and GitHub Copilot agent mirror — repo-specific Actions summary plus sync.
+
+---
+
 ## [1.8.0] - 2026-04-09
 
 ### Added
