@@ -44,6 +44,10 @@ jobs:
         with:
           repository: dwelsh1/coffee-cart
           path: coffee-cart
+      - name: Install toolchain for Coffee Cart (better-sqlite3 / node-gyp)
+        run: |
+          apt-get update
+          apt-get install -y --no-install-recommends build-essential
       - name: Install and start Coffee Cart
         working-directory: coffee-cart
         run: |
@@ -97,6 +101,10 @@ jobs:
         with:
           repository: dwelsh1/coffee-cart
           path: coffee-cart
+      - name: Install toolchain for Coffee Cart (better-sqlite3 / node-gyp)
+        run: |
+          apt-get update
+          apt-get install -y --no-install-recommends build-essential
       - name: Install and start Coffee Cart
         working-directory: coffee-cart
         run: |
@@ -185,6 +193,10 @@ jobs:
         with:
           repository: dwelsh1/coffee-cart
           path: coffee-cart
+      - name: Install toolchain for Coffee Cart (better-sqlite3 / node-gyp)
+        run: |
+          apt-get update
+          apt-get install -y --no-install-recommends build-essential
       - name: Install and start Coffee Cart
         working-directory: coffee-cart
         run: |
