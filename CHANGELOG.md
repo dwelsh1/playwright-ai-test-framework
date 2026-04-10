@@ -16,6 +16,7 @@
 
 - `docs/developer.md`, `docs/usage/docker-usage.md`, `docs/framework-cheatsheet.md`, and `docs/framework-assessment.md` updated to match the CI behavior above.
 - `ci-cd` skill and GitHub Copilot agent mirror — repo-specific Actions summary plus sync.
+- **Lean POM** terminology aligned across README, `CLAUDE.md`, `.cursor/rules`, `page-objects` / related skills, `docs/`, and regenerated `.github/agents` (rule renamed **No Feedback-Less Lean POM**).
 
 ---
 

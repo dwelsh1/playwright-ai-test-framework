@@ -232,7 +232,7 @@ export class CheckoutPage {
 ### Forbidden Pattern
 
 ```typescript
-// FORBIDDEN: no feedback locators — violates No Feedback-Less POM rule
+// FORBIDDEN: no feedback locators — violates No Feedback-Less Lean POM rule
 export class LoginPage {
   readonly emailInput: Locator;
   readonly passwordInput: Locator;
@@ -245,4 +245,4 @@ export class LoginPage {
 
 ## See Also
 
-- **`page-objects`** skill -- POM pattern, readonly locators, component composition, and fixture registration.
+- **`page-objects`** skill -- Lean POM, readonly locators, component composition, and fixture registration.

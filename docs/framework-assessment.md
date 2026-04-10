@@ -15,7 +15,7 @@ This report assesses the Playwright AI Test Framework at version 1.7.0. The fram
 | Category                             | Rating | Status    |
 | ------------------------------------ | ------ | --------- |
 | Project Architecture & Organization  | ★★★★★  | Exemplary |
-| Page Object Model & Component Design | ★★★★★  | Exemplary |
+| Lean POM & component design          | ★★★★★  | Exemplary |
 | Dependency Injection & Fixtures      | ★★★★★  | Exemplary |
 | Test Coverage & Quality              | ★★★★★  | Exemplary |
 | Type Safety & Schema Validation      | ★★★★★  | Exemplary |
@@ -35,32 +35,32 @@ This report assesses the Playwright AI Test Framework at version 1.7.0. The fram
 
 ## Framework at a Glance
 
-| Metric                      | Current                                                              |
-| --------------------------- | -------------------------------------------------------------------- |
-| Total Test Files            | 21 spec files (+ 2 setup files)                                      |
-| Total Test Cases            | 109 tagged tests                                                     |
-| Page Objects                | 5 pages + 4 reusable components                                      |
-| API Schemas (Zod)           | 5 strict schemas + 1 shared error response schema                    |
-| Data Factories              | 4 Faker-powered factories                                            |
-| Fixture Files               | 14 (POM, API, helper, network, accessibility)                        |
-| Enum Files                  | 3 (coffee-cart, sauce-demo, shared roles)                            |
-| AI Skills                   | 35 prescriptive skills                                               |
-| VS Code Tasks               | 15 named tasks (`.vscode/tasks.json`)                                |
-| VS Code Snippets            | 26 framework-compliant snippets (`.vscode/playwright.code-snippets`) |
-| Jr QA Usage Guides          | 23 guides + 1 learning path + 1 cheatsheet                           |
-| CI/CD Platforms             | 2 (GitHub Actions + CircleCI)                                        |
-| Report Formats              | 5 (List, HTML, JUnit, JSON, Smart Reporter)                          |
-| Lines of Test Code          | ~2,664                                                               |
-| Lines of Page Object Code   | ~754                                                                 |
-| Type Safety Violations      | 0 (`any` type usage: zero)                                           |
-| TypeScript Strict Flags     | 10 enabled                                                           |
-| ESLint Status               | 0 errors, 1 warning                                                  |
-| TypeScript Compilation      | 0 errors                                                             |
-| Dev Container               | Full setup (Dockerfile + devcontainer.json)                          |
-| API Test Plugin             | pw-api-plugin 2.1.0 (conditional logging)                            |
-| Zod Validation in API Tests | 26 `.parse()` calls across all API test files                        |
-| API Tests Passing           | 26/26 passing                                                        |
-| WCAG 2.1 AA Coverage        | 6 accessibility tests via `@axe-core/playwright`                     |
+| Metric                        | Current                                                              |
+| ----------------------------- | -------------------------------------------------------------------- |
+| Total Test Files              | 21 spec files (+ 2 setup files)                                      |
+| Total Test Cases              | 109 tagged tests                                                     |
+| Lean POM (pages + components) | 5 pages + 4 reusable components                                      |
+| API Schemas (Zod)             | 5 strict schemas + 1 shared error response schema                    |
+| Data Factories                | 4 Faker-powered factories                                            |
+| Fixture Files                 | 14 (Lean POM, API, helper, network, accessibility)                   |
+| Enum Files                    | 3 (coffee-cart, sauce-demo, shared roles)                            |
+| AI Skills                     | 35 prescriptive skills                                               |
+| VS Code Tasks                 | 15 named tasks (`.vscode/tasks.json`)                                |
+| VS Code Snippets              | 26 framework-compliant snippets (`.vscode/playwright.code-snippets`) |
+| Jr QA Usage Guides            | 23 guides + 1 learning path + 1 cheatsheet                           |
+| CI/CD Platforms               | 2 (GitHub Actions + CircleCI)                                        |
+| Report Formats                | 5 (List, HTML, JUnit, JSON, Smart Reporter)                          |
+| Lines of Test Code            | ~2,664                                                               |
+| Lines of Page Object Code     | ~754                                                                 |
+| Type Safety Violations        | 0 (`any` type usage: zero)                                           |
+| TypeScript Strict Flags       | 10 enabled                                                           |
+| ESLint Status                 | 0 errors, 1 warning                                                  |
+| TypeScript Compilation        | 0 errors                                                             |
+| Dev Container                 | Full setup (Dockerfile + devcontainer.json)                          |
+| API Test Plugin               | pw-api-plugin 2.1.0 (conditional logging)                            |
+| Zod Validation in API Tests   | 26 `.parse()` calls across all API test files                        |
+| API Tests Passing             | 26/26 passing                                                        |
+| WCAG 2.1 AA Coverage          | 6 accessibility tests via `@axe-core/playwright`                     |
 
 ### Test Distribution by Tag
 
@@ -99,7 +99,7 @@ This report assesses the Playwright AI Test Framework at version 1.7.0. The fram
 - Component composition separates reusable UI elements from page-specific logic
 - `testIgnore` patterns prevent accidental runs from WIP/explore/scratch files
 - `.devcontainer/` provides containerized development
-- New `fixtures/accessibility/` layer cleanly separates a11y concerns from POM and API fixtures
+- New `fixtures/accessibility/` layer cleanly separates a11y concerns from Lean POM and API fixtures
 - Multi-app directory contract documented and enforced (coffee-cart and sauce-demo coexist without cross-contamination)
 
 **What would improve this:**
@@ -107,7 +107,7 @@ Already at 5 stars. No changes needed.
 
 ---
 
-### 2. Page Object Model & Component Design ★★★★★
+### 2. Lean POM & component design ★★★★★
 
 **All five selector issues resolved:**
 
@@ -128,7 +128,7 @@ Already at 5 stars. No changes needed.
 **Strengths:**
 
 - Single entry point: `fixtures/pom/test-options.ts`
-- 5 fixture layers now: POM, pw-api, helper, network mock, accessibility
+- 5 fixture layers now: Lean POM, pw-api, helper, network mock, accessibility
 - `a11yScan` fixture cleanly injected — no test imports axe-core directly except the `[DEMO]` scenario that intentionally does so for assertion inversion
 - `api` fixture returns raw `APIResponse` — idiomatic Playwright pattern
 - Helper fixtures (`createdOrder`, `seededCart`) implement full setup/yield/teardown lifecycle
@@ -157,7 +157,7 @@ Already at 5 stars. No changes needed.
 - `afterEach` cleanup in cart-api tests ensures test isolation
 - 100% of tests use `test.step()` with Given/When/Then structure
 - Exactly one tag per test (except `@destructive` paired with another tag)
-- All previously noted issues resolved: hardcoded test data replaced with `generateCheckoutData()` factory, empty boolean assertion repurposed to assert non-empty state, inline modal locators replaced with scoped POM assertions, visual regression baselines committed for all 7 scenarios
+- All previously noted issues resolved: hardcoded test data replaced with `generateCheckoutData()` factory, empty boolean assertion repurposed to assert non-empty state, inline modal locators replaced with scoped Lean POM assertions, visual regression baselines committed for all 7 scenarios
 - Keyboard navigation test added: login form tab order (Email → Password → Sign in) verified and Enter-key activation tested with real credentials
 
 **What would improve this:**
@@ -324,7 +324,7 @@ Already at 5 stars. No changes needed.
 
 **Strengths:**
 
-- 35 prescriptive skills covering every testing topic: selectors, POM, fixtures, API, accessibility, visual regression, debugging, CI/CD, migration, onboarding, verification, and more
+- 35 prescriptive skills covering every testing topic: selectors, Lean POM, fixtures, API, accessibility, visual regression, debugging, CI/CD, migration, onboarding, verification, and more
 - Dual tool support: `.claude/skills/` for Claude Code, `.cursor/skills/` for Cursor — same rules, both tools
 - CLAUDE.md constitution with MUST/SHOULD/WON'T rule tables — unambiguous guidance for AI code generation
 - `Explore Before Generate` mandate: `playwright-cli` required before writing any selector or schema — AI cannot hallucinate selectors it hasn't observed; **No Substitute UI Exploration** rule explicitly hardened across `playwright-cli/SKILL.md`, `enums/SKILL.md`, and `fixtures/SKILL.md` (both `.claude/` and `.cursor/` copies) — IDE browser MCP, Cursor browser tools, and Playwright `codegen` are explicitly forbidden as substitutes

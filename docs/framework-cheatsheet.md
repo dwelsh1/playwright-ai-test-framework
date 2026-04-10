@@ -186,14 +186,14 @@ All imported via: `import { test, expect } from 'fixtures/pom/test-options'`
 
 ```
 fixtures/pom/test-options.ts          ← single import point for test + expect
-fixtures/pom/page-object-fixture.ts   ← register new page objects here
+fixtures/pom/page-object-fixture.ts   ← register new Lean POM page objects here
 fixtures/api/pw-api-fixture.ts        ← api fixture
 fixtures/api/schemas/coffee-cart/     ← Zod response schemas
 fixtures/helper/helper-fixture.ts     ← seededCart, createdOrder, consoleLog
 fixtures/accessibility/a11y-fixture.ts
 fixtures/network/network-mock-fixture.ts
 
-pages/coffee-cart/                    ← page objects (one file per page)
+pages/coffee-cart/                    ← Lean POM page objects (one file per page)
 pages/components/                     ← reusable UI components
 
 tests/coffee-cart/functional/         ← UI feature tests
@@ -393,7 +393,7 @@ Full task list in `.vscode/tasks.json`.
 | `pwbeforeeach` | `test.beforeEach` hook                                         |
 | `pwaftereach`  | `test.afterEach` cleanup hook                                  |
 | `pom`          | Page Object class with constructor locators                    |
-| `ge`           | Constructor locator line (add inside POM constructor)          |
+| `ge`           | Constructor locator line (add inside Lean POM constructor)     |
 | `pwaction`     | Page object action method with JSDoc                           |
 | `req`          | API test using `api` fixture                                   |
 | `rou`          | Network mock using `networkMock` fixture                       |

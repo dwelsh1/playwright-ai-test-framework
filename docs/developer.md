@@ -1,6 +1,6 @@
 # Developer Guide
 
-This guide walks you through the framework's architecture, conventions, and how to add tests and page objects. It's written for developers who are new to the codebase.
+This guide walks you through the framework's architecture, conventions, and how to add tests and **Lean POM** page objects. It's written for developers who are new to the codebase.
 
 ---
 
@@ -116,7 +116,9 @@ npx playwright test tests/coffee-cart/functional/menu.spec.ts --project=chromium
 
 ---
 
-## Page Objects
+## Page objects (Lean POM)
+
+The framework uses **Lean POM**: readonly constructor locators, action methods, **no `expect()` in page objects** (tests assert), and components for shared UI. Details live in `.cursor/skills/page-objects/SKILL.md`.
 
 Page objects live in `pages/coffee-cart/` and follow this pattern:
 

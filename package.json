@@ -71,7 +71,8 @@
     "test-automation",
     "ai-assisted-development",
     "zod",
-    "page-object-model"
+    "page-object-model",
+    "lean-pom"
   ],
   "author": "Don Welsh",
   "license": "MIT",

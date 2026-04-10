@@ -341,4 +341,4 @@ Tests MUST be independent. No test should depend on the outcome or side-effects 
 - **`data-strategy`** skill -- Factories vs static data, when to use which for data-driven tests.
 - **`api-testing`** skill -- API test structure, `test.step()` patterns for multi-call tests, and `apiRequest` fixture usage.
 - **`selectors`** skill -- Selector priority order, Exploration-First Workflow, and Feedback & Validation Message Selectors.
-- **`page-objects`** skill -- POM pattern, three-section locator structure, readonly locators, and exploration requirements.
+- **`page-objects`** skill -- Lean POM, three-section locator structure, readonly locators, and exploration requirements.

@@ -322,7 +322,7 @@ test.describe('Login', () => {
 
 ## 8. Page Objects
 
-A **Page Object** (POM) is a class that represents a page or component. It has two things:
+A **Lean POM** page object is a class that represents a page or component. It has two things:
 
 1. **Locators** — properties that describe how to find elements
 2. **Action methods** — functions that perform interactions
