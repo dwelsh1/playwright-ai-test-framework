@@ -40,6 +40,15 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - uses: actions/checkout@v4
+        with:
+          repository: dwelsh1/coffee-cart
+          path: coffee-cart
+      - name: Install and start Coffee Cart
+        working-directory: coffee-cart
+        run: |
+          npm ci
+          nohup npm start > /tmp/coffee-cart.log 2>&1 &
       - name: Wait for SUT to be ready
         run: |
           echo "Waiting for application to be ready..."
@@ -84,6 +93,15 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - uses: actions/checkout@v4
+        with:
+          repository: dwelsh1/coffee-cart
+          path: coffee-cart
+      - name: Install and start Coffee Cart
+        working-directory: coffee-cart
+        run: |
+          npm ci
+          nohup npm start > /tmp/coffee-cart.log 2>&1 &
       - name: Wait for SUT to be ready
         run: |
           echo "Waiting for application to be ready..."
@@ -106,7 +124,8 @@ jobs:
 
   merge-reports:
     name: Merge Reports
-    if: ${{ !cancelled() }}
+    # Regression is skipped on pull_request; `!cancelled()` alone still runs this job, leaving no blob artifacts.
+    if: github.event_name == 'schedule' || github.event_name == 'push'
     needs: regression
     runs-on: ubuntu-latest
     steps:
@@ -123,6 +142,7 @@ jobs:
           merge-multiple: true
       - name: Merge blob reports into HTML and JSON
         run: |
+          mkdir -p test-results
           npx playwright merge-reports --reporter html ./all-blob-reports
           npx playwright merge-reports --reporter json ./all-blob-reports > test-results/results.json
       - name: Detect flaky tests
@@ -161,6 +181,15 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - uses: actions/checkout@v4
+        with:
+          repository: dwelsh1/coffee-cart
+          path: coffee-cart
+      - name: Install and start Coffee Cart
+        working-directory: coffee-cart
+        run: |
+          npm ci
+          nohup npm start > /tmp/coffee-cart.log 2>&1 &
       - name: Wait for SUT to be ready
         run: |
           curl --retry 10 --retry-delay 3 --retry-connrefused \
