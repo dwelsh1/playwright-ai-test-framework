@@ -28,7 +28,7 @@ jobs:
       - run: npm run lint
 
   smoke:
-    name: Smoke Tests
+    name: Smoke Tests (Sauce Demo)
     needs: lint
     runs-on: ubuntu-latest
     container:
@@ -40,37 +40,14 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - uses: actions/checkout@v4
-        with:
-          repository: dwelsh1/coffee-cart
-          path: coffee-cart
-      - name: Install toolchain for Coffee Cart (better-sqlite3 / node-gyp)
-        run: |
-          apt-get update
-          apt-get install -y --no-install-recommends build-essential
-      # Coffee Cart `npm start` is Windows-only (PowerShell). Linux CI matches start.ps1: API + Vite.
-      - name: Install and start Coffee Cart
-        working-directory: coffee-cart
-        run: |
-          npm ci
-          nohup node server/index.js > /tmp/coffee-cart-api.log 2>&1 &
-          nohup npm run dev > /tmp/coffee-cart-vite.log 2>&1 &
-      - name: Wait for SUT to be ready
-        run: |
-          echo "Waiting for application to be ready..."
-          curl --retry 20 --retry-delay 3 --retry-connrefused \
-               --fail --silent --output /dev/null \
-               "${API_URL}/api/coffees"
-          curl --retry 20 --retry-delay 3 --retry-connrefused \
-               --fail --silent --output /dev/null \
-               "${APP_URL}/"
-          echo "Application is ready."
       - name: Build smart reporter
         run: npm run build:smart-reporter
-      - name: Run smoke tests
-        run: npx playwright test --project=chromium --grep @smoke
+      - name: Run Sauce Demo smoke suite (public AUT)
+        run: npx playwright test --project=sauce-demo
         env:
           ENABLE_AI_RECOMMENDATIONS: 'false'
+          # Unset/empty repo var falls back in playwright.config.ts (trim + default URL)
+          SAUCE_DEMO_URL: ${{ vars.SAUCE_DEMO_URL }}
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:
