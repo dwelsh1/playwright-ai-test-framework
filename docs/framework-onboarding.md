@@ -200,19 +200,19 @@ npx playwright test --project=chromium --grep @api         # API tests only
 
 **Tag meanings:**
 
-| Tag            | Count | When it runs                   | What it covers                                               |
-| -------------- | ----- | ------------------------------ | ------------------------------------------------------------ |
-| `@smoke`       | 13    | Every PR                       | Critical path, fast gate                                     |
-| `@sanity`      | 7     | After deploy                   | Core feature verification                                    |
-| `@regression`  | 45    | Nightly                        | Full functional regression                                   |
-| `@e2e`         | 6     | Nightly                        | Multi-page user journeys                                     |
-| `@api`         | 25    | Every PR + nightly             | API endpoint contracts & schemas                             |
-| `@a11y`        | 6     | Nightly + on-demand            | WCAG 2.1 AA accessibility validation                         |
-| `@visual`      | 6     | Nightly (main branch only)     | Screenshot baseline comparison                               |
-| `@destructive` | 2     | Nightly (secondary only)       | State-modifying tests with cleanup                           |
-| `@flaky`       | —     | Nightly (quarantine job)       | Known-intermittent tests, non-blocking                       |
-| `@responsive`  | —     | **mobile-chrome** project only | Viewport/layout checks (desktop projects exclude via config) |
-| `@graphql`     | —     | With `@api` / API project      | GraphQL-over-HTTP specs (see GraphQL doc)                    |
+| Tag            | Count | When it runs                   | What it covers                                                 |
+| -------------- | ----- | ------------------------------ | -------------------------------------------------------------- |
+| `@smoke`       | 13    | Coffee Cart gate (`main` CI)   | Critical path; GitHub **PR** job runs Sauce Demo, not `@smoke` |
+| `@sanity`      | 7     | After deploy                   | Core feature verification                                      |
+| `@regression`  | 45    | Nightly                        | Full functional regression                                     |
+| `@e2e`         | 6     | Nightly                        | Multi-page user journeys                                       |
+| `@api`         | 25    | Nightly + local                | API contracts; GitHub **PR** job does not run API suite        |
+| `@a11y`        | 6     | Nightly + on-demand            | WCAG 2.1 AA accessibility validation                           |
+| `@visual`      | 6     | Nightly (main branch only)     | Screenshot baseline comparison                                 |
+| `@destructive` | 2     | Nightly (secondary only)       | State-modifying tests with cleanup                             |
+| `@flaky`       | —     | Nightly (quarantine job)       | Known-intermittent tests, non-blocking                         |
+| `@responsive`  | —     | **mobile-chrome** project only | Viewport/layout checks (desktop projects exclude via config)   |
+| `@graphql`     | —     | With `@api` / API project      | GraphQL-over-HTTP specs (see GraphQL doc)                      |
 
 **Responsive runs:** `npx playwright test --project=mobile-chrome` picks up tests tagged `@responsive` (Pixel 7 profile). Desktop `chromium` / `firefox` / `webkit` do not run those tests by default.
 

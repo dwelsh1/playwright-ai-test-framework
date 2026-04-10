@@ -64,16 +64,16 @@ This report assesses the Playwright AI Test Framework at version 1.7.0. The fram
 
 ### Test Distribution by Tag
 
-| Tag            | Count | Purpose                              |
-| -------------- | ----- | ------------------------------------ |
-| `@smoke`       | 9     | Critical path, runs on every PR      |
-| `@sanity`      | 7     | Core feature verification            |
-| `@regression`  | 51    | Full functional regression, nightly  |
-| `@e2e`         | 5     | Multi-page user journeys             |
-| `@api`         | 26    | API endpoint validation              |
-| `@a11y`        | 6     | WCAG 2.1 AA accessibility validation |
-| `@visual`      | 7     | Screenshot baseline comparison       |
-| `@destructive` | 2     | State-modifying (secondary tag only) |
+| Tag            | Count | Purpose                                                        |
+| -------------- | ----- | -------------------------------------------------------------- |
+| `@smoke`       | 9     | Coffee Cart critical path; GitHub PRs run `sauce-demo` instead |
+| `@sanity`      | 7     | Core feature verification                                      |
+| `@regression`  | 51    | Full functional regression, nightly                            |
+| `@e2e`         | 5     | Multi-page user journeys                                       |
+| `@api`         | 26    | API endpoint validation                                        |
+| `@a11y`        | 6     | WCAG 2.1 AA accessibility validation                           |
+| `@visual`      | 7     | Screenshot baseline comparison                                 |
+| `@destructive` | 2     | State-modifying (secondary tag only)                           |
 
 ### Test Distribution by Type
 
