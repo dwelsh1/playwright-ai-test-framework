@@ -48,17 +48,22 @@ jobs:
         run: |
           apt-get update
           apt-get install -y --no-install-recommends build-essential
+      # Coffee Cart `npm start` is Windows-only (PowerShell). Linux CI matches start.ps1: API + Vite.
       - name: Install and start Coffee Cart
         working-directory: coffee-cart
         run: |
           npm ci
-          nohup npm start > /tmp/coffee-cart.log 2>&1 &
+          nohup node server/index.js > /tmp/coffee-cart-api.log 2>&1 &
+          nohup npm run dev > /tmp/coffee-cart-vite.log 2>&1 &
       - name: Wait for SUT to be ready
         run: |
           echo "Waiting for application to be ready..."
-          curl --retry 10 --retry-delay 3 --retry-connrefused \
+          curl --retry 20 --retry-delay 3 --retry-connrefused \
                --fail --silent --output /dev/null \
                "${API_URL}/api/coffees"
+          curl --retry 20 --retry-delay 3 --retry-connrefused \
+               --fail --silent --output /dev/null \
+               "${APP_URL}/"
           echo "Application is ready."
       - name: Build smart reporter
         run: npm run build:smart-reporter
@@ -109,13 +114,17 @@ jobs:
         working-directory: coffee-cart
         run: |
           npm ci
-          nohup npm start > /tmp/coffee-cart.log 2>&1 &
+          nohup node server/index.js > /tmp/coffee-cart-api.log 2>&1 &
+          nohup npm run dev > /tmp/coffee-cart-vite.log 2>&1 &
       - name: Wait for SUT to be ready
         run: |
           echo "Waiting for application to be ready..."
-          curl --retry 10 --retry-delay 3 --retry-connrefused \
+          curl --retry 20 --retry-delay 3 --retry-connrefused \
                --fail --silent --output /dev/null \
                "${API_URL}/api/coffees"
+          curl --retry 20 --retry-delay 3 --retry-connrefused \
+               --fail --silent --output /dev/null \
+               "${APP_URL}/"
           echo "Application is ready."
       - name: Build smart reporter
         run: npm run build:smart-reporter
@@ -201,12 +210,16 @@ jobs:
         working-directory: coffee-cart
         run: |
           npm ci
-          nohup npm start > /tmp/coffee-cart.log 2>&1 &
+          nohup node server/index.js > /tmp/coffee-cart-api.log 2>&1 &
+          nohup npm run dev > /tmp/coffee-cart-vite.log 2>&1 &
       - name: Wait for SUT to be ready
         run: |
-          curl --retry 10 --retry-delay 3 --retry-connrefused \
+          curl --retry 20 --retry-delay 3 --retry-connrefused \
                --fail --silent --output /dev/null \
                "${API_URL}/api/coffees"
+          curl --retry 20 --retry-delay 3 --retry-connrefused \
+               --fail --silent --output /dev/null \
+               "${APP_URL}/"
       - name: Build smart reporter
         run: npm run build:smart-reporter
       - name: Run quarantined tests
