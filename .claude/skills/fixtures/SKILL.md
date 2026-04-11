@@ -63,7 +63,7 @@ export { test, expect, request };
 Before registering a new page object fixture, confirm both of the following are true:
 
 1. **The page object was created after exploring the page with `playwright-cli`** — not IDE browser MCP, Cursor browser tools, or Playwright Test `codegen` (see **No Substitute UI Exploration** rule in `CLAUDE.md`). If `playwright-cli` cannot run, stop and notify the human before proceeding.
-2. **The page object includes locators for success messages, error messages, and inline validation feedback** where those elements exist in the application. A page object with only interactive element locators is incomplete (see `No Feedback-Less POM` rule).
+2. **The page object includes locators for success messages, error messages, and inline validation feedback** where those elements exist in the application. A page object with only interactive element locators is incomplete (see **No Feedback-Less Lean POM** rule).
 
 If either condition is not met, complete it before registering the fixture.
 

@@ -28,11 +28,9 @@ jobs:
       - run: npm run lint
 
   smoke:
-    name: Smoke Tests
+    name: Smoke Tests (Sauce Demo)
     needs: lint
     runs-on: ubuntu-latest
-    container:
-      image: mcr.microsoft.com/playwright:v1.58.0-noble
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -40,19 +38,18 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - name: Wait for SUT to be ready
-        run: |
-          echo "Waiting for application to be ready..."
-          curl --retry 10 --retry-delay 3 --retry-connrefused \
-               --fail --silent --output /dev/null \
-               "${API_URL}/api/coffees"
-          echo "Application is ready."
+      # Install browsers on the runner instead of using mcr.microsoft.com/playwright:* job containers.
+      # GitHub-hosted runners sometimes fail to pull from MCR ("The request is blocked" / access denied).
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
       - name: Build smart reporter
         run: npm run build:smart-reporter
-      - name: Run smoke tests
-        run: npx playwright test --project=chromium --grep @smoke
+      - name: Run Sauce Demo smoke suite (public AUT)
+        run: npx playwright test --project=sauce-demo
         env:
           ENABLE_AI_RECOMMENDATIONS: 'false'
+          # Unset/empty repo var falls back in playwright.config.ts (trim + default URL)
+          SAUCE_DEMO_URL: ${{ vars.SAUCE_DEMO_URL }}
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:
@@ -71,8 +68,6 @@ jobs:
     needs: lint
     if: github.event_name == 'schedule' || github.event_name == 'push'
     runs-on: ubuntu-latest
-    container:
-      image: mcr.microsoft.com/playwright:v1.58.0-noble
     strategy:
       fail-fast: false
       matrix:
@@ -84,12 +79,31 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+      - uses: actions/checkout@v4
+        with:
+          repository: dwelsh1/coffee-cart
+          path: coffee-cart
+      - name: Install toolchain for Coffee Cart (better-sqlite3 / node-gyp)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends build-essential
+      - name: Install and start Coffee Cart
+        working-directory: coffee-cart
+        run: |
+          npm ci
+          nohup node server/index.js > /tmp/coffee-cart-api.log 2>&1 &
+          nohup npm run dev > /tmp/coffee-cart-vite.log 2>&1 &
       - name: Wait for SUT to be ready
         run: |
           echo "Waiting for application to be ready..."
-          curl --retry 10 --retry-delay 3 --retry-connrefused \
+          curl --retry 20 --retry-delay 3 --retry-connrefused \
                --fail --silent --output /dev/null \
                "${API_URL}/api/coffees"
+          curl --retry 20 --retry-delay 3 --retry-connrefused \
+               --fail --silent --output /dev/null \
+               "${APP_URL}/"
           echo "Application is ready."
       - name: Build smart reporter
         run: npm run build:smart-reporter
@@ -106,7 +120,8 @@ jobs:
 
   merge-reports:
     name: Merge Reports
-    if: ${{ !cancelled() }}
+    # Regression is skipped on pull_request; `!cancelled()` alone still runs this job, leaving no blob artifacts.
+    if: github.event_name == 'schedule' || github.event_name == 'push'
     needs: regression
     runs-on: ubuntu-latest
     steps:
@@ -123,6 +138,7 @@ jobs:
           merge-multiple: true
       - name: Merge blob reports into HTML and JSON
         run: |
+          mkdir -p test-results
           npx playwright merge-reports --reporter html ./all-blob-reports
           npx playwright merge-reports --reporter json ./all-blob-reports > test-results/results.json
       - name: Detect flaky tests
@@ -152,8 +168,6 @@ jobs:
     if: github.event_name == 'schedule' || github.event_name == 'push'
     runs-on: ubuntu-latest
     continue-on-error: true
-    container:
-      image: mcr.microsoft.com/playwright:v1.58.0-noble
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -161,11 +175,30 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+      - uses: actions/checkout@v4
+        with:
+          repository: dwelsh1/coffee-cart
+          path: coffee-cart
+      - name: Install toolchain for Coffee Cart (better-sqlite3 / node-gyp)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends build-essential
+      - name: Install and start Coffee Cart
+        working-directory: coffee-cart
+        run: |
+          npm ci
+          nohup node server/index.js > /tmp/coffee-cart-api.log 2>&1 &
+          nohup npm run dev > /tmp/coffee-cart-vite.log 2>&1 &
       - name: Wait for SUT to be ready
         run: |
-          curl --retry 10 --retry-delay 3 --retry-connrefused \
+          curl --retry 20 --retry-delay 3 --retry-connrefused \
                --fail --silent --output /dev/null \
                "${API_URL}/api/coffees"
+          curl --retry 20 --retry-delay 3 --retry-connrefused \
+               --fail --silent --output /dev/null \
+               "${APP_URL}/"
       - name: Build smart reporter
         run: npm run build:smart-reporter
       - name: Run quarantined tests

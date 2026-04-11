@@ -173,7 +173,7 @@ The GitHub Actions workflow at `.github/workflows/playwright.yml` uses Docker fo
 
 ```yaml
 smoke:
-  name: Smoke Tests
+  name: Smoke Tests (Sauce Demo)
   runs-on: ubuntu-latest
   container:
     image: mcr.microsoft.com/playwright:v1.58.0-noble
@@ -185,15 +185,15 @@ smoke:
 
 The steps that follow are standard — checkout code, install packages, run tests — but they all execute inside the Playwright container, not on the bare Ubuntu VM.
 
-### The four jobs and what they do
+### The workflow jobs and what they do
 
-| Job             | When it runs                   | What it does                                                 |
-| --------------- | ------------------------------ | ------------------------------------------------------------ |
-| `lint`          | Every push and PR              | Runs ESLint on all TypeScript files — no Docker image needed |
-| `smoke`         | Every push and PR (after lint) | Runs `@smoke` tagged tests in Chromium                       |
-| `regression`    | Pushes to `main` and nightly   | Runs all tests across 4 parallel shards                      |
-| `quarantine`    | Pushes to `main` and nightly   | Runs `@flaky` tagged tests with 3 retries                    |
-| `merge-reports` | After all regression shards    | Combines shard reports into one HTML report                  |
+| Job             | When it runs                              | What it does                                                                  |
+| --------------- | ----------------------------------------- | ----------------------------------------------------------------------------- |
+| `lint`          | Every push, PR, and schedule              | Runs ESLint on all TypeScript files — no Docker image needed                  |
+| `smoke`         | Every push, PR, and schedule (after lint) | Runs the **`sauce-demo`** project against the public demo site (no local app) |
+| `regression`    | Pushes to `main` and nightly only         | Coffee Cart suite in Chromium, 4 shards; clones and starts Coffee Cart in CI  |
+| `quarantine`    | Pushes to `main` and nightly only         | Runs `@flaky` tagged tests with 3 retries                                     |
+| `merge-reports` | After regression, **not** on PRs          | Merges blob reports into HTML + JSON (skipped when regression does not run)   |
 
 ### Sharding
 
@@ -268,7 +268,7 @@ Waiting for application to be ready...
 curl: (7) Failed to connect to localhost port 3002
 ```
 
-The CI job checks whether the Coffee Cart API is running before starting tests. If you see this followed by a failure, the application server is not running. In CI, the app is expected to be already running in the environment — check environment variables `APP_URL` and `API_URL`.
+The **regression** and **quarantine** jobs curl the Coffee Cart API before tests. If you see this and a failure, the API (or Vite) did not start in that job — check the Coffee Cart install/start steps, `APP_URL` / `API_URL`, and logs under `/tmp/coffee-cart-*.log`. The **smoke** job does not wait on localhost; it targets the public Sauce Demo site.
 
 ---
 

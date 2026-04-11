@@ -38,7 +38,7 @@ Patterns for migrating existing test suites from Cypress or Selenium to Playwrig
 | **Execution**    | Runs in browser (same event loop) | Runs in Node.js (controls browser remotely)  |
 | **Async**        | Auto-chains, no `await`           | Explicit `await` on every action             |
 | **Selectors**    | `cy.get()` with CSS/jQuery        | `getByRole()` priority (accessibility-first) |
-| **Page Objects** | Optional, often avoided           | Mandatory POM with fixture injection         |
+| **Page Objects** | Optional, often avoided           | Mandatory Lean POM with fixture injection    |
 | **Imports**      | Global `cy` object                | Import from `fixtures/pom/test-options.ts`   |
 | **Retries**      | Built into commands               | Web-first assertions auto-retry              |
 | **Network**      | `cy.intercept()`                  | `page.route()`                               |
@@ -174,6 +174,6 @@ await button.click(); // always re-queries the DOM
 ## See Also
 
 - **`selectors`** skill -- Selector priority and conversion guide.
-- **`page-objects`** skill -- POM pattern with fixture injection.
+- **`page-objects`** skill -- Lean POM with fixture injection.
 - **`authentication`** skill -- Storage state to replace login helpers.
 - **`fixtures`** skill -- Fixture registration for page objects.

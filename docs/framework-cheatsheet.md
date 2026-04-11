@@ -57,17 +57,17 @@
 
 ## Test Tags
 
-| Tag            | When                | Coverage                                    |
-| -------------- | ------------------- | ------------------------------------------- |
-| `@smoke`       | Every PR            | Critical path, fast gate                    |
-| `@sanity`      | After deploy        | Core feature verification                   |
-| `@regression`  | Nightly             | Full functional suite                       |
-| `@e2e`         | Nightly             | Multi-page user journeys                    |
-| `@api`         | Every PR + nightly  | API endpoint contracts                      |
-| `@a11y`        | Nightly + on-demand | WCAG 2.1 AA scanning                        |
-| `@visual`      | Nightly (main only) | Screenshot baseline comparison              |
-| `@destructive` | Nightly secondary   | State-modifying — needs `afterEach` cleanup |
-| `@flaky`       | Quarantine job      | Known-intermittent, non-blocking            |
+| Tag            | When                | Coverage                                                                  |
+| -------------- | ------------------- | ------------------------------------------------------------------------- |
+| `@smoke`       | Coffee Cart gate    | Critical path; **GitHub PRs** run `sauce-demo` instead (public AUT)       |
+| `@sanity`      | After deploy        | Core feature verification                                                 |
+| `@regression`  | Nightly             | Full functional suite                                                     |
+| `@e2e`         | Nightly             | Multi-page user journeys                                                  |
+| `@api`         | Nightly + local     | API contracts; not in the GitHub **PR** job (Sauce Demo smoke only on PR) |
+| `@a11y`        | Nightly + on-demand | WCAG 2.1 AA scanning                                                      |
+| `@visual`      | Nightly (main only) | Screenshot baseline comparison                                            |
+| `@destructive` | Nightly secondary   | State-modifying — needs `afterEach` cleanup                               |
+| `@flaky`       | Quarantine job      | Known-intermittent, non-blocking                                          |
 
 **Rules:** Exactly **one** primary tag per test. Only `@destructive` and `@flaky` may be added alongside.
 Never put tags on `test.describe()` — only on individual tests.
@@ -186,14 +186,14 @@ All imported via: `import { test, expect } from 'fixtures/pom/test-options'`
 
 ```
 fixtures/pom/test-options.ts          ← single import point for test + expect
-fixtures/pom/page-object-fixture.ts   ← register new page objects here
+fixtures/pom/page-object-fixture.ts   ← register new Lean POM page objects here
 fixtures/api/pw-api-fixture.ts        ← api fixture
 fixtures/api/schemas/coffee-cart/     ← Zod response schemas
 fixtures/helper/helper-fixture.ts     ← seededCart, createdOrder, consoleLog
 fixtures/accessibility/a11y-fixture.ts
 fixtures/network/network-mock-fixture.ts
 
-pages/coffee-cart/                    ← page objects (one file per page)
+pages/coffee-cart/                    ← Lean POM page objects (one file per page)
 pages/components/                     ← reusable UI components
 
 tests/coffee-cart/functional/         ← UI feature tests
@@ -393,7 +393,7 @@ Full task list in `.vscode/tasks.json`.
 | `pwbeforeeach` | `test.beforeEach` hook                                         |
 | `pwaftereach`  | `test.afterEach` cleanup hook                                  |
 | `pom`          | Page Object class with constructor locators                    |
-| `ge`           | Constructor locator line (add inside POM constructor)          |
+| `ge`           | Constructor locator line (add inside Lean POM constructor)     |
 | `pwaction`     | Page object action method with JSDoc                           |
 | `req`          | API test using `api` fixture                                   |
 | `rou`          | Network mock using `networkMock` fixture                       |

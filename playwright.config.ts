@@ -267,7 +267,7 @@ export default defineConfig({
       testDir: 'tests/sauce-demo',
       use: {
         ...devices['Desktop Chrome'],
-        baseURL: process.env['SAUCE_DEMO_URL'] ?? 'https://www.saucedemo.com',
+        baseURL: process.env['SAUCE_DEMO_URL']?.trim() || 'https://www.saucedemo.com',
         // Sauce Demo uses data-test attributes (not the default data-testid)
         testIdAttribute: 'data-test',
       },

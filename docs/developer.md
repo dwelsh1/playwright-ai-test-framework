@@ -1,6 +1,6 @@
 # Developer Guide
 
-This guide walks you through the framework's architecture, conventions, and how to add tests and page objects. It's written for developers who are new to the codebase.
+This guide walks you through the framework's architecture, conventions, and how to add tests and **Lean POM** page objects. It's written for developers who are new to the codebase.
 
 ---
 
@@ -116,7 +116,9 @@ npx playwright test tests/coffee-cart/functional/menu.spec.ts --project=chromium
 
 ---
 
-## Page Objects
+## Page objects (Lean POM)
+
+The framework uses **Lean POM**: readonly constructor locators, action methods, **no `expect()` in page objects** (tests assert), and components for shared UI. Details live in `.cursor/skills/page-objects/SKILL.md`.
 
 Page objects live in `pages/coffee-cart/` and follow this pattern:
 
@@ -974,13 +976,13 @@ The framework includes ready-to-use pipeline configs for both GitHub Actions and
 
 ### GitHub Actions (`.github/workflows/playwright.yml`)
 
-| Trigger            | What Runs                                      | Sharding |
-| ------------------ | ---------------------------------------------- | -------- |
-| Pull request       | Lint + smoke tests                             | No       |
-| Push to main       | Lint + smoke + sharded regression + quarantine | 4 shards |
-| Nightly (2 AM UTC) | Lint + sharded regression + quarantine         | 4 shards |
+| Trigger            | What Runs                                                                 | Sharding |
+| ------------------ | ------------------------------------------------------------------------- | -------- |
+| Pull request       | Lint + **Sauce Demo** smoke (`npx playwright test --project=sauce-demo`)  | No       |
+| Push to main       | Lint + Sauce Demo smoke + **Coffee Cart** sharded regression + quarantine | 4 shards |
+| Nightly (2 AM UTC) | Same as push to `main` (lint, Sauce Demo smoke, Coffee Cart regression)   | 4 shards |
 
-Regression shards upload blob reports; the `merge-reports` job combines them into HTML + JSON and then runs `scripts/detect-flaky.js` to identify tests that failed on attempt 1 but passed on retry. Results are written to `test-results/flaky-tests.json` and uploaded as the `flaky-report` artifact.
+On **push** and **schedule**, regression shards upload blob reports; the `merge-reports` job (**skipped on pull requests**) combines them into HTML + JSON and then runs `scripts/detect-flaky.js` to identify tests that failed on attempt 1 but passed on retry. Results are written to `test-results/flaky-tests.json` and uploaded as the `flaky-report` artifact. Regression jobs clone [coffee-cart](https://github.com/dwelsh1/coffee-cart), install native build tools for `better-sqlite3`, and start the API plus Vite (`node server/index.js` and `npm run dev`) because Coffee Cart’s `npm start` script is Windows-only.
 
 The `quarantine` job runs tests tagged `@flaky` in isolation with `continue-on-error: true` — it never fails the build. Results are uploaded as `quarantine-report` (7-day retention).
 
