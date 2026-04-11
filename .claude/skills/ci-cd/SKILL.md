@@ -119,7 +119,11 @@ reporter: process.env.CI
 
 ## This repository (`playwright-ai-test-framework`)
 
-GitHub Actions behavior is defined in `.github/workflows/playwright.yml` (source of truth). In short: **pull requests** run lint plus `npx playwright test --project=sauce-demo` (public Sauce Demo). **Pushes to `main` and the nightly schedule** add Coffee Cart regression (four shards, Coffee Cart cloned and started in the container), `merge-reports`, and quarantine. The generic examples below are patterns; align copy-paste snippets with that workflow when editing this repo.
+GitHub Actions behavior is defined in `.github/workflows/playwright.yml` (source of truth). In short: **pull requests** run lint plus `npx playwright test --project=sauce-demo` (public Sauce Demo) **by default**. **Pushes to `main` and the nightly schedule** always add Coffee Cart regression (four shards, Coffee Cart cloned and started on the runner), `merge-reports`, and quarantine.
+
+**Optional full regression on a PR** (same jobs as push): the `detect-full-regression` job sets `run_full` when the PR touches `tests/**`, `playwright.config.ts`, or `.github/workflows/playwright.yml`, **or** when the PR has label **`ci:full`** or **`run-regression`**. The workflow uses `pull_request` types `labeled` / `unlabeled` so adding or removing those labels re-runs the gate. See `README.md` (GitHub Actions subsection) and `docs/developer.md` (GitHub Actions table).
+
+The generic examples below are patterns; align copy-paste snippets with that workflow when editing this repo.
 
 ## Test Suites by Tag
 
