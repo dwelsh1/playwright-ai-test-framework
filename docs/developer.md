@@ -1018,7 +1018,7 @@ Both pipelines upload:
 
 ### Docker image
 
-All CI jobs use `mcr.microsoft.com/playwright:v1.58.0-noble` for consistent font rendering and browser behavior. **Update the image tag when upgrading `@playwright/test`.**
+All CI jobs use `mcr.microsoft.com/playwright:v1.59.1-noble` for consistent font rendering and browser behavior. **Update the image tag when upgrading `@playwright/test`.**
 
 ### Dev Container
 

@@ -43,7 +43,7 @@ Docker does the same thing for software. It bundles an application with its oper
 | **Registry**   | A place where images are stored and downloaded from. Like an app store for Docker images. The most common is Docker Hub. Microsoft has their own at `mcr.microsoft.com`.                |
 | **Volume**     | Storage that exists outside the container's filesystem and persists when the container is stopped or recreated. Useful for things like `node_modules` that are expensive to rebuild.    |
 | **Layer**      | Each instruction in a Dockerfile creates a layer. Docker caches layers, so if only the last instruction changed, only that layer is rebuilt — not everything. This makes builds faster. |
-| **Tag**        | A version label on an image. For example, `playwright:v1.58.0-noble` — `v1.58.0` is the Playwright version and `noble` is the Ubuntu codename the image is based on.                    |
+| **Tag**        | A version label on an image. For example, `playwright:v1.59.1-noble` — `v1.59.1` is the Playwright version and `noble` is the Ubuntu codename the image is based on.                    |
 
 ---
 
@@ -52,7 +52,7 @@ Docker does the same thing for software. It bundles an application with its oper
 The framework uses the official Microsoft Playwright image:
 
 ```
-mcr.microsoft.com/playwright:v1.58.0-noble
+mcr.microsoft.com/playwright:v1.59.1-noble
 ```
 
 This image is maintained by the Playwright team and comes pre-configured with everything needed to run Playwright tests:
@@ -86,7 +86,7 @@ With Docker, the CI runner simply pulls the Playwright image and runs tests insi
 - **Isolation** — tests in one CI job cannot interfere with another
 - **Speed** — pulling a cached image is faster than installing everything from scratch
 - **Reproducibility** — you can reproduce any CI failure locally by running the same image
-- **Version pinning** — the image tag (`v1.58.0-noble`) pins the exact browser versions; upgrading is a deliberate change in the `Dockerfile`
+- **Version pinning** — the image tag (`v1.59.1-noble`) pins the exact browser versions; upgrading is a deliberate change in the `Dockerfile`
 
 ---
 
@@ -97,7 +97,7 @@ The framework's `Dockerfile` is at `.devcontainer/Dockerfile`. This file is used
 Here is the full file with each section explained:
 
 ```dockerfile
-FROM mcr.microsoft.com/playwright:v1.58.0-noble
+FROM mcr.microsoft.com/playwright:v1.59.1-noble
 ```
 
 **Start from the official Playwright image.** Everything already in that image — Ubuntu, Node.js, browsers — is inherited automatically. This is called the "base image".
@@ -176,12 +176,12 @@ smoke:
   name: Smoke Tests (Sauce Demo)
   runs-on: ubuntu-latest
   container:
-    image: mcr.microsoft.com/playwright:v1.58.0-noble
+    image: mcr.microsoft.com/playwright:v1.59.1-noble
 ```
 
 **`runs-on: ubuntu-latest`** — GitHub spins up a fresh Ubuntu virtual machine.
 
-**`container: image: mcr.microsoft.com/playwright:v1.58.0-noble`** — Inside that VM, GitHub pulls the Playwright image and runs all subsequent steps inside that container. The VM acts as the host; the Playwright image is the environment where your tests actually run.
+**`container: image: mcr.microsoft.com/playwright:v1.59.1-noble`** — Inside that VM, GitHub pulls the Playwright image and runs all subsequent steps inside that container. The VM acts as the host; the Playwright image is the environment where your tests actually run.
 
 The steps that follow are standard — checkout code, install packages, run tests — but they all execute inside the Playwright container, not on the bare Ubuntu VM.
 
@@ -208,7 +208,7 @@ The CircleCI configuration at `.circleci/config.yml` uses Docker similarly, but 
 ```yaml
 smoke-tests:
   docker:
-    - image: mcr.microsoft.com/playwright:v1.58.0-noble
+    - image: mcr.microsoft.com/playwright:v1.59.1-noble
 ```
 
 The `docker:` key tells CircleCI to run this job inside the specified Docker image. The same Playwright image is used as in GitHub Actions — test results will be identical.
@@ -248,7 +248,7 @@ When a CI job fails, you may see Docker-specific messages in the logs. Here is w
 ### "Unable to pull image"
 
 ```
-Error: failed to pull image mcr.microsoft.com/playwright:v1.58.0-noble
+Error: failed to pull image mcr.microsoft.com/playwright:v1.59.1-noble
 ```
 
 The CI runner could not download the Docker image. Usually a temporary network issue — re-running the pipeline fixes it.
@@ -305,9 +305,9 @@ For CI jobs, these extras are not needed — the CI runner handles user accounts
 
 ### What is the difference between the image version and the Playwright version?
 
-The image tag `v1.58.0-noble` means:
+The image tag `v1.59.1-noble` means:
 
-- **`v1.58.0`** — the version of `@playwright/test` and the browsers bundled in the image
+- **`v1.59.1`** — the version of `@playwright/test` and the browsers bundled in the image
 - **`noble`** — Ubuntu 24.04 LTS ("Noble Numbat")
 
 The `@playwright/test` version in `package.json` should match the image version. If they drift apart, browser APIs may differ and tests may behave unexpectedly.
@@ -320,13 +320,13 @@ Yes, though you rarely need to. This is useful for reproducing a CI failure exac
 
 ```bash
 # Pull the same image CI uses
-docker pull mcr.microsoft.com/playwright:v1.58.0-noble
+docker pull mcr.microsoft.com/playwright:v1.59.1-noble
 
 # Run a container with the current directory mounted
 docker run --rm -it \
   -v $(pwd):/workspace \
   -w /workspace \
-  mcr.microsoft.com/playwright:v1.58.0-noble \
+  mcr.microsoft.com/playwright:v1.59.1-noble \
   bash
 ```
 

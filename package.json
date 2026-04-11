@@ -1,15 +1,15 @@
 {
   "name": "playwright-ai-test-framework",
-  "version": "1.8.0",
+  "version": "1.8.3",
   "description": "An enterprise-ready Playwright framework for AI-assisted test automation development with TypeScript",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/don-welsh/playwright-ai-test-framework.git"
+    "url": "git+https://github.com/dwelsh1/playwright-ai-test-framework.git"
   },
-  "homepage": "https://github.com/don-welsh/playwright-ai-test-framework",
+  "homepage": "https://github.com/dwelsh1/playwright-ai-test-framework",
   "bugs": {
-    "url": "https://github.com/don-welsh/playwright-ai-test-framework/issues"
+    "url": "https://github.com/dwelsh1/playwright-ai-test-framework/issues"
   },
   "scripts": {
     "pretest": "node scripts/check-smart-reporter.cjs",
@@ -84,11 +84,11 @@
     "@axe-core/playwright": "4.11.1",
     "@eslint/eslintrc": "^3.3.5",
     "@faker-js/faker": "^9.9.0",
-    "@playwright/cli": "^0.1.1",
-    "@playwright/test": "^1.58.0",
+    "@playwright/cli": "^0.1.6",
+    "@playwright/test": "^1.59.1",
     "@types/node": "^24.0.1",
-    "@typescript-eslint/eslint-plugin": "^8.34.1",
-    "@typescript-eslint/parser": "^8.34.1",
+    "@typescript-eslint/eslint-plugin": "^8.58.1",
+    "@typescript-eslint/parser": "^8.58.1",
     "dotenv": "^16.5.0",
     "eslint": "^9.29.0",
     "eslint-config-prettier": "^10.1.5",
@@ -98,7 +98,7 @@
     "husky": "^9.1.7",
     "jiti": "^2.4.2",
     "lint-staged": "^16.1.2",
-    "playwright-cli-select": "1.0.9",
+    "playwright-cli-select": "1.0.10",
     "pw-api-plugin": "^2.1.0",
     "yaml": "2.8.3",
     "zod": "^4.3.6"

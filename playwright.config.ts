@@ -8,6 +8,12 @@ import fs from 'fs';
 const testEnv = process.env['TEST_ENV'] || 'dev';
 dotenv.config({ path: path.resolve('env', `.env.${testEnv}`) });
 
+function optionalEnvString(key: string, fallback: string): string {
+  const v = process.env[key];
+  if (v == null || String(v).trim() === '') return fallback;
+  return String(v).trim();
+}
+
 // ──────────────────────────────────────────────────────────
 // Smart Reporter settings (LM Studio + cloud AI)
 // ──────────────────────────────────────────────────────────
@@ -267,7 +273,7 @@ export default defineConfig({
       testDir: 'tests/sauce-demo',
       use: {
         ...devices['Desktop Chrome'],
-        baseURL: process.env['SAUCE_DEMO_URL']?.trim() || 'https://www.saucedemo.com',
+        baseURL: optionalEnvString('SAUCE_DEMO_URL', 'https://www.saucedemo.com'),
         // Sauce Demo uses data-test attributes (not the default data-testid)
         testIdAttribute: 'data-test',
       },

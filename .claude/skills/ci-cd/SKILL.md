@@ -17,7 +17,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:v1.50.0-noble
+      image: mcr.microsoft.com/playwright:v1.59.1-noble
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -41,7 +41,7 @@ Font rendering and browser behavior differ across OS. Use the official container
 
 ```yaml
 container:
-  image: mcr.microsoft.com/playwright:v1.50.0-noble
+  image: mcr.microsoft.com/playwright:v1.59.1-noble
 ```
 
 **Match the image tag to your `@playwright/test` version in `package.json`.**
@@ -130,7 +130,7 @@ jobs:
   smoke:
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:v1.50.0-noble
+      image: mcr.microsoft.com/playwright:v1.59.1-noble
     steps:
       - uses: actions/checkout@v4
       - run: npm ci
@@ -140,7 +140,7 @@ jobs:
     if: github.event_name == 'schedule' # nightly only
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:v1.50.0-noble
+      image: mcr.microsoft.com/playwright:v1.59.1-noble
     steps:
       - uses: actions/checkout@v4
       - run: npm ci
@@ -204,7 +204,7 @@ orbs:
 jobs:
   playwright-tests:
     docker:
-      - image: mcr.microsoft.com/playwright:v1.50.0-noble
+      - image: mcr.microsoft.com/playwright:v1.59.1-noble
     parallelism: 4
     steps:
       - checkout
@@ -245,7 +245,7 @@ steps:
 jobs:
   smoke-tests:
     docker:
-      - image: mcr.microsoft.com/playwright:v1.50.0-noble
+      - image: mcr.microsoft.com/playwright:v1.59.1-noble
     steps:
       - checkout
       - node/install-packages:
@@ -258,7 +258,7 @@ jobs:
 
   regression-tests:
     docker:
-      - image: mcr.microsoft.com/playwright:v1.50.0-noble
+      - image: mcr.microsoft.com/playwright:v1.59.1-noble
     parallelism: 4
     steps:
       - checkout
@@ -320,12 +320,12 @@ Run tests locally in the same container as CI:
 ```bash
 # Run all tests
 docker run --rm -v $(pwd):/work -w /work \
-  mcr.microsoft.com/playwright:v1.50.0-noble \
+  mcr.microsoft.com/playwright:v1.59.1-noble \
   npx playwright test
 
 # Run with sharding
 docker run --rm -v $(pwd):/work -w /work \
-  mcr.microsoft.com/playwright:v1.50.0-noble \
+  mcr.microsoft.com/playwright:v1.59.1-noble \
   npx playwright test --shard=1/4
 ```
 

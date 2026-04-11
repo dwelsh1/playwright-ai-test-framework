@@ -158,7 +158,7 @@ Visual tests require consistent rendering. Font hinting and anti-aliasing differ
 ```bash
 # Generate baselines using the same container as CI
 docker run --rm -v $(pwd):/work -w /work \
-  mcr.microsoft.com/playwright:v1.50.0-noble \
+  mcr.microsoft.com/playwright:v1.59.1-noble \
   npx playwright test --update-snapshots --project=visual
 ```
 

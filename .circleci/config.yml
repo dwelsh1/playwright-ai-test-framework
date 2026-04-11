@@ -21,7 +21,7 @@ jobs:
 
   smoke-tests:
     docker:
-      - image: mcr.microsoft.com/playwright:v1.58.0-noble
+      - image: mcr.microsoft.com/playwright:v1.59.1-noble
     environment:
       CI: 'true'
       ENABLE_AI_RECOMMENDATIONS: 'false'
@@ -56,7 +56,7 @@ jobs:
 
   regression-tests:
     docker:
-      - image: mcr.microsoft.com/playwright:v1.58.0-noble
+      - image: mcr.microsoft.com/playwright:v1.59.1-noble
     parallelism: 4
     environment:
       CI: 'true'
@@ -99,7 +99,7 @@ jobs:
 
   quarantine-tests:
     docker:
-      - image: mcr.microsoft.com/playwright:v1.58.0-noble
+      - image: mcr.microsoft.com/playwright:v1.59.1-noble
     environment:
       CI: 'true'
       ENABLE_AI_RECOMMENDATIONS: 'false'

@@ -1,5 +1,33 @@
 # Changelog
 
+## [1.8.3] - 2026-04-11
+
+### Changed
+
+- **`playwright-cli-select`** **1.0.10**.
+- **`@typescript-eslint/eslint-plugin`** and **`@typescript-eslint/parser`** **^8.58.1**.
+
+### Fixed
+
+- **`playwright.config.ts`** — Sauce Demo **`baseURL`** uses **`optionalEnvString()`** so blank **`SAUCE_DEMO_URL`** still falls back to the default host without triggering **`@typescript-eslint/prefer-nullish-coalescing`** on **`||`**.
+
+---
+
+## [1.8.2] - 2026-04-11
+
+### Changed
+
+- **`@playwright/test`** **^1.59.1** and **`@playwright/cli`** **^0.1.6** (latest on npm at upgrade time; **1.59.0** is superseded by **1.59.1**).
+- **`mcr.microsoft.com/playwright`** Docker image tags aligned to **`v1.59.1-noble`** (`.devcontainer/`, CircleCI, docs).
+- **`tools/playwright-smart-reporter`** — devDependency **`@playwright/test`** aligned to **^1.59.1** with refreshed lockfile.
+- **`package.json`** repository, homepage, and bugs URLs → **`github.com/dwelsh1`**.
+
+### Fixed
+
+- **`npm audit`** — transitive fixes applied at the **repo root** (**0** vulnerabilities). The **`tools/playwright-smart-reporter`** subpackage still reports **moderate** issues in **`vitest` / `vite`** (fix would require **`npm audit fix --force`** / major **`vitest`** bump — unchanged).
+
+---
+
 ## [1.8.1] - 2026-04-10
 
 ### Changed
