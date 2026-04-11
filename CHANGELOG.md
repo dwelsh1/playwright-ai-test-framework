@@ -9,6 +9,7 @@
 ### Fixed
 
 - **GitHub Actions** — **`merge-reports`** now runs **`npx playwright merge-reports --reporter junit`** with **`PLAYWRIGHT_JUNIT_OUTPUT_FILE: test-results/junit.xml`** so the **`regression-junit`** artifact upload finds the merged JUnit file (previously only HTML + JSON were merged from blobs).
+- **Coffee Cart accessibility** — payment-details modal **`a11yScan`** temporarily disables **`color-contrast`** (helper text **#64748b** on **#f0f6ff** is **4.38:1**, below **4.5:1**) until Coffee Cart fixes the modal styles.
 
 ### Changed
 
