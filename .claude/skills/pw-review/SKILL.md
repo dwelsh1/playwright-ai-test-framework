@@ -27,6 +27,8 @@ Prioritize these outcomes:
 
 This skill is designed for **this specific Playwright framework**. All reviews must check compliance with the framework's mandatory rules in addition to general Playwright best practices. The full constitution is in `CLAUDE.md`. Key mandatory rules are summarized below — treat any violation as a critical issue unless clearly justified.
 
+Reviews must explicitly validate **Lean POM** usage where page objects are involved: readonly constructor locators, actions only, no `expect()` in POM classes, and feedback locators when the UI provides them (**No Feedback-Less Lean POM**).
+
 ### MUST rules
 
 - Import `test` and `expect` from `fixtures/pom/test-options.ts` only — never from `@playwright/test` in spec files

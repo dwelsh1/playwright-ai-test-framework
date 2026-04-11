@@ -5,6 +5,8 @@ description: Test file structure, tagging, step patterns, and import rules
 
 # Test Standards
 
+Functional and E2E specs exercise **Lean POM** through fixtures: keep **Given / When / Then** in `test.step()`, assert in the spec (not inside page objects), and use one primary tag per test as defined below.
+
 ## Imports
 
 **ALWAYS** import `test` and `expect` from the merged fixture file:

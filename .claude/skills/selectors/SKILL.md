@@ -5,6 +5,8 @@ description: Selector strategy and locator rules for Playwright page objects
 
 # Selector Strategy
 
+Locator choices must support **Lean POM** page objects: prefer roles, labels, and accessible names so constructor-assigned locators stay stable and readable. Exploration with `playwright-cli` informs those choices before you codify them.
+
 ## Exploration-First Workflow (Mandatory)
 
 Before writing any selectors or page object locators, explore the live application with `playwright-cli`. Selectors written from assumptions break. Selectors discovered from observation are accurate.

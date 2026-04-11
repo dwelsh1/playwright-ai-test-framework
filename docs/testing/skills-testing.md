@@ -76,6 +76,8 @@ Test these together:
 - `page-objects`
 - `data-strategy`
 
+**Lean POM shortcut:** focused prompts + automated smoke for a six-skill subset — [`skills-checklist-pack-1-lean-pom.md`](./skills-checklist-pack-1-lean-pom.md).
+
 ### Pack 2 — API and type safety
 
 Test these together:

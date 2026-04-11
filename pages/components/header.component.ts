@@ -7,6 +7,7 @@ export class HeaderComponent {
   readonly page: Page;
   readonly menuLink: Locator;
   readonly cartLink: Locator;
+  readonly githubLink: Locator;
   readonly ordersLink: Locator;
   readonly adminLink: Locator;
   private readonly navContainer: Locator;
@@ -18,6 +19,7 @@ export class HeaderComponent {
     this.logoutButton = page.getByRole('button', { name: /logout|sign out/i });
     this.menuLink = this.navContainer.getByRole('link', { name: /menu|home|coffees/i });
     this.cartLink = this.navContainer.getByRole('link', { name: /cart/i });
+    this.githubLink = page.getByRole('banner').getByRole('link', { name: /github/i });
     this.ordersLink = this.navContainer.getByRole('link', { name: /orders|history/i });
     this.adminLink = this.navContainer.getByRole('link', { name: /admin|dashboard/i });
   }

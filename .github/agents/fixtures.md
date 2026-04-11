@@ -10,6 +10,8 @@ metadata:
 
 # Fixtures and Dependency Injection
 
+**Lean POM** page objects are always injected through fixtures (`test.extend` / merged `test-options`), never constructed ad hoc in specs. Register new page objects in `fixtures/pom/` after their Lean POM shape is complete (including feedback locators where applicable).
+
 ## Core Rule
 
 **ALWAYS** use fixtures for dependency injection. **NEVER** instantiate page objects manually in test files.

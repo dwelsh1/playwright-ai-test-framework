@@ -78,6 +78,16 @@ The framework also includes tests for Sauce Demo, a publicly hosted demo app mai
 | `npx playwright test`               | Run all tests across all browsers                                                                             |
 | `npx playwright test --grep "@tag"` | Run tests matching a tag                                                                                      |
 
+### Playwright UI mode (interactive runner)
+
+Opens Playwright’s built-in **UI** so you can browse the tree, run or watch individual tests, inspect traces, and time-travel steps. Uses the same projects as batch runs (`user-setup` still runs before Coffee Cart browser tests).
+
+| Command                      | Description                                           |
+| ---------------------------- | ----------------------------------------------------- |
+| `npm run test:ui`            | Coffee Cart browser tests (`chromium` project)        |
+| `npm run test:ui:api`        | Coffee Cart API tests (`chromium-api`, single worker) |
+| `npm run test:ui:sauce-demo` | Sauce Demo suite (`sauce-demo` project)               |
+
 ### Interactive Test Selection
 
 Browse and pick tests from a searchable list instead of typing file paths or grep patterns. Powered by [playwright-cli-select](https://github.com/dennisbergevin/playwright-cli-select).
