@@ -163,14 +163,14 @@ Creates the directory where authentication storage state files are saved after l
 
 Once the container is running, VS Code works almost exactly the same as when you are working locally. The key differences:
 
-| What                    | Behaviour inside the container                                               |
-| ----------------------- | ---------------------------------------------------------------------------- |
-| **Terminal**            | Opens inside the container — commands run in Linux, not your local machine   |
-| **File edits**          | Changes are reflected on your local machine immediately (files are shared)   |
-| **Node.js / npm**       | The container's Node.js 22 is used — not anything installed on your machine  |
-| **Playwright browsers** | Pre-installed in `/ms-playwright` — `npm test` uses them automatically       |
-| **Extensions**          | Playwright, ESLint, and Prettier are pre-installed and pre-configured        |
-| **Git**                 | Works normally — commits from inside the container appear in your local repo |
+| What                    | Behaviour inside the container                                                       |
+| ----------------------- | ------------------------------------------------------------------------------------ |
+| **Terminal**            | Opens inside the container — commands run in Linux, not your local machine           |
+| **File edits**          | Changes are reflected on your local machine immediately (files are shared)           |
+| **Node.js / npm**       | The container's Node.js **22.22.2** is used — not anything installed on your machine |
+| **Playwright browsers** | Pre-installed in `/ms-playwright` — `npm test` uses them automatically               |
+| **Extensions**          | Playwright, ESLint, and Prettier are pre-installed and pre-configured                |
+| **Git**                 | Works normally — commits from inside the container appear in your local repo         |
 
 ---
 

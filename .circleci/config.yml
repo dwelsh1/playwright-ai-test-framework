@@ -10,7 +10,7 @@ orbs:
 jobs:
   lint:
     docker:
-      - image: cimg/node:22.0
+      - image: cimg/node:22.22.2
     steps:
       - checkout
       - node/install-packages:

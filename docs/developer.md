@@ -1027,7 +1027,7 @@ The `.devcontainer/` directory provides a one-click containerized development en
 **What it includes:**
 
 - Playwright Docker image with pre-installed browsers
-- Node.js 22
+- Node.js **22.22.2** (see **`.nvmrc`**)
 - VS Code extensions: Playwright, ESLint, Prettier
 - Named volumes for `node_modules` and CLI browser cache (avoids slow bind-mount I/O)
 - Auto-forwarded ports for the app (5273) and API (3002)

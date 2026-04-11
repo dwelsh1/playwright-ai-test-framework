@@ -91,7 +91,7 @@ install_node() {
     if [ -f ".nvmrc" ]; then
         nvm install
     else
-        nvm install 22
+        nvm install 22.22.2
     fi
     nvm use
 }

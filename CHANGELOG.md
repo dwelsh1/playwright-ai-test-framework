@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.8.4] - 2026-04-11
+
+### Changed
+
+- **Node.js** **22.22.2** — **`.nvmrc`**, **`package.json`** **`engines.node`** **`>=22.22.2`**, **Dev Container** Node feature, **CircleCI** **`cimg/node:22.22.2`** (lint job).
+- **GitHub Actions** — **`actions/setup-node`** uses **`node-version-file: .nvmrc`** on all jobs for a single source of truth.
+- **Docs** — onboarding, developer, dev-container, and scripts usage updated for **22.22.2**; **`scripts/setup.sh`** fallback **`nvm install`** version aligned.
+
+---
+
 ## [1.8.3] - 2026-04-11
 
 ### Changed

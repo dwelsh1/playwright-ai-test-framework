@@ -187,7 +187,7 @@ These scripts are used to set up a development environment from scratch. You typ
 
 **What it does:** A full one-shot developer environment setup. It:
 
-1. Installs Node.js 22 via `nvm` (or verifies it is already installed)
+1. Installs Node.js **22.22.2** (matches **`.nvmrc`**) via `nvm` (or verifies it is already installed)
 2. Runs `npm ci` to install all project dependencies
 3. Installs Playwright browsers (`npx playwright install --with-deps`)
 4. Runs `link-cli.sh` to put `playwright-cli` on `PATH`

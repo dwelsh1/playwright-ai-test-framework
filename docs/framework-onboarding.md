@@ -74,7 +74,7 @@ If you prefer to install everything on your machine directly:
 
 **You need:**
 
-- **Node.js 22+** — check with `node -v`
+- **Node.js 22.22.2+** — see **`.nvmrc`** and **`package.json`** **`engines`**; check with `node -v`
 - **VS Code** (recommended) or any editor with TypeScript support
 - **Git** — check with `git --version`
 

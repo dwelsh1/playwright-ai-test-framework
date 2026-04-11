@@ -22,7 +22,7 @@ npm run build:smart-reporter
 npm test
 ```
 
-**Dev Container:** Open in VS Code and click "Reopen in Container" for a pre-configured environment with browsers, Node.js 22, and extensions ready to go.
+**Dev Container:** Open in VS Code and click "Reopen in Container" for a pre-configured environment with browsers, Node.js **22.22.2** (see **`.nvmrc`**), and extensions ready to go.
 
 ## Commands
 
