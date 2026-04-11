@@ -154,6 +154,14 @@ const localReporters: PlaywrightTestConfig['reporter'] = [
   ['./tools/playwright-smart-reporter/dist/smart-reporter.js', getSmartReporterOptions()],
 ];
 
+// Linux CI (GitHub Actions, Circle) expects *-chromium-linux.png; baselines in repo were captured on Windows
+// (*-chromium-win32.png). Point screenshot paths at the committed Windows baselines so comparisons run instead of
+// failing on missing files. Prefer adding dedicated Linux baselines later if pixel drift becomes noisy.
+const chromiumSnapshotPathTemplateOnLinuxCi =
+  process.env['CI'] && process.platform === 'linux'
+    ? ('{testDir}/{testFilePath}-snapshots/{arg}-chromium-win32{ext}' as const)
+    : undefined;
+
 export default defineConfig({
   testDir: 'tests',
   testMatch: '**/*.spec.ts',
@@ -202,6 +210,9 @@ export default defineConfig({
       testDir: 'tests/coffee-cart',
       testIgnore: ['**/api/**'],
       grepInvert: /@responsive/,
+      ...(chromiumSnapshotPathTemplateOnLinuxCi
+        ? { snapshotPathTemplate: chromiumSnapshotPathTemplateOnLinuxCi }
+        : {}),
       use: {
         ...devices['Desktop Chrome'],
         storageState: StorageStatePaths.USER,
