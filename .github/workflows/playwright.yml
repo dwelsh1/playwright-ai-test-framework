@@ -204,9 +204,9 @@ jobs:
                "${APP_URL}/"
       - name: Build smart reporter
         run: npm run build:smart-reporter
+      # Swallow exit code so flaky failures stay in the HTML report without surfacing a GitHub "exit code 1" annotation.
       - name: Run quarantined tests
-        run: npx playwright test --project=chromium --grep "@flaky" --retries=3
-        continue-on-error: true
+        run: npx playwright test --project=chromium --grep "@flaky" --retries=3 || true
         env:
           ENABLE_AI_RECOMMENDATIONS: 'false'
       - uses: actions/upload-artifact@v6
