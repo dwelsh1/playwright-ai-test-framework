@@ -1,6 +1,6 @@
 {
   "name": "playwright-ai-test-framework",
-  "version": "1.8.4",
+  "version": "1.8.5",
   "description": "An enterprise-ready Playwright framework for AI-assisted test automation development with TypeScript",
   "main": "index.js",
   "repository": {

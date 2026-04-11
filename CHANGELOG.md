@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.8.5] - 2026-04-11
+
+### Changed
+
+- **GitHub Actions** — **`actions/checkout@v5`**, **`actions/setup-node@v5`**, **`actions/upload-artifact@v6`**, **`actions/download-artifact@v8`** so action runtimes use **Node 24** (addresses GitHub’s Node 20 deprecation warnings for `checkout` / `setup-node` / `upload-artifact` / `download-artifact`).
+- **`ci-cd`** skill + Copilot agent examples aligned with those pins.
+
+### Documentation
+
+- **`.github/workflows/playwright.yml`** — comments clarify **quarantine** runs only on **`push`** to **`main`** and **`schedule`**, not on **`pull_request`** (PR checks remain **lint** + **smoke**).
+
+---
+
 ## [1.8.4] - 2026-04-11
 
 ### Changed
