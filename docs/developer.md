@@ -976,15 +976,17 @@ The framework includes ready-to-use pipeline configs for both GitHub Actions and
 
 ### GitHub Actions (`.github/workflows/playwright.yml`)
 
-| Trigger            | What Runs                                                                 | Sharding |
-| ------------------ | ------------------------------------------------------------------------- | -------- |
-| Pull request       | Lint + **Sauce Demo** smoke (`npx playwright test --project=sauce-demo`)  | No       |
-| Push to main       | Lint + Sauce Demo smoke + **Coffee Cart** sharded regression + quarantine | 4 shards |
-| Nightly (2 AM UTC) | Same as push to `main` (lint, Sauce Demo smoke, Coffee Cart regression)   | 4 shards |
+| Trigger            | What Runs                                                                      | Sharding |
+| ------------------ | ------------------------------------------------------------------------------ | -------- |
+| Pull request       | Lint + **Sauce Demo** smoke by default; see **optional full regression** below | No\*     |
+| Push to main       | Lint + Sauce Demo smoke + **Coffee Cart** sharded regression + quarantine      | 4 shards |
+| Nightly (2 AM UTC) | Same as push to `main` (lint, Sauce Demo smoke, Coffee Cart regression)        | 4 shards |
 
-On **push** and **schedule**, regression shards upload blob reports; the `merge-reports` job (**skipped on pull requests**) merges blobs into **HTML**, **JSON** (`test-results/results.json`), and **JUnit** (`test-results/junit.xml`, via `PLAYWRIGHT_JUNIT_OUTPUT_FILE` and `npx playwright merge-reports --reporter junit`), then runs `scripts/detect-flaky.js` to identify tests that failed on attempt 1 but passed on retry. Results are written to `test-results/flaky-tests.json` and uploaded as the `flaky-report` artifact. Regression jobs clone [coffee-cart](https://github.com/dwelsh1/coffee-cart), install native build tools for `better-sqlite3`, and start the API plus Vite (`node server/index.js` and `npm run dev`) because Coffee Cart’s `npm start` script is Windows-only.
+\* **Optional full regression on PRs** — job `detect-full-regression` sets `run_full` when the PR **changes** any of `tests/**`, `playwright.config.ts`, or `.github/workflows/playwright.yml` (vs base branch), **or** when the PR has label **`ci:full`** or **`run-regression`**. When `run_full` is true, the workflow also runs the Coffee Cart regression matrix, **`merge-reports`**, and **`quarantine`** (same as push). The workflow listens for `pull_request` types **`labeled`** and **`unlabeled`** so adding or removing those labels triggers a new run without pushing a commit.
 
-The `quarantine` job runs tests tagged `@flaky` in isolation with `continue-on-error: true` — it never fails the build. Results are uploaded as `quarantine-report` (7-day retention).
+On **push**, **schedule**, and **pull_request** runs where full regression executes, regression shards upload blob reports; the `merge-reports` job merges blobs into **HTML**, **JSON** (`test-results/results.json`), and **JUnit** (`test-results/junit.xml`, via `PLAYWRIGHT_JUNIT_OUTPUT_FILE` and `npx playwright merge-reports --reporter junit`), then runs `scripts/detect-flaky.js` to identify tests that failed on attempt 1 but passed on retry. Results are written to `test-results/flaky-tests.json` and uploaded as the `flaky-report` artifact. Regression jobs clone [coffee-cart](https://github.com/dwelsh1/coffee-cart), install native build tools for `better-sqlite3`, and start the API plus Vite (`node server/index.js` and `npm run dev`) because Coffee Cart’s `npm start` script is Windows-only.
+
+The `quarantine` job runs tests tagged `@flaky` in isolation with `continue-on-error: true` at the job level — it never fails the build. Results are uploaded as `quarantine-report` (7-day retention).
 
 ### CircleCI (`.circleci/config.yml`)
 

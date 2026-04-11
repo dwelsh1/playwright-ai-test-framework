@@ -5,6 +5,8 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+    # `labeled` / `unlabeled` so adding or removing `ci:full` or `run-regression` re-runs the gate without a new commit.
+    types: [opened, synchronize, reopened, labeled, unlabeled]
   schedule:
     # Nightly regression at 2 AM UTC
     - cron: '0 2 * * *'
@@ -27,6 +29,53 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run lint
+
+  # Decides whether Coffee Cart regression + merge-reports + quarantine run for this workflow run.
+  # On pull_request: true when any of tests/**, playwright.config.ts, or .github/workflows/playwright.yml changed,
+  # or when the PR has label `ci:full` or `run-regression`. See README and docs/developer.md.
+  detect-full-regression:
+    name: Full regression gate (paths / labels)
+    runs-on: ubuntu-latest
+    outputs:
+      run_full: ${{ steps.decide.outputs.run_full }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: ${{ github.event_name == 'pull_request' && 0 || 1 }}
+      - uses: dorny/paths-filter@v3
+        id: paths
+        if: github.event_name == 'pull_request'
+        with:
+          filters: |
+            relevant:
+              - 'tests/**'
+              - 'playwright.config.ts'
+              - '.github/workflows/playwright.yml'
+      - name: Decide if full Coffee Cart regression should run
+        id: decide
+        run: |
+          set -e
+          ev="${{ github.event_name }}"
+          if [ "$ev" = "push" ] || [ "$ev" = "schedule" ]; then
+            echo "run_full=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          if [ "$ev" != "pull_request" ]; then
+            echo "run_full=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          paths_hit="${{ steps.paths.outputs.relevant }}"
+          labels="${{ join(github.event.pull_request.labels.*.name, ',') }}"
+          label_hit=false
+          case ",${labels}," in
+            *,ci:full,*) label_hit=true ;;
+            *,run-regression,*) label_hit=true ;;
+          esac
+          if [ "$paths_hit" = "true" ] || [ "$label_hit" = "true" ]; then
+            echo "run_full=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run_full=false" >> "$GITHUB_OUTPUT"
+          fi
 
   smoke:
     name: Smoke Tests (Sauce Demo)
@@ -66,8 +115,8 @@ jobs:
 
   regression:
     name: Regression Tests (shard ${{ matrix.shard }})
-    needs: lint
-    if: github.event_name == 'schedule' || github.event_name == 'push'
+    needs: [lint, detect-full-regression]
+    if: github.event_name == 'schedule' || github.event_name == 'push' || (github.event_name == 'pull_request' && needs.detect-full-regression.outputs.run_full == 'true')
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -121,9 +170,9 @@ jobs:
 
   merge-reports:
     name: Merge Reports
-    # Regression is skipped on pull_request; `!cancelled()` alone still runs this job, leaving no blob artifacts.
-    if: github.event_name == 'schedule' || github.event_name == 'push'
-    needs: regression
+    # Runs with regression: push/schedule always; pull_request only when detect-full-regression.outputs.run_full is true.
+    if: github.event_name == 'schedule' || github.event_name == 'push' || (github.event_name == 'pull_request' && needs.detect-full-regression.outputs.run_full == 'true')
+    needs: [regression, detect-full-regression]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
@@ -167,12 +216,12 @@ jobs:
           path: test-results/flaky-tests.json
           retention-days: 30
 
-  # Runs only on push to main and schedule — not on pull_request (PRs stay lint + smoke only).
+  # Same gate as regression: push/schedule always; pull_request when detect-full-regression.outputs.run_full is true.
   # continue-on-error: flaky suite may still exit 1 on steps; the workflow is allowed to succeed for merge.
   quarantine:
     name: Quarantined Tests (informational)
-    needs: lint
-    if: github.event_name == 'schedule' || github.event_name == 'push'
+    needs: [lint, detect-full-regression]
+    if: github.event_name == 'schedule' || github.event_name == 'push' || (github.event_name == 'pull_request' && needs.detect-full-regression.outputs.run_full == 'true')
     runs-on: ubuntu-latest
     continue-on-error: true
     steps:
