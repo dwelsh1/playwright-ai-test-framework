@@ -10,7 +10,7 @@ Read this skill when:
 - Onboarding a new application into the framework
 - Removing the Coffee Cart or Sauce Demo demo apps
 - Adding, renaming, or removing products/routes/messages in an existing app's enums
-- Generating the full set of files for a new app area (enums → config → factory → POMs → fixtures → project)
+- Generating the full set of files for a new app area (enums → config → factory → Lean POM page objects → fixtures → project)
 
 ---
 

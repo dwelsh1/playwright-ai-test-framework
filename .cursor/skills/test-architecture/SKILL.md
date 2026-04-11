@@ -86,7 +86,7 @@ test('user can register and see dashboard', { tag: '@e2e' }, async ({ page }) =>
 - One page or feature per test file
 - Test user interactions: clicks, fills, selects
 - Validate UI feedback: errors, success messages, state changes
-- Use page objects for reusable interactions
+- Use Lean POM page objects for reusable interactions
 
 ### E2E Tests (`@e2e`)
 

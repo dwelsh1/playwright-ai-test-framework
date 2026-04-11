@@ -2,7 +2,7 @@
 
 An enterprise-ready Playwright test automation framework designed for AI-assisted development with TypeScript.
 
-Built with **Page Object Model**, **fixture-based dependency injection**, **Zod schema validation**, and **35 AI skills** that guide Claude and Cursor to generate code following the framework's conventions.
+Built with **Lean POM** (Page Object Model), **fixture-based dependency injection**, **Zod schema validation**, and **35 AI skills** that guide Claude and Cursor to generate code following the framework's conventions.
 
 > **Smart Reporter v1.7.0** — now includes percentile duration metrics (p50/p90/p95), defect leakage tracking, bulk artifact ZIP download, HAR export, console log capture, and browser/build context filters.
 
@@ -223,14 +223,14 @@ Desktop browser projects use **`grepInvert: /@responsive/`** so layout-only mobi
 │   │   └── helper-fixture.ts
 │   ├── network/                         # Network mocking fixture
 │   │   └── network-mock-fixture.ts
-│   └── pom/                             # Page object fixtures
-│       ├── page-object-fixture.ts       # POM registration
+│   └── pom/                             # Lean POM fixture registration
+│       ├── page-object-fixture.ts       # Lean POM fixture registration
 │       └── test-options.ts              # Single import point (test, expect)
 ├── helpers/                             # Utility functions
 │   ├── coffee-cart/
 │   └── util/
-├── pages/                               # Page objects
-│   ├── coffee-cart/                      # App-specific page objects
+├── pages/                               # Lean POM page objects
+│   ├── coffee-cart/                      # App-specific Lean POM pages
 │   └── components/                      # Reusable UI components
 ├── test-data/
 │   ├── factories/coffee-cart/           # Dynamic data (Faker)
@@ -276,7 +276,7 @@ API specs use the **`api` fixture** (`fixtures/api/pw-api-fixture.ts`), which wr
 
 ## AI Skills
 
-The framework includes **35 prescriptive AI skills** in `.claude/skills/` and `.cursor/skills/` that guide AI assistants to generate code matching the framework's conventions. The same guidance is available to **GitHub Copilot** as [custom agents](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/create-custom-agents) under `.github/agents/` (regenerate with `npm run sync:github-agents` after editing any skill). Skills cover selectors, page objects, fixtures, test standards, API testing, accessibility, visual regression, debugging, CI/CD, and more.
+The framework includes **35 prescriptive AI skills** in `.claude/skills/` and `.cursor/skills/` that guide AI assistants to generate code matching the framework's conventions. The same guidance is available to **GitHub Copilot** as [custom agents](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/create-custom-agents) under `.github/agents/` (regenerate with `npm run sync:github-agents` after editing any skill). Skills cover selectors, Lean POM, fixtures, test standards, API testing, accessibility, visual regression, debugging, CI/CD, and more.
 
 One of the newer workflow skills is `trust-but-verify`, which is designed for post-implementation manual verification of UI changes. It reviews the branch diff, PR description, and expected behavior, uses `playwright-cli` to verify the live app, and writes a verification report to `docs/verification/`. See `docs/verification/README.md` for naming, screenshot, and commit guidance.
 
@@ -299,14 +299,14 @@ Both of these are "start here" docs for Jr QA Engineers, but they serve differen
 
 | Document                                                                            | Audience        | Content                                                                                          |
 | ----------------------------------------------------------------------------------- | --------------- | ------------------------------------------------------------------------------------------------ |
-| [Developer Guide](docs/developer.md)                                                | New developers  | Architecture, patterns, how to add tests and page objects                                        |
+| [Developer Guide](docs/developer.md)                                                | New developers  | Architecture, patterns, how to add tests and Lean POM page objects                               |
 | [Framework Onboarding](docs/framework-onboarding.md)                                | Jr QA Engineers | Step-by-step walkthrough including a11y and visual demos                                         |
 | [Dev Container Guide](docs/usage/dev-container.md)                                  | Jr QA Engineers | Step-by-step VS Code Dev Container setup, daily use, and troubleshooting                         |
 | [Docker Usage Guide](docs/usage/docker-usage.md)                                    | Jr QA Engineers | What Docker is, how CI uses it, the Playwright image, and the Dockerfile explained               |
 | [Test Generator Usage](docs/usage/test-generator-usage.md)                          | Jr QA Engineers | Step-by-step guide to scaffolding tests with `generate:test`                                     |
 | [Debugging Failing Tests](docs/usage/debugging-failing-tests.md)                    | Jr QA Engineers | Systematic guide to diagnosing and fixing test failures                                          |
 | [playwright-cli Exploration Guide](docs/usage/playwright-cli-exploration.md)        | Jr QA Engineers | How to explore pages and discover selectors before writing                                       |
-| [Creating a Page Object](docs/usage/creating-a-page-object.md)                      | Jr QA Engineers | Step-by-step guide to building and registering page objects                                      |
+| [Creating a Lean POM page object](docs/usage/creating-a-page-object.md)             | Jr QA Engineers | Step-by-step guide to building and registering Lean POM page objects                             |
 | [Visual Regression — Managing Baselines](docs/usage/visual-regression-baselines.md) | Jr QA Engineers | Creating, updating, and troubleshooting visual baselines                                         |
 | [Smart Reporter Usage Guide](docs/usage/playwright-smart-reporter.md)               | Jr QA Engineers | Reading reports, trace viewer, AI suggestions, and history                                       |
 | [Test Data Factories](docs/usage/test-data-factories.md)                            | Jr QA Engineers | Factories, Faker, static JSON, overrides, and when to use each                                   |

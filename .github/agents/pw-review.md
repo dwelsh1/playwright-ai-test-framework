@@ -256,7 +256,7 @@ These skills contain the detailed rules being reviewed against. Read them when i
 | `selectors`      | Locator priority, forbidden selectors, conversion guide |
 | `test-standards` | Tagging rules, `test.step()`, imports, Given/When/Then  |
 | `fixtures`       | Fixture injection, `test.extend()`, merging             |
-| `page-objects`   | POM pattern, readonly locators, registration            |
+| `page-objects`   | Lean POM, readonly locators, registration               |
 | `type-safety`    | Zod schemas, `z.strictObject()`, no-any enforcement     |
 | `data-strategy`  | Factories vs static data, when to use Faker             |
 | `api-testing`    | `api` fixture, schema validation, helper fixtures       |

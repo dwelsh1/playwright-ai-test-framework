@@ -1,6 +1,6 @@
 ---
 name: page-objects
-description: "Page Object Model pattern, readonly constructor locators, component composition, and registration Framework skill ID: page-objects. Canonical source: .cursor/skills/page-objects/SKILL.md. Regenerate this agent: npm run sync:github-agents"
+description: "Lean POM — readonly constructor locators, component composition, fixture registration, tests own assertions Framework skill ID: page-objects. Canonical source: .cursor/skills/page-objects/SKILL.md. Regenerate this agent: npm run sync:github-agents"
 metadata:
   framework_skill_id: page-objects
   source_path: .cursor/skills/page-objects/SKILL.md
@@ -8,7 +8,9 @@ metadata:
 
 > **GitHub Copilot custom agent** — Synced from Agent Skills at `.cursor/skills/page-objects/SKILL.md`. Regenerate: `npm run sync:github-agents`.
 
-# Page Object Model
+# Page Object Model (Lean POM)
+
+**Lean POM** in this framework means: **readonly** locators assigned in the **constructor** (lazy Playwright locators), **action** methods that encode real user steps, **assertions only in specs** (never `expect()` inside page objects), **components** for shared UI, and **no meaningless wrappers** around a single Playwright call. Form and CRUD pages must include feedback/validation locators — see the **No Feedback-Less Lean POM** rule below.
 
 ## File Locations
 
@@ -19,7 +21,7 @@ metadata:
 | Page objects | `pages/{area}/`     | `[name].page.ts`      |
 | Components   | `pages/components/` | `[name].component.ts` |
 
-## Page Object Pattern
+## Lean POM structure
 
 Organize locators in three sections with comments. This makes the page object self-documenting and ensures feedback/validation locators are never overlooked.
 
@@ -145,7 +147,7 @@ await loginPage.login(email, password);
 await expect(loginPage.page).toHaveURL(/\/dashboard/);
 ```
 
-**Exception:** `waitForURL()` or `waitForResponse()` inside POM methods is fine -- those are synchronization, not assertion.
+**Exception:** `waitForURL()` or `waitForResponse()` inside Lean POM methods is fine -- those are synchronization, not assertion.
 
 ### Fluent Navigation
 
@@ -276,10 +278,10 @@ Steps:
 
 This is not optional. The `No Substitute UI Exploration` rule forbids using any other browser tool.
 
-### Forbidden Pattern — No Feedback Locators
+### No Feedback-Less Lean POM rule
 
 ```typescript
-// FORBIDDEN: violates No Feedback-Less POM rule
+// FORBIDDEN: violates No Feedback-Less Lean POM rule
 // A page object for a form with no feedback message locators
 export class LoginPage {
   readonly page: Page;

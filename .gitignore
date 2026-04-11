@@ -41,6 +41,9 @@ yarn-error.log*
 .idea/
 .vscode/
 
+# Claude Code (local machine paths / permissions — do not commit)
+.claude/settings.local.json
+
 # OS
 **/.DS_Store
 **/Thumbs.db

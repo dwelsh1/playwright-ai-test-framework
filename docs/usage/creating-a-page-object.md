@@ -1,8 +1,8 @@
-# Creating a Page Object
+# Creating a Lean POM page object
 
 **Audience:** Jr QA Engineers adding their first page objects to the framework.
 
-A page object is a TypeScript class that represents one page or component in the app. It holds the selectors for that page and the actions a user can perform on it. Tests use the page object instead of calling Playwright directly — which means if the app's HTML changes, you fix it in one place, not in every test.
+A **Lean POM** page object is a TypeScript class that represents one page or component in the app. It holds the selectors for that page and the actions a user can perform on it. Tests use the page object instead of calling Playwright directly — which means if the app's HTML changes, you fix it in one place, not in every test.
 
 This guide walks through building a page object from scratch, step by step, using a real example.
 

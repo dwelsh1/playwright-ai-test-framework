@@ -117,6 +117,10 @@ reporter: process.env.CI
   : [['html', { open: 'never' }]],
 ```
 
+## This repository (`playwright-ai-test-framework`)
+
+GitHub Actions behavior is defined in `.github/workflows/playwright.yml` (source of truth). In short: **pull requests** run lint plus `npx playwright test --project=sauce-demo` (public Sauce Demo). **Pushes to `main` and the nightly schedule** add Coffee Cart regression (four shards, Coffee Cart cloned and started in the container), `merge-reports`, and quarantine. The generic examples below are patterns; align copy-paste snippets with that workflow when editing this repo.
+
 ## Test Suites by Tag
 
 Run different test suites at different stages:

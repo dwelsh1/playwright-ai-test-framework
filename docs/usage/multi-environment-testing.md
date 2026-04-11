@@ -230,21 +230,7 @@ export enum Credentials {
 
 ## 8. CI pipeline and environments
 
-The GitHub Actions and CircleCI pipelines run tests in different environments automatically:
-
-**On every push/PR:**
-
-- `npm test` runs against `dev` (using the local server via `webServer`)
-
-**On nightly schedule:**
-
-- `npm run test:env:staging` runs the full suite against staging
-
-**On release:**
-
-- `npm run test:env:production` runs smoke tests against production
-
-The CI pipelines inject environment variables (`APP_URL`, `API_URL`, credentials) from the CI secrets store — they do not rely on the `.env` files. The `.env` files are for local development only.
+**What the checked-in workflows do today** is summarized in `docs/developer.md` → _CI/CD_ (for example, GitHub Actions pull requests run lint plus the **`sauce-demo`** project against the public demo URL; Coffee Cart suites run on **`main`** push and nightly with a cloned app and `APP_URL` / `API_URL` defaults). The notes below describe **patterns** for wiring `TEST_ENV` and secrets if you extend the pipelines — they are not a line-by-line description of every job.
 
 To override which environment a CI run targets, set `TEST_ENV` in the workflow file:
 
