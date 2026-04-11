@@ -11,12 +11,20 @@ export class MenuPage {
   readonly header: HeaderComponent;
   readonly promotion: PromotionComponent;
   readonly coffeeList: Locator;
+  readonly proceedToCheckoutButton: Locator;
 
   constructor(page: Page) {
     this.page = page;
     this.header = new HeaderComponent(page);
     this.promotion = new PromotionComponent(page);
-    this.coffeeList = page.getByRole('list').filter({ has: page.getByRole('heading') });
+    // Product grid only: nav lists can include headings/links but not "Add … to cart" actions.
+    this.coffeeList = page
+      .getByRole('list')
+      .filter({ has: page.getByRole('heading') })
+      .filter({ has: page.getByRole('button', { name: /Add .+ to cart/i }) });
+    this.proceedToCheckoutButton = page
+      .getByRole('banner')
+      .getByRole('button', { name: /proceed to checkout/i });
   }
 
   /**
@@ -24,7 +32,10 @@ export class MenuPage {
    */
   getCoffeeCard(coffeeName: string): Locator {
     return this.coffeeList.getByRole('listitem').filter({
-      has: this.page.getByRole('button', { name: new RegExp(`Add ${coffeeName} to cart`, 'i') }),
+      // `has` is evaluated under each listitem; do not pass a locator rooted at `coffeeList` or the filter chains incorrectly.
+      has: this.page.getByRole('button', {
+        name: new RegExp(`Add ${coffeeName} to cart`, 'i'),
+      }),
     });
   }
 
@@ -46,7 +57,9 @@ export class MenuPage {
    * Get add to cart button for a coffee
    */
   getAddToCartButton(coffeeName: string): Locator {
-    return this.page.getByRole('button', { name: new RegExp(`Add ${coffeeName} to cart`, 'i') });
+    return this.coffeeList.getByRole('button', {
+      name: new RegExp(`Add ${coffeeName} to cart`, 'i'),
+    });
   }
 
   /**
@@ -54,6 +67,30 @@ export class MenuPage {
    */
   getCoffeeRecipe(coffeeName: string): Locator {
     return this.getCoffeeCard(coffeeName).getByRole('img', { name: coffeeName });
+  }
+
+  /**
+   * Accessible region for ingredient lines (named generic under the coffee card)
+   */
+  getCoffeeIngredientRegion(coffeeName: string): Locator {
+    return this.getCoffeeCard(coffeeName).getByRole('generic', { name: coffeeName, exact: true });
+  }
+
+  /**
+   * Wait until the product grid has rendered (avoids asserting on an empty shell)
+   */
+  async waitForMenuHydrated(): Promise<void> {
+    await this.coffeeList
+      .getByRole('listitem')
+      .first()
+      .waitFor({ state: 'visible', timeout: 20_000 });
+  }
+
+  /**
+   * Footer checkout control label (includes running total)
+   */
+  async readCheckoutSummaryText(): Promise<string> {
+    return (await this.proceedToCheckoutButton.textContent())?.trim() ?? '';
   }
 
   /**

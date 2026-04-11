@@ -1,4 +1,5 @@
 import { expect, test } from '../../../fixtures/pom/test-options';
+import { formatPrice } from '../../../helpers/coffee-cart/price.helper';
 import { generateUserCredentials } from '../../../test-data/factories/coffee-cart/checkout.factory';
 import { CoffeeNames } from '../../../enums/coffee-cart/coffee-cart';
 import coffeeMenuData from '../../../test-data/static/coffee-cart/coffeeMenu.json' assert { type: 'json' };
@@ -13,7 +14,61 @@ test.describe('Menu Page', () => {
     // Navigate to menu
     await menuPage.goto();
     await expect(page).toHaveURL(/\/(?:menu|home|$)/);
+    await menuPage.waitForMenuHydrated();
   });
+
+  test(
+    'should hydrate menu with nav, product cards, and ingredient regions',
+    { tag: '@sanity' },
+    async ({ menuPage, header }) => {
+      const espresso = coffeeMenuData.coffees.find((c) => c.name === CoffeeNames.ESPRESSO)!;
+      const cappuccino = coffeeMenuData.coffees.find((c) => c.name === CoffeeNames.CAPPUCCINO)!;
+
+      await test.step('GIVEN user is logged in on the menu route', async () => {
+        await expect(menuPage.page).toHaveURL(/\/(?:menu|home|$)/);
+      });
+
+      await test.step('WHEN the menu list is shown', async () => {
+        await expect(menuPage.coffeeList).toBeVisible();
+      });
+
+      await test.step('THEN top navigation shows menu and cart with count', async () => {
+        await expect(header.menuLink).toBeVisible();
+        await expect(header.cartLink).toBeVisible();
+        await expect(header.cartLink).toContainText(/cart\s*\(\d+\)/i);
+      });
+
+      await test.step('THEN GitHub link points at /github when the build exposes it', async () => {
+        await expect(async () => {
+          if ((await header.githubLink.count()) === 0) {
+            return;
+          }
+          await expect(header.githubLink).toBeVisible();
+          await expect(header.githubLink).toHaveAttribute('href', /\/github/);
+        }).toPass({ timeout: 5_000 });
+      });
+
+      await test.step('THEN known coffees show title with price and recipe content', async () => {
+        for (const coffee of [espresso, cappuccino]) {
+          const title = menuPage.getCoffeeTitle(coffee.name);
+          await expect(title).toBeVisible();
+          await expect(title).toContainText(coffee.name);
+          await expect(title).toContainText(formatPrice(coffee.price));
+          const firstIngredient = coffee.recipe[0]!.name;
+          await expect(async () => {
+            const region = menuPage.getCoffeeIngredientRegion(coffee.name);
+            if ((await region.count()) > 0) {
+              // Named ingredient region (e.g. public menu); local fork may use image-only cards instead.
+              // eslint-disable-next-line playwright/no-conditional-expect -- branch matches one of two supported DOM shapes
+              await expect(region).toContainText(firstIngredient, { ignoreCase: true });
+              return;
+            }
+            await expect(menuPage.getCoffeeRecipe(coffee.name)).toBeVisible();
+          }).toPass({ timeout: 5_000 });
+        }
+      });
+    },
+  );
 
   test('should load menu page with coffees', { tag: '@smoke' }, async ({ menuPage }) => {
     await test.step('GIVEN user is logged in', async () => {
@@ -30,6 +85,30 @@ test.describe('Menu Page', () => {
       await expect(card).toBeVisible();
     });
   });
+
+  test(
+    'should update cart link and checkout summary after adding from menu',
+    { tag: '@sanity' },
+    async ({ menuPage, header }) => {
+      const coffee = coffeeMenuData.coffees.find((c) => c.name === CoffeeNames.AMERICANO)!;
+
+      await test.step('GIVEN menu is hydrated with an empty cart', async () => {
+        await expect(header.cartLink).toContainText('(0)');
+        const initialSummary = await menuPage.readCheckoutSummaryText();
+        expect(initialSummary).toMatch(/Total:\s*\$0\.00/);
+      });
+
+      await test.step('WHEN user adds one item from the menu', async () => {
+        await menuPage.addToCart(coffee.name);
+      });
+
+      await test.step('THEN cart link and checkout summary reflect the line total', async () => {
+        await expect(header.cartLink).toContainText('(1)');
+        const summary = await menuPage.readCheckoutSummaryText();
+        expect(summary).toContain(formatPrice(coffee.price));
+      });
+    },
+  );
 
   test('should add coffee to cart from menu', { tag: '@smoke' }, async ({ menuPage }) => {
     const coffeeName = coffeeMenuData.coffees[0]!.name;

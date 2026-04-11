@@ -79,6 +79,7 @@ To match the full **Pack 1** list in [skills-testing.md](./skills-testing.md), a
 
 ## See also
 
+- [Menu skill test walkthrough](./menu-skill-test-walkthrough.md) — `playwright-cli` menu exploration, implementation prompt, `pw-review` second pass
 - [Skills testing guide](./skills-testing.md) — full packs, skill-by-skill table, `skill-creator` sequence
 - [Skills usage guide](../usage/skills-guide.md) — when to use which skill
 - [Skill prompt examples](../usage/skill-prompt-examples.md) — copy-paste prompts
