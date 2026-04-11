@@ -280,6 +280,15 @@ Desktop browser projects use **`grepInvert: /@responsive/`** so layout-only mobi
 
 Environment variables are loaded from `env/.env.dev` via dotenv. Auth setup runs automatically before tests — see [Developer Guide](docs/developer.md#authentication--storage-state) for details.
 
+### GitHub Actions: optional full regression on pull requests
+
+By default, **pull requests** only run **lint** and **Sauce Demo smoke** (see [Developer Guide — CI/CD](docs/developer.md)). You can run the same **Coffee Cart** path as `push` to `main` (sharded regression, **merge-reports**, **quarantine**) on a PR in either of these cases:
+
+1. **Labels** — add **`ci:full`** or **`run-regression`** to the PR (GitHub re-runs the workflow on label add/remove because `pull_request` includes `labeled` / `unlabeled`).
+2. **Paths** — the PR touches **`tests/**`**, **`playwright.config.ts`**, or **`.github/workflows/playwright.yml`\*\* (compared to the base branch).
+
+If neither applies, regression jobs stay skipped so typo-only PRs stay fast. Source of truth: `.github/workflows/playwright.yml` job **`detect-full-regression`**.
+
 ### API debugging ([pw-api-plugin](https://github.com/sclavijosuero/pw-api-plugin))
 
 API specs use the **`api` fixture** (`fixtures/api/pw-api-fixture.ts`), which wraps **[pw-api-plugin](https://github.com/sclavijosuero/pw-api-plugin)** so you can see rich request/response cards in the Playwright UI, **Trace Viewer**, and (optionally) the **HTML report**. By default **`LOG_API_UI`** is off so API-only projects do not launch a browser; turn it on when debugging. See [API logging with `LOG_API_UI`](docs/developer.md#api-logging-with-log_api_ui) and `.env.example` for **`LOG_API_REPORT`** and **`COLOR_SCHEME`**.

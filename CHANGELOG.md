@@ -2,6 +2,10 @@
 
 ## [1.8.5] - 2026-04-11
 
+### Added
+
+- **GitHub Actions** — optional **full Coffee Cart regression** on **`pull_request`**: job **`detect-full-regression`** ( **`dorny/paths-filter@v3`** + label check) sets **`run_full`** when the PR changes **`tests/**`**, **`playwright.config.ts`**, or **`.github/workflows/playwright.yml`**, or when the PR has label **`ci:full`** or **`run-regression`**. **`pull_request`** now includes **`labeled`** / **`unlabeled`** so label-only reruns work. **`merge-reports`** **`needs`** **`detect-full-regression`** when **`if`\*\* references its output.
+
 ### Changed
 
 - **GitHub Actions** — **`actions/checkout@v5`**, **`actions/setup-node@v5`**, **`actions/upload-artifact@v6`**, **`actions/download-artifact@v8`** so action runtimes use **Node 24** (addresses GitHub’s Node 20 deprecation warnings for `checkout` / `setup-node` / `upload-artifact` / `download-artifact`).
@@ -9,7 +13,8 @@
 
 ### Documentation
 
-- **`.github/workflows/playwright.yml`** — comments clarify **quarantine** runs only on **`push`** to **`main`** and **`schedule`**, not on **`pull_request`** (PR checks remain **lint** + **smoke**).
+- **`.github/workflows/playwright.yml`** — comments describe **quarantine** / **regression** gating (default PR: **lint** + **smoke**; full suite when **`detect-full-regression`** output is true).
+- **`README.md`**, **`docs/developer.md`**, and **`ci-cd`** skills (`.claude` / `.cursor`) — document optional PR full regression (paths + labels).
 
 ---
 
