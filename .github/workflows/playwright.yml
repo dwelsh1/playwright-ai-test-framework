@@ -186,11 +186,14 @@ jobs:
           path: all-blob-reports
           pattern: blob-report-*
           merge-multiple: true
-      - name: Merge blob reports into HTML and JSON
+      - name: Merge blob reports into HTML, JSON, and JUnit
+        env:
+          PLAYWRIGHT_JUNIT_OUTPUT_FILE: test-results/junit.xml
         run: |
           mkdir -p test-results
           npx playwright merge-reports --reporter html ./all-blob-reports
           npx playwright merge-reports --reporter json ./all-blob-reports > test-results/results.json
+          npx playwright merge-reports --reporter junit ./all-blob-reports
       - name: Detect flaky tests
         run: node scripts/detect-flaky.js
         continue-on-error: true
@@ -204,6 +207,7 @@ jobs:
         with:
           name: regression-junit
           path: test-results/junit.xml
+          if-no-files-found: warn
           retention-days: 30
       - uses: actions/upload-artifact@v6
         if: always()
