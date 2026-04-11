@@ -2,6 +2,10 @@
 
 ## [1.8.5] - 2026-04-11
 
+### Fixed
+
+- **GitHub Actions** — **`merge-reports`** now runs **`npx playwright merge-reports --reporter junit`** with **`PLAYWRIGHT_JUNIT_OUTPUT_FILE: test-results/junit.xml`** so the **`regression-junit`** artifact upload finds the merged JUnit file (previously only HTML + JSON were merged from blobs).
+
 ### Changed
 
 - **GitHub Actions** — **`actions/checkout@v5`**, **`actions/setup-node@v5`**, **`actions/upload-artifact@v6`**, **`actions/download-artifact@v8`** so action runtimes use **Node 24** (addresses GitHub’s Node 20 deprecation warnings for `checkout` / `setup-node` / `upload-artifact` / `download-artifact`).

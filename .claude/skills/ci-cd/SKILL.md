@@ -101,6 +101,8 @@ jobs:
           pattern: blob-report-*
           merge-multiple: true
       - run: npx playwright merge-reports --reporter html ./all-blob-reports
+      # Merged JUnit: set PLAYWRIGHT_JUNIT_OUTPUT_FILE (see repo .github/workflows/playwright.yml merge-reports job).
+      - run: PLAYWRIGHT_JUNIT_OUTPUT_FILE=test-results/junit.xml npx playwright merge-reports --reporter junit ./all-blob-reports
       - uses: actions/upload-artifact@v6
         with:
           name: playwright-report
