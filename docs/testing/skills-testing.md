@@ -87,6 +87,8 @@ Test these together:
 - `test-architecture`
 - `data-strategy`
 
+**Checklist:** prompts + pass criteria — [`skills-checklist-pack-2-api-type-safety.md`](./skills-checklist-pack-2-api-type-safety.md).
+
 ### Pack 3 — Review and debugging
 
 Test these together:
@@ -97,6 +99,8 @@ Test these together:
 - `flaky-tests`
 - `advanced-assertions`
 
+**Checklist:** prompts + pass criteria — [`skills-checklist-pack-3-review-debugging.md`](./skills-checklist-pack-3-review-debugging.md).
+
 ### Pack 4 — Workflow and repo operations
 
 Test these together:
@@ -106,6 +110,8 @@ Test these together:
 - `app-onboarding`
 - `migration-guides`
 - `skill-creator`
+
+**Checklist:** prompts + pass criteria + negative checks — [`skills-checklist-pack-4-workflow-repo.md`](./skills-checklist-pack-4-workflow-repo.md).
 
 ---
 
