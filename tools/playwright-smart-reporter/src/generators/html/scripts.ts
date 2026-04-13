@@ -5,21 +5,47 @@ import { generateComparisonScript } from '../comparison-generator';
  * Generate all JavaScript for the new app-shell layout
  */
 export function generateScripts(
-  testsJson: string,
   includeGallery: boolean,
   includeComparison: boolean,
   enableTraceViewer: boolean,
   enableHistoryDrilldown: boolean,
-  historyRunSnapshotsJson: string,
-  statsData: string,
-  reporterOptionsJson: string,
 ): string {
-  return `    const tests = ${testsJson};
-    const stats = ${statsData};
-    const reporterOptions = ${reporterOptionsJson};
+  return `    function srReadEmbeddedJson(id, fallback) {
+      try {
+        const el = document.getElementById(id);
+        if (!el) return fallback;
+        const raw = el.textContent;
+        if (raw == null || raw.trim() === '') return fallback;
+        return JSON.parse(raw);
+      } catch (e) {
+        console.error('[smart-reporter] Embedded JSON parse failed: ' + id, e);
+        return fallback;
+      }
+    }
+    const tests = srReadEmbeddedJson('sr-embed-tests', []);
+    const stats = srReadEmbeddedJson('sr-embed-stats', {
+      passed: 0,
+      failed: 0,
+      skipped: 0,
+      flaky: 0,
+      slow: 0,
+      newTests: 0,
+      total: 0,
+      passRate: 0,
+      gradeA: 0,
+      gradeB: 0,
+      gradeC: 0,
+      gradeD: 0,
+      gradeF: 0,
+      totalDuration: 0,
+      summaries: [],
+    });
+    const reporterOptions = srReadEmbeddedJson('sr-embed-reporter-options', {});
     const traceViewerEnabled = ${enableTraceViewer ? 'true' : 'false'};
     const historyDrilldownEnabled = ${enableHistoryDrilldown ? 'true' : 'false'};
-    const historyRunSnapshots = ${historyRunSnapshotsJson};
+    const historyRunSnapshots = srReadEmbeddedJson('sr-embed-history-snapshots', {});
+    const screenshotsData = srReadEmbeddedJson('sr-embed-screenshots', {});
+    const networkLogsData = srReadEmbeddedJson('sr-embed-network', {});
     const detailsBodyCache = new WeakMap();
     let currentView = 'overview';
     let selectedTestId = null;
@@ -1606,8 +1632,85 @@ export function generateScripts(
 	      });
 	    }
 
+    /**
+     * Capture-phase delegation for primary navigation controls. Some environments
+     * (strict CSP script-src-attr, certain embedded browsers, or broken inline script
+     * parse) do not run legacy onclick attributes; delegation keeps nav responsive.
+     */
+    function initGlobalNavClickDelegation() {
+      document.addEventListener(
+        'click',
+        (e) => {
+          const el = e.target instanceof Element ? e.target : null;
+          if (!el) return;
+
+          const navItem = el.closest('.nav-item');
+          if (navItem && navItem.dataset && navItem.dataset.view) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            switchView(navItem.dataset.view);
+            return;
+          }
+
+          const mini = el.closest('.mini-stat');
+          if (mini) {
+            if (mini.classList.contains('passed')) {
+              e.preventDefault();
+              e.stopImmediatePropagation();
+              filterTests('passed');
+              return;
+            }
+            if (mini.classList.contains('failed')) {
+              e.preventDefault();
+              e.stopImmediatePropagation();
+              filterTests('failed');
+              return;
+            }
+            if (mini.classList.contains('flaky')) {
+              e.preventDefault();
+              e.stopImmediatePropagation();
+              filterTests('flaky');
+              return;
+            }
+          }
+
+          const ring = el.closest('.progress-ring-container.clickable');
+          if (ring) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            switchView('tests');
+            return;
+          }
+
+          const crumb = el.closest('.breadcrumb[data-view]');
+          if (crumb && crumb.dataset && crumb.dataset.view) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            switchView(crumb.dataset.view);
+            return;
+          }
+
+          if (el.closest('.sidebar-toggle')) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            toggleSidebar();
+            return;
+          }
+
+          if (el.closest('.search-trigger')) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            openSearch();
+            return;
+          }
+        },
+        true,
+      );
+    }
+
     // Run on page load
     window.addEventListener('DOMContentLoaded', () => {
+      initGlobalNavClickDelegation();
       scrollChartsToRight();
       initHistoryDrilldown();
       initCollapsibleGroups(); // Phase 2: restore collapse state from localStorage
@@ -2256,36 +2359,38 @@ ${includeComparison ? `    // Comparison functions\n${generateComparisonScript()
 
       if (!hasBranchFilter && !hasEnvFilter) {
         document.querySelectorAll('.bar-group').forEach(el => {
-          (el as HTMLElement).style.opacity = '';
-          (el as HTMLElement).style.pointerEvents = '';
+          if (!(el instanceof HTMLElement)) return;
+          el.style.opacity = '';
+          el.style.pointerEvents = '';
         });
         updateTrendFilterBanner(null);
         return;
       }
 
       document.querySelectorAll('.bar-group').forEach(el => {
-        const barBranch = (el as HTMLElement).dataset.branch ?? '';
-        const barEnv = (el as HTMLElement).dataset.env ?? '';
+        if (!(el instanceof HTMLElement)) return;
+        const barBranch = el.dataset.branch ?? '';
+        const barEnv = el.dataset.env ?? '';
         // Current run bar has empty data attributes — always shown
         const isCurrent = barBranch === '' && barEnv === '';
         const matchesBranch = !hasBranchFilter || isCurrent || branchFilters.includes(barBranch);
         const matchesEnv = !hasEnvFilter || isCurrent || envFilters.includes(barEnv);
         if (matchesBranch && matchesEnv) {
-          (el as HTMLElement).style.opacity = '';
-          (el as HTMLElement).style.pointerEvents = '';
+          el.style.opacity = '';
+          el.style.pointerEvents = '';
         } else {
-          (el as HTMLElement).style.opacity = '0.12';
-          (el as HTMLElement).style.pointerEvents = 'none';
+          el.style.opacity = '0.12';
+          el.style.pointerEvents = 'none';
         }
       });
 
-      const parts: string[] = [];
+      const parts = [];
       if (hasBranchFilter) parts.push(\`branch: \${branchFilters.join(', ')}\`);
       if (hasEnvFilter) parts.push(\`env: \${envFilters.join(', ')}\`);
       updateTrendFilterBanner(parts.join(' · '));
     }
 
-    function updateTrendFilterBanner(text: string | null) {
+    function updateTrendFilterBanner(text) {
       let banner = document.getElementById('trend-filter-banner');
       if (!banner) {
         const trendSection = document.querySelector('.trend-section');
@@ -2297,9 +2402,9 @@ ${includeComparison ? `    // Comparison functions\n${generateComparisonScript()
       }
       if (text) {
         banner.textContent = \`Showing: \${text}\`;
-        (banner as HTMLElement).style.display = 'block';
+        banner.style.display = 'block';
       } else {
-        (banner as HTMLElement).style.display = 'none';
+        banner.style.display = 'none';
       }
     }
 

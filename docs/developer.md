@@ -815,7 +815,11 @@ cp playwright-report-settings.example.json playwright-report-settings.json
 
 Key settings: `smartReporterMaxTokens` (default 512), `lmStudioModel`, `enableAIRecommendations`. Environment variables override the file — see [Smart Reporter — Manual Testing Guide](testing/smart-reporter-testing.md) and `playwright-report-settings.example.json` for the most relevant options.
 
-**In-report Settings** — click the gear icon (&#9881;) in the report header to open the Settings page. Three tabs let you configure AI / LM Studio options, report display options, and advanced thresholds. Changes are saved to `localStorage` and persist across page reloads. Click "Download playwright-report-settings.json" to export a settings file — place it in your project root and `getSmartReporterOptions()` in `playwright.config.ts` will read it on the next test run.
+**In-report Settings** — click the gear icon (&#9881;) in the report header to open **Settings** (tabs: **AI / LM Studio**, report options, advanced). Changes are saved to the browser’s **`localStorage`** and persist when you reload that report in the same profile. They affect the **opened** report (for example, the LM Studio URL used to fetch `/v1/models` in the Settings UI) and the contents of **Download playwright-report-settings.json**. They do **not** by themselves change the next **`npm test`**, **`npm run test:all`**, or CI run.
+
+**What controls AI during a run** — Failure analysis runs in the reporter **while the Playwright process is finishing**. Options come from `getSmartReporterOptions()` in `playwright.config.ts`: merge of **`playwright-report-settings.json`** at the project root (or the path in **`SMART_REPORTER_CONFIG`** when set and the file exists) with **environment overrides**. Env wins over the file for the same keys (for example **`LM_STUDIO_BASE_URL`**, **`LM_STUDIO_MODEL`**, **`ENABLE_AI_RECOMMENDATIONS`**, **`SMART_REPORTER_MAX_TOKENS`**). Suggestion text is **embedded in the generated HTML** for that run; reopening the file does not call LM Studio again.
+
+**Aligning UI and runs** — After tuning AI in the report, use **Download playwright-report-settings.json** and replace the repo-root file (or copy equivalent values into **`.env`**) so the next generated report uses the same LM Studio base URL and model id. Jr-facing detail: [Smart Reporter usage — §8 & §15](usage/playwright-smart-reporter.md#8-ai-fix-suggestions).
 
 **Trace viewer** — for inline trace viewing, use `npm run report:smart:serve` instead of opening the file directly (avoids `file://` restrictions).
 
