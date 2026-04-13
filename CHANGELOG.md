@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.9.0] - 2026-04-13
+
+### Fixed
+
+- **Smart Reporter** — large test payloads are embedded as **`application/json`** script tags and read at runtime (**`srReadEmbeddedJson`**) so the inline bundle no longer breaks on **U+2028/U+2029** or **import-assert** lines inside prompts. Removed **TypeScript-only** syntax from generated client JS so the report parses in the browser (navigation and filters work). Added **capture-phase** click delegation for primary nav when legacy **`onclick`** does not run (e.g. strict **CSP**).
+
+### Changed
+
+- **AI analyzer tests** — console tip expectation aligned with **LM Studio**-first messaging.
+
+### Documentation
+
+- **`docs/usage/playwright-smart-reporter.md`** — **Settings** vs run-time AI (**`localStorage`** vs **`playwright-report-settings.json`** / **`.env`**).
+- **`docs/developer.md`** — same distinction for contributors; link to usage guide.
+
+---
+
 ## [1.8.5] - 2026-04-11
 
 ### Added
