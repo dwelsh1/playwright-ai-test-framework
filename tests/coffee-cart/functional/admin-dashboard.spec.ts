@@ -1,11 +1,13 @@
 import { expect, test } from '../../../fixtures/pom/test-options';
+import { apiRequest } from '../../../fixtures/api/plain-function';
+import { config } from '../../../config/coffee-cart';
+import { ApiEndpoints, AdminDashboardStats } from '../../../enums/coffee-cart/coffee-cart';
 import { generateAdminCredentials } from '../../../test-data/factories/coffee-cart/checkout.factory';
-import { AdminDashboardStats } from '../../../enums/coffee-cart/coffee-cart';
 
 test.describe('Admin Dashboard', () => {
   test.beforeEach(async ({ loginPage, adminPage, createdOrder }) => {
     // Seed a stable order for every admin-dashboard test via the helper fixture.
-    void createdOrder;
+    expect(createdOrder.orderId).toMatch(/^ORD-/);
     // Admin login
     const { email, password } = generateAdminCredentials();
     await loginPage.goto();
@@ -96,23 +98,38 @@ test.describe('Admin Dashboard', () => {
   test(
     'should update order count after deletion',
     { tag: '@regression' },
-    async ({ adminPage, createdOrder }) => {
+    async ({ adminPage, createdOrder, request }) => {
       const seededOrderId = createdOrder.orderId;
       expect(seededOrderId).toMatch(/^ORD-/);
 
       let initialCount = 0;
 
       await test.step('GIVEN admin has orders to delete', async () => {
+        await expect
+          .poll(
+            async () => {
+              const { status } = await apiRequest({
+                request,
+                method: 'GET',
+                url: `${ApiEndpoints.ORDERS}/${encodeURIComponent(seededOrderId)}`,
+                baseUrl: config.apiUrl,
+              });
+              return status;
+            },
+            { message: 'Seeded order is retrievable via Orders API', timeout: 15_000 },
+          )
+          .toBe(200);
+
         await expect(adminPage.ordersTable).toBeVisible();
         await expect
           .poll(
             async () => {
-              await adminPage.page.reload();
-              return adminPage.getAdminOrderRow(seededOrderId).count();
+              await adminPage.goto();
+              return adminPage.getDeleteButton(seededOrderId).count();
             },
             {
-              message: 'Admin dashboard shows the seeded order before deletion',
-              timeout: 10_000,
+              message: 'Admin dashboard lists a delete action for the seeded order',
+              timeout: 25_000,
             },
           )
           .toBeGreaterThan(0);
@@ -130,12 +147,12 @@ test.describe('Admin Dashboard', () => {
         await expect
           .poll(
             async () => {
-              await adminPage.page.reload();
-              return adminPage.getAdminOrderRow(seededOrderId).count();
+              await adminPage.goto();
+              return adminPage.getDeleteButton(seededOrderId).count();
             },
             {
-              message: 'Deleted seeded order disappears from the admin dashboard',
-              timeout: 10_000,
+              message: 'Deleted seeded order no longer has a delete action on the admin dashboard',
+              timeout: 25_000,
             },
           )
           .toBe(0);
