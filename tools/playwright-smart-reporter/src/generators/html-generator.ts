@@ -47,6 +47,12 @@ export interface HtmlGeneratorData {
   customFields?: CustomMetadataField[];
   savedViews?: SavedView[];
 }
+
+/** JSON safe inside any HTML `<script>...</script>` body (incl. `type="application/json"`). */
+function escapeJsonForHtmlScript(json: string): string {
+  return json.replace(/</g, '\\u003c').replace(/>/g, '\\u003e').replace(/&/g, '\\u0026');
+}
+
 export function generateHtml(data: HtmlGeneratorData): string {
   const {
     results,
@@ -241,11 +247,7 @@ export function generateHtml(data: HtmlGeneratorData): string {
     };
   });
 
-  // Escape JSON for safe embedding in HTML <script> tags
-  const testsJson = JSON.stringify(lightenedResults)
-    .replace(/</g, '\\u003c')
-    .replace(/>/g, '\\u003e')
-    .replace(/&/g, '\\u0026');
+  const testsJson = escapeJsonForHtmlScript(JSON.stringify(lightenedResults));
 
   // Screenshots data for ZIP download — keep base64 data URIs (stripped from lightenedResults)
   // Only include non-passed tests to keep the payload small
@@ -254,10 +256,7 @@ export function generateHtml(data: HtmlGeneratorData): string {
     const shots = (r.attachments?.screenshots ?? []).filter((s) => s.startsWith('data:'));
     if (shots.length > 0) screenshotsMap[r.testId] = shots;
   }
-  const screenshotsDataJson = JSON.stringify(screenshotsMap)
-    .replace(/</g, '\\u003c')
-    .replace(/>/g, '\\u003e')
-    .replace(/&/g, '\\u0026');
+  const screenshotsDataJson = escapeJsonForHtmlScript(JSON.stringify(screenshotsMap));
 
   // Network logs data for HAR export — stripped from lightenedResults
   const networkLogsMap: Record<string, (typeof results)[0]['networkLogs']> = {};
@@ -266,10 +265,7 @@ export function generateHtml(data: HtmlGeneratorData): string {
       networkLogsMap[r.testId] = r.networkLogs;
     }
   }
-  const networkLogsDataJson = JSON.stringify(networkLogsMap)
-    .replace(/</g, '\\u003c')
-    .replace(/>/g, '\\u003e')
-    .replace(/&/g, '\\u0026');
+  const networkLogsDataJson = escapeJsonForHtmlScript(JSON.stringify(networkLogsMap));
 
   // Feature flags
   const showGallery = options.enableGalleryView !== false;
@@ -313,12 +309,9 @@ export function generateHtml(data: HtmlGeneratorData): string {
           ]),
         )
       : {};
-  const historyRunSnapshotsJson = enableHistoryDrilldown
-    ? JSON.stringify(lightenedHistorySnapshots)
-        .replace(/</g, '\\u003c')
-        .replace(/>/g, '\\u003e')
-        .replace(/&/g, '\\u0026')
-    : '{}';
+  const historyRunSnapshotsJson = escapeJsonForHtmlScript(
+    enableHistoryDrilldown ? JSON.stringify(lightenedHistorySnapshots) : '{}',
+  );
 
   // Google Fonts links (only included when not in CSP-safe mode)
   const fontLinks = cspSafe
@@ -328,42 +321,45 @@ export function generateHtml(data: HtmlGeneratorData): string {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">`;
 
-  // Stats data for JavaScript
-  const statsData = JSON.stringify({
-    passed,
-    failed,
-    skipped,
-    flaky,
-    slow,
-    newTests,
-    total,
-    passRate,
-    gradeA,
-    gradeB,
-    gradeC,
-    gradeD,
-    gradeF,
-    totalDuration,
-    summaries: history.summaries ?? [],
-  });
+  const statsData = escapeJsonForHtmlScript(
+    JSON.stringify({
+      passed,
+      failed,
+      skipped,
+      flaky,
+      slow,
+      newTests,
+      total,
+      passRate,
+      gradeA,
+      gradeB,
+      gradeC,
+      gradeD,
+      gradeF,
+      totalDuration,
+      summaries: history.summaries ?? [],
+    }),
+  );
 
   // Accessibility analysis (axe-core annotations)
   const a11yAnalysis = new AxeAnnotationAnalyzer().analyze(results, history.summaries ?? []);
 
   // Reporter options for Settings UI (embedded so the Settings page shows current values)
-  const reporterOptionsJson = JSON.stringify({
-    enableAIRecommendations: options.enableAIRecommendations ?? true,
-    lmStudioBaseUrl: options.lmStudioBaseUrl ?? '',
-    lmStudioModel: options.lmStudioModel ?? '',
-    smartReporterMaxTokens: options.smartReporterMaxTokens ?? 512,
-    maxHistoryRuns: options.maxHistoryRuns ?? 10,
-    filterPwApiSteps: options.filterPwApiSteps ?? false,
-    enableHistoryDrilldown: options.enableHistoryDrilldown ?? false,
-    enableTraceViewer: options.enableTraceViewer ?? true,
-    enableNetworkLogs: options.enableNetworkLogs ?? true,
-    stabilityThreshold: options.stabilityThreshold ?? 70,
-    retryFailureThreshold: options.retryFailureThreshold ?? 3,
-  });
+  const reporterOptionsJson = escapeJsonForHtmlScript(
+    JSON.stringify({
+      enableAIRecommendations: options.enableAIRecommendations ?? true,
+      lmStudioBaseUrl: options.lmStudioBaseUrl ?? '',
+      lmStudioModel: options.lmStudioModel ?? '',
+      smartReporterMaxTokens: options.smartReporterMaxTokens ?? 512,
+      maxHistoryRuns: options.maxHistoryRuns ?? 10,
+      filterPwApiSteps: options.filterPwApiSteps ?? false,
+      enableHistoryDrilldown: options.enableHistoryDrilldown ?? false,
+      enableTraceViewer: options.enableTraceViewer ?? true,
+      enableNetworkLogs: options.enableNetworkLogs ?? true,
+      stabilityThreshold: options.stabilityThreshold ?? 70,
+      retryFailureThreshold: options.retryFailureThreshold ?? 3,
+    }),
+  );
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -1408,10 +1404,16 @@ ${generateStyles(passRate, cspSafe)}
   <!-- JSZip library for trace extraction and artifact downloads -->
   <script>${generateJSZipScript()}</script>
 
+  <!-- Large payloads as JSON: avoids JS parse errors from U+2028/U+2029, import attributes in prompts, etc. -->
+  <script id="sr-embed-tests" type="application/json">${testsJson}</script>
+  <script id="sr-embed-screenshots" type="application/json">${screenshotsDataJson}</script>
+  <script id="sr-embed-network" type="application/json">${networkLogsDataJson}</script>
+  <script id="sr-embed-stats" type="application/json">${statsData}</script>
+  <script id="sr-embed-reporter-options" type="application/json">${reporterOptionsJson}</script>
+  <script id="sr-embed-history-snapshots" type="application/json">${historyRunSnapshotsJson}</script>
+
   <script>
-    const screenshotsData = ${screenshotsDataJson};
-    const networkLogsData = ${networkLogsDataJson};
-${generateScripts(testsJson, showGallery, showComparison, enableTraceViewer, enableHistoryDrilldown, historyRunSnapshotsJson, statsData, reporterOptionsJson)}
+${generateScripts(showGallery, showComparison, enableTraceViewer, enableHistoryDrilldown)}
 
 ${enableTraceViewer ? generateTraceViewerScript() : ''}
   </script>

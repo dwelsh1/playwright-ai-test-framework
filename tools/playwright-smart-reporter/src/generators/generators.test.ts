@@ -3,6 +3,7 @@
  * Verifies that generators don't crash with various inputs
  */
 
+import vm from 'node:vm';
 import { describe, it, expect } from 'vitest';
 import { generateHtml, type HtmlGeneratorData } from './html-generator';
 import {
@@ -70,6 +71,27 @@ describe('html-generator', () => {
       expect(html).toContain('</html>');
     });
 
+    it('embedded report <script> body parses as JavaScript (no leaked TypeScript)', () => {
+      const data: HtmlGeneratorData = {
+        results: [
+          createMinimalTestResult(),
+          createMinimalTestResult({ testId: 'test-2', status: 'failed', error: 'failure message' }),
+        ],
+        history: createTestHistory(),
+        startTime: Date.now(),
+        options: { enableTraceViewer: true },
+      };
+      const html = generateHtml(data);
+      const marker = '\n  <script>\n    function srReadEmbeddedJson';
+      const start = html.indexOf(marker);
+      expect(start).toBeGreaterThanOrEqual(0);
+      const scriptStart = start + '\n  <script>\n'.length;
+      const end = html.lastIndexOf('\n  </script>\n</body>');
+      expect(end).toBeGreaterThan(scriptStart);
+      const embedded = html.slice(scriptStart, end);
+      expect(() => new vm.Script(embedded, { filename: 'smart-report-embedded.js' })).not.toThrow();
+    });
+
     it('handles single passed test', () => {
       const data: HtmlGeneratorData = {
         results: [createMinimalTestResult()],
@@ -82,6 +104,30 @@ describe('html-generator', () => {
 
       expect(html).toContain('Test One');
       expect(html).toContain('passed');
+    });
+
+    it('embeds tests as application/json so import attribute lines in aiPrompt still parse', () => {
+      const frame = "  1 | import coffeeMenuData from './coffeeMenu.json' assert { type: 'json' };";
+      const data: HtmlGeneratorData = {
+        results: [
+          createMinimalTestResult({
+            status: 'failed',
+            aiPrompt: `# Test source\n\n\`\`\`ts\n${frame}\n\`\`\`\n`,
+          }),
+        ],
+        history: createTestHistory(),
+        startTime: Date.now(),
+        options: {},
+      };
+
+      const html = generateHtml(data);
+      const embedMatch = html.match(
+        /<script id="sr-embed-tests" type="application\/json">([\s\S]*?)<\/script>/,
+      );
+      expect(embedMatch).toBeTruthy();
+      const parsed: unknown = JSON.parse(embedMatch![1]);
+      expect(Array.isArray(parsed)).toBe(true);
+      expect((parsed as { aiPrompt?: string }[])[0]?.aiPrompt).toContain("assert { type: 'json' }");
     });
 
     it('handles mixed test results', () => {
@@ -236,10 +282,11 @@ describe('html-generator', () => {
       expect(html).toContain('<!DOCTYPE html>');
       expect(html).toContain('</html>');
 
-      // Extract the JavaScript section that contains "const tests = "
-      const jsMatch = html.match(/const tests = (\[[\s\S]*?\]);/);
-      expect(jsMatch).toBeTruthy();
-      const testsJson = jsMatch![1];
+      const embedMatch = html.match(
+        /<script id="sr-embed-tests" type="application\/json">([\s\S]*?)<\/script>/,
+      );
+      expect(embedMatch).toBeTruthy();
+      const testsJson = embedMatch![1];
 
       // The embedded JSON should NOT contain the large base64 data
       expect(testsJson).not.toContain('AAAAAAAAAAAAAAAAA'); // Large base64 content
@@ -278,10 +325,11 @@ describe('html-generator', () => {
       expect(html).toContain('Test 0');
       expect(html).toContain('Test 99');
 
-      // Extract the JavaScript section that contains "const tests = "
-      const jsMatch = html.match(/const tests = (\[[\s\S]*?\]);/);
-      expect(jsMatch).toBeTruthy();
-      const testsJson = jsMatch![1];
+      const embedMatch = html.match(
+        /<script id="sr-embed-tests" type="application\/json">([\s\S]*?)<\/script>/,
+      );
+      expect(embedMatch).toBeTruthy();
+      const testsJson = embedMatch![1];
 
       // Large base64 data should be stripped from embedded JSON
       expect(testsJson).not.toContain('BBBBBBBBBBBBBBBBB');

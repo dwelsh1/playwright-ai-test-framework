@@ -285,6 +285,19 @@ If no provider is configured, the AI suggestion section is empty. The rest of th
 
 **Provider priority:** LM Studio → Anthropic → OpenAI → Gemini. The first one that responds is used.
 
+### Report Settings vs when AI runs
+
+Understanding **where** settings apply avoids confusion when the report Settings page and your test run disagree.
+
+| Where                                                     | What it affects                                                                                                                                                                                                                                                                 |
+| --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **End of each test run**                                  | The Smart Reporter (Node) calls your AI provider and **embeds** suggestion text in the generated HTML for **that** run. Opening an old report later does **not** call the AI again.                                                                                             |
+| **Gear → Settings in the report**                         | Values are stored in the browser’s **`localStorage`**. They persist when you reload the same report in the same browser profile. They control the **in-page** Settings UI (including “fetch models” from the URL you enter) and what gets **exported** when you click Download. |
+| **`playwright-report-settings.json` in the project root** | Read when Playwright starts the next run (via `getSmartReporterOptions()` in `playwright.config.ts`). This is what configures **AI for `npm test`, `npm run test:all`, and CI** unless overridden by env.                                                                       |
+| **`.env` / environment variables**                        | **`LM_STUDIO_BASE_URL`**, **`LM_STUDIO_MODEL`**, **`ENABLE_AI_RECOMMENDATIONS`**, **`SMART_REPORTER_MAX_TOKENS`**, etc. **Override** the JSON file when both are set.                                                                                                           |
+
+**Keeping the report UI and runs in sync:** After you tune **AI / LM Studio** in the report, click **Download playwright-report-settings.json** and replace the file in the project root (or mirror the same values in `.env`) so the next run uses the same base URL and model id as you see in Settings.
+
 ---
 
 ## 9. Test history and trends
@@ -544,6 +557,8 @@ To export settings as a config file: click **Download playwright-report-settings
 
 To reset everything: click **Reset to Defaults**.
 
+> **Important:** Toggles and fields on this page update **`localStorage` only**. They do **not** automatically change how **`npm test`** or CI invoke LM Studio until you **replace** `playwright-report-settings.json` (or set the same values in **`.env`**). AI text already inside an HTML file came from the config active **when that run finished**. See [§8 — Report Settings vs when AI runs](#report-settings-vs-when-ai-runs).
+
 ---
 
 ## 16. LM Studio — local AI suggestions
@@ -599,7 +614,7 @@ LM_STUDIO_BASE_URL=http://127.0.0.1:1234
 LM_STUDIO_MODEL=local
 ```
 
-Or use the Settings page in the report (see [Section 15](#15-adjusting-settings)) and download `playwright-report-settings.json` to the project root.
+Or use the Settings page in the report (see [Section 15](#15-adjusting-settings)) and download `playwright-report-settings.json` to the project root — the download step is required so the file on disk matches what you configured in the browser.
 
 ---
 
@@ -620,6 +635,20 @@ You opened the HTML file directly. Use the serve command instead:
 ```bash
 npm run report:smart:serve
 ```
+
+**Sidebar and stat chips do nothing when clicked (Tests, Failed, Overview, etc.)**
+
+Navigation uses inline handlers that call functions defined in the main report script. If that script fails to parse or throws before those functions exist, every click appears dead.
+
+1. Open **DevTools → Console**, reload the report, and look for a **SyntaxError** or other red error on load.
+2. **Hard refresh** the page (`Ctrl+Shift+R` / `Cmd+Shift+R`) in case a half-loaded script was cached.
+3. Rebuild the reporter and **regenerate** the HTML so you pick up the latest embed fixes and **capture-phase navigation** (sidebar nav, Failed / Passed / Flaky chips, pass-rate ring, top search / menu toggle):
+
+```bash
+npm run build:smart-reporter
+```
+
+Then run your tests again (or whatever command produced the report) and re-open with `npm run report:smart:serve`.
 
 **AI suggestion section is empty**
 
@@ -645,14 +674,15 @@ The reporter compiled with an error. Check the terminal output during the test r
 
 ## 18. Common mistakes
 
-| Mistake                                                | What to do instead                                               |
-| ------------------------------------------------------ | ---------------------------------------------------------------- |
-| Clicking "View trace" from a file:// URL               | Run `npm run report:smart:serve` first, then open the served URL |
-| Deleting `playwright-report/` between runs             | Keep the folder — it stores `test-history.json` for trends       |
-| Looking for the report at `test-results/`              | The Smart Reporter is at `playwright-report/smart-report.html`   |
-| Expecting AI suggestions without any provider          | Configure LM Studio (free) or set a cloud API key                |
-| Forgetting to build after cloning                      | Run `npm run build:smart-reporter` once after cloning            |
-| Using `report:smart` on a new machine without building | Build first: `npm run build:smart-reporter`                      |
+| Mistake                                                | What to do instead                                                                             |
+| ------------------------------------------------------ | ---------------------------------------------------------------------------------------------- |
+| Clicking "View trace" from a file:// URL               | Run `npm run report:smart:serve` first, then open the served URL                               |
+| Deleting `playwright-report/` between runs             | Keep the folder — it stores `test-history.json` for trends                                     |
+| Looking for the report at `test-results/`              | The Smart Reporter is at `playwright-report/smart-report.html`                                 |
+| Expecting AI suggestions without any provider          | Configure LM Studio (free) or set a cloud API key                                              |
+| Forgetting to build after cloning                      | Run `npm run build:smart-reporter` once after cloning                                          |
+| Using `report:smart` on a new machine without building | Build first: `npm run build:smart-reporter`                                                    |
+| Clicks in the report do nothing                        | Check the browser console for errors; rebuild reporter and re-run tests to regenerate the HTML |
 
 ---
 

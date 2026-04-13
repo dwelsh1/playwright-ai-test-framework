@@ -127,7 +127,7 @@ describe('AIAnalyzer', () => {
       await analyzer.analyzeFailed(results);
 
       expect(consoleSpy).toHaveBeenCalledWith(
-        '💡 Tip: Set ANTHROPIC_API_KEY, OPENAI_API_KEY, or GEMINI_API_KEY for AI failure analysis',
+        '💡 Tip: Set LM_STUDIO_BASE_URL (e.g. http://127.0.0.1:1234), ANTHROPIC_API_KEY, OPENAI_API_KEY, or GEMINI_API_KEY for AI failure analysis',
       );
       expect(mockFetch).not.toHaveBeenCalled();
 
