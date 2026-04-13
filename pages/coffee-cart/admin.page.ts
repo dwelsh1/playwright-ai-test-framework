@@ -17,7 +17,8 @@ export class AdminPage {
     this.page = page;
     this.header = new HeaderComponent(page);
     this.dashboard = page.getByRole('heading', { name: 'Admin Dashboard' });
-    this.ordersTable = page.getByRole('table');
+    // Scope to the orders grid — the first `table` on the page can be another widget.
+    this.ordersTable = page.getByRole('table', { name: /^orders$/i });
     // Inline confirmation uses "Sure? Yes / No" pattern (not a dialog)
     this.confirmPrompt = page.getByText(/sure\?/i);
     this.confirmDeleteButton = page.getByRole('button', { name: /^yes$/i });
@@ -43,17 +44,20 @@ export class AdminPage {
   }
 
   /**
-   * Get order row in admin table
+   * Get order row in the orders table (substring match on the row; order ids are unique).
    */
   getAdminOrderRow(orderId: string): Locator {
-    return this.ordersTable.getByRole('row').filter({ hasText: new RegExp(orderId, 'i') });
+    return this.ordersTable.getByRole('row').filter({ hasText: orderId });
   }
 
   /**
-   * Get delete button for an order
+   * Get delete button for an order (matches a11y name like "Delete order ORD-…").
    */
   getDeleteButton(orderId: string): Locator {
-    return this.getAdminOrderRow(orderId).getByRole('button', { name: /delete|remove/i });
+    const escaped = orderId.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return this.ordersTable.getByRole('button', {
+      name: new RegExp(`delete\\s+order\\s+${escaped}`, 'i'),
+    });
   }
 
   /**

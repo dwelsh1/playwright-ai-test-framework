@@ -79,7 +79,11 @@ To match the full **Pack 1** list in [skills-testing.md](./skills-testing.md), a
 
 ## See also
 
-- [Menu skill test walkthrough](./menu-skill-test-walkthrough.md) — `playwright-cli` menu exploration, implementation prompt, `pw-review` second pass
+- [Menu skill test walkthrough](./menu-skill-test-walkthrough.md) — Coffee Cart menu: `playwright-cli`, implementation prompts, `pw-review` second pass
+- [Sauce Demo skill test walkthrough](./sauce-demo-skill-test-walkthrough.md) — hosted Sauce Demo: same skill sequence, `sd*` fixtures and app conventions
+- [Pack 2 — API and type safety](./skills-checklist-pack-2-api-type-safety.md)
+- [Pack 3 — Review and debugging](./skills-checklist-pack-3-review-debugging.md)
+- [Pack 4 — Workflow and repo operations](./skills-checklist-pack-4-workflow-repo.md)
 - [Skills testing guide](./skills-testing.md) — full packs, skill-by-skill table, `skill-creator` sequence
 - [Skills usage guide](../usage/skills-guide.md) — when to use which skill
 - [Skill prompt examples](../usage/skill-prompt-examples.md) — copy-paste prompts
